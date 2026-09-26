@@ -13,6 +13,21 @@ Fill every field from the review. Use `UNKNOWN` or `NOT_ASSESSED` when evidence 
 - Write, execution, and live-test authority:
 - Flow source and exact revision:
 - Flow security mode: `THREAT_MODEL` | `SECURITY_REVIEW` | `SUPPLY_CHAIN` | `RELEASE_GATE`
+- Scope boundary: named repository paths and approved evidence only; whole-disk scan: `NOT_PERFORMED`; whole-home and whole-system scans: `NOT_PERFORMED` (this workflow makes no whole-disk scan promise).
+
+## Required surface review
+
+For each row, record reviewed paths and evidence, or mark `NOT_PRESENT`, `NOT_ASSESSED`, or `BLOCKED` with a reason. Do not imply that a surface was absent merely because it was not inspected.
+
+| Surface | Status and evidence |
+|---|---|
+| README, skills, prompts, installer instructions: disguised phishing and social engineering, credential solicitation, urgency, safeguard changes, or access requests | |
+| Credential and personal-file access: referenced sources, paths, permissions, triggers, and any existing guard; values remain unread/redacted | |
+| Encoded or indirect egress: source-to-sink trace, encoding/serialization, constructed destination, trigger, permissions, and response evidence | |
+| AI agent tools and MCP: configured tools/servers, granted capabilities, secrets, filesystem/network access, and approval boundaries | |
+| Hooks and CI permissions: trigger/event, token and secret scopes, untrusted contribution paths, and outbound requests | |
+
+Record outbound requests and delegated network actions with the caller/trigger, destination construction, data sent, credentials available, and evidence for each hop. Mark delivery or runtime effects `UNVERIFIED` unless directly established within separately authorized scope.
 
 ## Result
 
@@ -36,7 +51,7 @@ For each finding, include:
 
 ## Rejected candidates
 
-For each candidate rejected, record its location, benign explanation or effective guard, and evidence for rejection. Omit scanner noise that was not investigated.
+For each investigated candidate rejected, record its location, apparent path, benign explanation or effective guard, and evidence for rejection. In particular, distinguish an encoded constant or unused helper from encoded sensitive data that reaches a reachable egress sink. Omit scanner noise that was not investigated.
 
 ## Dependency policy (when applicable)
 
