@@ -30,6 +30,10 @@ On 2026-09-26, the public Flow `main` branch resolved to `f39b0444d29febe00403a8
 
 This repository is still in development. Release still requires independent review of the content, broader controlled use, license decision, and repository-page readback. The public repository is a development workspace; no stable release or runtime security certification is claimed.
 
+## Website and HTML report example
+
+[NoBrainer Security](https://nobrainer.tech/security/) explains the workflow. Open the [controlled HTML report example](https://nobrainer.tech/security/security-report-example.html) to inspect its presentation, evidence links, and limitations. This example does not claim that a general HTML report generator is already implemented. Website source is in [site/](site/README.md).
+
 ## Go deeper
 
 Need a structured learning and testing path for professional work? Explore [AI Security Testing at NoBrainer Tech](https://nobrainer.tech/paths/ai-security/), including authorized scope, evidence, and remediation workflows.

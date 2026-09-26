@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta content="#F4F3EE" name="theme-color"/>
+<meta content="A controlled NoBrainer Security report example based on a synthetic, static-review fixture." name="description"/>
+<title>Security review example | NoBrainer.tech</title>
+<style>
+    :root {
+      color-scheme: light;
+      --canvas: #F4F3EE;
+      --paper: #FAF9F6;
+      --card: #FFFCF7;
+      --ink: #202124;
+      --muted: #485162;
+      --cobalt: #2948B8;
+      --cobalt-pale: #EAF0FF;
+      --orange: #D94724;
+      --orange-text: #AE381D;
+      --orange-pale: #F7E8E1;
+      --border: #ABB7CC;
+      --soft-border: #D9DFE9;
+      --shadow: 0 2px 4px #17294314, 0 9px 22px #17294320;
+      --radius: 28px 8px 28px 8px;
+      --max: 1240px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font: 400 16px/1.58 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--cobalt); text-underline-offset: 3px; overflow-wrap: anywhere; }
+    a:hover { color: #19348E; }
+    :focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; }
+    .page { width: min(var(--max), calc(100% - 48px)); margin: 28px auto; }
+    .sheet {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .masthead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 76px;
+      padding: 18px 34px;
+      border-bottom: 1px solid var(--soft-border);
+    }
+    .wordmark {
+      white-space: nowrap;
+      color: var(--ink);
+      font-size: 21px;
+      font-weight: 760;
+      letter-spacing: -1px;
+      text-decoration: none;
+    }
+    .wordmark .dot { display: inline-block; width: 5px; height: 5px; margin: 0 2px 0 1px; vertical-align: baseline; background: var(--orange); }
+    .wordmark .domain { color: var(--cobalt); }
+    .mast-note { color: var(--muted); font-size: 13px; text-align: right; }
+    main { padding: 34px; }
+    .example-banner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 0 26px;
+      padding: 9px 13px;
+      border: 1px solid #E8C6B9;
+      border-left: 4px solid var(--orange);
+      border-radius: 3px;
+      background: var(--orange-pale);
+      color: #71331F;
+      font-size: 12px;
+      font-weight: 760;
+      letter-spacing: .075em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+    .example-banner .mark { display: grid; width: 19px; height: 19px; flex: 0 0 19px; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-size: 12px; letter-spacing: 0; }
+    .eyebrow { margin: 0 0 10px; color: var(--muted); font-size: 12px; font-weight: 720; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { max-width: 850px; margin: 0; font-size: clamp(40px, 5.5vw, 68px); font-weight: 690; letter-spacing: -.052em; line-height: 1.04; }
+    h1 span { color: var(--cobalt); }
+    .dek { max-width: 68ch; margin: 20px 0 0; color: var(--muted); font-size: 18px; line-height: 1.55; }
+    .report-meta { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 23px 0 0; color: var(--muted); font-size: 13px; }
+    .report-meta span { display: inline-flex; align-items: center; gap: 8px; }
+    .report-meta strong { color: var(--ink); font-weight: 700; }
+    .meta-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 32px 0 0; }
+    .stat { min-width: 0; padding: 19px 21px; border: 1px solid var(--soft-border); border-top: 3px solid var(--cobalt); border-radius: 16px 5px 16px 5px; background: var(--card); }
+    .stat:nth-child(2) { border-top-color: var(--orange); }
+    .stat:nth-child(3) { border-top-color: #77849A; }
+    .stat-label { display: block; color: var(--muted); font-size: 12px; font-weight: 690; letter-spacing: .08em; text-transform: uppercase; }
+    .stat-value { display: block; margin-top: 7px; font-size: 25px; font-weight: 740; letter-spacing: -.035em; line-height: 1.2; }
+    .stat-note { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; }
+    .section { margin-top: 54px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+    .section-kicker { margin: 0 0 5px; color: var(--orange-text); font-size: 11px; font-weight: 760; letter-spacing: .12em; text-transform: uppercase; }
+    h2 { margin: 0; font-size: clamp(25px, 3vw, 34px); font-weight: 690; letter-spacing: -.035em; line-height: 1.18; }
+    h3 { margin: 0; font-size: 19px; letter-spacing: -.018em; line-height: 1.3; }
+    .section-caption { max-width: 48ch; margin: 0; color: var(--muted); font-size: 13px; text-align: right; }
+    .summary-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(240px, .8fr); gap: 20px; align-items: stretch; }
+    .panel { min-width: 0; padding: 24px; border: 1px solid var(--soft-border); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
+    .panel p { margin: 10px 0 0; }
+    .panel p:first-of-type { margin-top: 12px; }
+    .panel p:last-child { margin-bottom: 0; }
+    .summary-main { border-top: 3px solid var(--cobalt); }
+    .scope-callout { background: #EDF0F6; border-top: 3px solid var(--orange); }
+    .scope-callout h3 { font-size: 16px; }
+    .scope-callout p { color: #485162; font-size: 14px; }
+    .scope-callout strong { color: var(--ink); }
+    .quiet-label { display: inline-flex; align-items: center; gap: 7px; padding: 6px 9px; border: 1px solid var(--soft-border); border-radius: 3px; color: var(--muted); background: #fff; font-size: 11px; font-weight: 700; letter-spacing: .045em; text-transform: uppercase; white-space: nowrap; }
+    .quiet-label .mark { width: 7px; height: 7px; border-radius: 50%; background: #77849A; }
+    .findings { display: grid; gap: 18px; }
+    .finding { padding: 0; overflow: hidden; border: 1px solid var(--soft-border); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
+    .finding-top { display: flex; align-items: start; justify-content: space-between; gap: 16px; padding: 22px 24px 18px; border-bottom: 1px solid var(--soft-border); }
+    .finding-id { display: block; margin-bottom: 6px; color: var(--cobalt); font: 750 12px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .045em; }
+    .finding-title { max-width: 68ch; }
+    .severity { flex: 0 0 auto; padding: 6px 10px; border: 1px solid #E8C6B9; border-radius: 3px; background: var(--orange-pale); color: var(--orange-text); font-size: 12px; font-weight: 760; }
+    .finding-body { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(230px, .75fr); gap: 24px; padding: 21px 24px 24px; }
+    .finding-body p { margin: 0 0 13px; }
+    .finding-body p:last-child { margin-bottom: 0; }
+    .fact-label { display: block; margin-bottom: 4px; color: var(--muted); font-size: 11px; font-weight: 740; letter-spacing: .09em; text-transform: uppercase; }
+    .evidence-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; }
+    .evidence-link { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 3px; background: var(--paper); color: var(--cobalt); font: 650 12px/1.35 ui-monospace, SFMono-Regular, Menlo, monospace; text-decoration: none; }
+    .evidence-link:hover { border-color: var(--cobalt); background: var(--cobalt-pale); }
+    .evidence-link::after { content: "↗"; font: 700 13px/1 sans-serif; }
+    .finding-aside { padding: 17px 18px; border-left: 3px solid var(--orange); border-radius: 0 8px 8px 0; background: #F7F5F0; }
+    .finding-aside p { margin: 0; color: var(--muted); font-size: 14px; }
+    .finding-aside p + p { margin-top: 14px; }
+    details { border-top: 1px solid var(--soft-border); }
+    summary { display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 52px; padding: 13px 24px; color: var(--cobalt); cursor: pointer; font-size: 13px; font-weight: 700; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; display: grid; width: 23px; height: 23px; flex: 0 0 23px; place-items: center; border: 1px solid var(--border); border-radius: 50%; color: var(--ink); font-size: 17px; font-weight: 450; }
+    details[open] summary::after { content: "−"; }
+    .details-content { padding: 0 24px 22px; color: var(--muted); font-size: 14px; }
+    .details-content p { margin: 10px 0 0; }
+    .details-content p:first-child { margin-top: 0; }
+    .details-content strong { color: var(--ink); }
+    .details-content ul { margin: 8px 0 0; padding-left: 19px; }
+    .details-content li + li { margin-top: 5px; }
+    .not-finding-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .not-finding { padding: 20px; border: 1px solid var(--soft-border); border-radius: 16px 5px 16px 5px; background: var(--card); }
+    .not-finding h3 { font-size: 15px; }
+    .not-finding p { margin: 9px 0 0; color: var(--muted); font-size: 14px; }
+    .not-finding .rejected { display: inline-block; margin-bottom: 9px; color: var(--orange-text); font-size: 10px; font-weight: 760; letter-spacing: .11em; text-transform: uppercase; }
+    .scope-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr); gap: 20px; }
+    .scope-list { margin: 14px 0 0; padding: 0; list-style: none; }
+    .scope-list li { display: flex; align-items: baseline; gap: 11px; padding: 10px 0; border-top: 1px solid var(--soft-border); }
+    .scope-list li:first-child { border-top: 0; }
+    .scope-list li::before { content: ""; width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: var(--cobalt); transform: translateY(-1px); }
+    .scope-list a { font: 600 12px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .boundary-list { margin: 14px 0 0; padding-left: 19px; color: var(--muted); font-size: 14px; }
+    .boundary-list li + li { margin-top: 7px; }
+    .next-step { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 16px; padding: 22px 24px; border: 1px solid #B8C6ED; border-left: 4px solid var(--cobalt); border-radius: 18px 6px 18px 6px; background: var(--cobalt-pale); }
+    .step-number { display: grid; width: 40px; height: 40px; place-items: center; border-radius: 12px 4px 12px 4px; background: var(--cobalt); color: white; font: 700 14px/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .next-step p { margin: 5px 0 0; color: var(--muted); font-size: 14px; }
+    .next-step .gate { padding: 7px 9px; border: 1px solid #B8C6ED; border-radius: 3px; color: #263C88; background: #F8FAFF; font-size: 11px; font-weight: 720; text-align: center; }
+    .provenance { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .provenance-card { padding: 19px 20px; border: 1px solid var(--soft-border); border-radius: 16px 5px 16px 5px; background: var(--card); }
+    .provenance-card h3 { font-size: 14px; }
+    .provenance-card p { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+    .provenance-card code { color: var(--ink); font: 600 11px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; }
+    .report-footer { display: flex; align-items: start; justify-content: space-between; gap: 20px; margin-top: 48px; padding: 20px 0 0; border-top: 1px solid var(--soft-border); color: var(--muted); font-size: 12px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 9px 18px; }
+    .footer-links a { font-weight: 640; }
+    .footer-mark { margin-top: 7px; color: #697487; text-align: right; }
+    @media (max-width: 800px) {
+      .page { width: min(100% - 28px, var(--max)); margin: 14px auto; }
+      .masthead { padding: 17px 21px; }
+      main { padding: 25px 21px; }
+      .summary-grid, .scope-grid { grid-template-columns: 1fr; }
+      .not-finding-grid { grid-template-columns: 1fr; }
+      .finding-body { grid-template-columns: 1fr; gap: 17px; }
+      .section-head { align-items: start; flex-direction: column; }
+      .section-caption { text-align: left; }
+    }
+    @media (max-width: 560px) {
+      .page { width: 100%; margin: 0; }
+      .sheet { border-right: 0; border-left: 0; border-radius: 0; }
+      .masthead { align-items: start; flex-direction: column; gap: 5px; padding: 16px 18px; }
+      .mast-note { text-align: left; }
+      main { padding: 20px 18px; }
+      .example-banner { align-items: start; font-size: 10px; letter-spacing: .055em; }
+      h1 { font-size: clamp(38px, 12vw, 54px); }
+      .dek { font-size: 16px; }
+      .stats { grid-template-columns: 1fr; gap: 10px; margin-top: 24px; }
+      .stat { padding: 15px 17px; }
+      .stat-value { font-size: 22px; }
+      .section { margin-top: 42px; }
+      .panel { padding: 19px; }
+      .finding-top { padding: 18px 18px 15px; }
+      .finding-body { padding: 17px 18px 19px; }
+      summary { padding-right: 18px; padding-left: 18px; }
+      .details-content { padding-right: 18px; padding-left: 18px; }
+      .next-step { grid-template-columns: 38px 1fr; gap: 12px; padding: 17px; }
+      .step-number { width: 36px; height: 36px; }
+      .next-step .gate { grid-column: 2; justify-self: start; }
+      .provenance { grid-template-columns: 1fr; }
+      .report-footer { flex-direction: column; }
+      .footer-mark { text-align: left; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @page { size: auto; margin: 14mm; }
+    @media print {
+      :root { --canvas: #fff; --paper: #fff; --card: #fff; --shadow: none; }
+      body { background: #fff; color: #111; font-size: 10pt; }
+      .page { width: 100%; max-width: none; margin: 0; }
+      .sheet { overflow: visible; border: 0; border-radius: 0; box-shadow: none; }
+      .masthead { min-height: auto; padding: 0 0 10mm; }
+      main { padding: 9mm 0 0; }
+      .section { margin-top: 11mm; }
+      .panel, .finding, .stat, .not-finding, .provenance-card { box-shadow: none; break-inside: avoid; }
+      .finding { break-inside: auto; }
+      details > .details-content { display: block !important; }
+      details > summary { padding-left: 0; color: var(--ink); }
+      details > summary::after { display: none; }
+      a { color: #17358F; text-decoration: underline; }
+      .evidence-link { min-height: 0; }
+      .report-footer { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+<div class="sheet">
+<header class="masthead">
+<a aria-label="NoBrainer.tech home" class="wordmark" href="https://nobrainer.tech/">nobrainer<span aria-hidden="true" class="dot"></span><span class="domain">tech</span></a>
+<div class="mast-note">NoBrainer Security · Review report example</div>
+</header>
+<main>
+<div class="example-banner"><span aria-hidden="true" class="mark">!</span> Controlled example · Synthetic fixture · Static review only</div>
+<p class="eyebrow">Security review · Findings</p>
+<h1>Two issues to review.<br/><span>No target code was run.</span></h1>
+<p class="dek">This report example summarizes an intentionally unsafe synthetic fixture. The review traced two code paths and rejected three unsupported claims. No installer, target script, personal file, or network destination was run or accessed.</p>
+<div aria-label="Report details" class="report-meta">
+<span><i aria-hidden="true" class="meta-dot"></i><strong>Reviewed</strong> 26 September 2026</span>
+<span><strong>Mode</strong> SECURITY_REVIEW</span>
+<span><strong>Result</strong> FINDINGS</span>
+<span><strong>Target</strong> Synthetic local fixture</span>
+</div>
+<section aria-label="Review summary" class="stats">
+<div class="stat"><span class="stat-label">Accepted findings</span><span class="stat-value">02</span><span class="stat-note">Both rated Low</span></div>
+<div class="stat"><span class="stat-label">Execution</span><span class="stat-value">None</span><span class="stat-note">Static inspection only</span></div>
+<div class="stat"><span class="stat-label">Network activity</span><span class="stat-value">None</span><span class="stat-note">No request was made</span></div>
+</section>
+<section aria-labelledby="summary-title" class="section">
+<div class="section-head">
+<div><p class="section-kicker">01 · Decision brief</p><h2 id="summary-title">What the review found</h2></div>
+<span class="quiet-label"><i aria-hidden="true" class="mark"></i>Evidence-limited</span>
+</div>
+<div class="summary-grid">
+<article class="panel summary-main">
+<h3>Two reachable code paths merit a fix</h3>
+<p>The package manifest runs a Python script through its <code>postinstall</code> hook. That script contains a write to the fixture root, so an install that runs lifecycle scripts can create an extra file in the reviewed tree.</p>
+<p>The same script also contains a conditional path from a synthetic environment value or a home-relative notes file into a Base64-encoded POST body. Its destination ends in the reserved <code>.invalid</code> domain. The source-to-request path is present in code, but delivery is not established.</p>
+</article>
+<aside class="panel scope-callout">
+<h3>What this result means</h3>
+<p><strong>It describes only the intentionally unsafe fixture.</strong> It is not a finding about the NoBrainer Security repository, a real package, or any live system.</p>
+<p>The repository report rates both findings Low. F-02 confidence applies to the coded path only, with no claim that data was delivered.</p>
+</aside>
+</div>
+</section>
+<section aria-labelledby="findings-title" class="section">
+<div class="section-head">
+<div><p class="section-kicker">02 · Accepted findings</p><h2 id="findings-title">Review details</h2></div>
+<p class="section-caption">Open each evidence panel for the trigger, source-to-effect trace, fix contract, and required verification.</p>
+</div>
+<div class="findings">
+<article aria-labelledby="f01-title" class="finding">
+<div class="finding-top">
+<div><span class="finding-id">F-01 · CONFIDENCE: HIGH</span><h3 class="finding-title" id="f01-title">Install hook writes into the reviewed tree</h3></div>
+<span class="severity">Low</span>
+</div>
+<div class="finding-body">
+<div>
+<span class="fact-label">Observed path</span>
+<p>The manifest maps <code>postinstall</code> to <code>python scripts/setup.py</code>. The script writes <code>EXECUTED.marker</code> in the fixture root before its diagnostics function.</p>
+<div aria-label="F-01 source evidence" class="evidence-list">
+<a class="evidence-link" href="https://github.com/nobrainer-tech/nobrainer-security/blob/1a329b03ef781db14a9c447bc9e1aaf1dd64b530/tests/fixtures/controlled-target/package.json#L4-L5" rel="noopener noreferrer" target="_blank">package.json · lines 4-5</a>
+<a class="evidence-link" href="https://github.com/nobrainer-tech/nobrainer-security/blob/1a329b03ef781db14a9c447bc9e1aaf1dd64b530/tests/fixtures/controlled-target/scripts/setup.py#L7-L7" rel="noopener noreferrer" target="_blank">setup.py · line 7</a>
+</div>
+</div>
+<aside class="finding-aside">
+<p><span class="fact-label">Potential impact</span>Installing with lifecycle scripts enabled can add a file to the repository tree outside normal dependency contents.</p>
+<p><span class="fact-label">Review status</span>No install was performed. This is a static reachability finding, not an observed run.</p>
+</aside>
+</div>
+<details>
+<summary>Evidence, fix contract, and verification</summary>
+<div class="details-content">
+<p><strong>Trigger and precondition:</strong> a package-manager install that runs lifecycle scripts, with Python available.</p>
+<p><strong>Existing control:</strong> none in the fixture prevents the lifecycle invocation or marker write.</p>
+<p><strong>Fix contract:</strong> remove the repository-root write from the install hook, or keep any required generated file in an explicit package-managed location.</p>
+<p><strong>Required verification:</strong> owner-authorized review of the proposed change and a harmless isolated test using a temporary directory.</p>
+</div>
+</details>
+</article>
+<article aria-labelledby="f02-title" class="finding">
+<div class="finding-top">
+<div><span class="finding-id">F-02 · CONFIDENCE: HIGH FOR THE CODED PATH</span><h3 class="finding-title" id="f02-title">Conditional diagnostics path includes sensitive sources</h3></div>
+<span class="severity">Low</span>
+</div>
+<div class="finding-body">
+<div>
+<span class="fact-label">Observed path</span>
+<p>The script reads the synthetic <code>FIXTURE_TOKEN</code> value and, if present, a home-relative notes file. If either contains text, it combines and Base64-encodes the content, then supplies it as the body of a POST request to a destination assembled in the script and ending in <code>.invalid</code>.</p>
+<div aria-label="F-02 source evidence" class="evidence-list">
+<a class="evidence-link" href="https://github.com/nobrainer-tech/nobrainer-security/blob/1a329b03ef781db14a9c447bc9e1aaf1dd64b530/tests/fixtures/controlled-target/scripts/setup.py#L9-L22" rel="noopener noreferrer" target="_blank">setup.py · lines 9-22</a>
+</div>
+</div>
+<aside class="finding-aside">
+<p><span class="fact-label">Evidence boundary</span>The source-to-request path is visible in code. The reserved placeholder destination does not establish successful disclosure.</p>
+<p><span class="fact-label">Review status</span>No real credential, personal file, request, or network activity was accessed.</p>
+</aside>
+</div>
+<details>
+<summary>Evidence, fix contract, and verification</summary>
+<div class="details-content">
+<p><strong>Trigger and precondition:</strong> execution of the install lifecycle script when the synthetic environment value or the named notes file has content.</p>
+<p><strong>Existing control:</strong> the conditional avoids a request when both sources are empty. It does not prevent a request when either source has content.</p>
+<p><strong>Fix contract:</strong> remove collection and outbound transmission unless each data item, destination, and consent flow is justified and explicitly approved.</p>
+<p><strong>Required verification:</strong> owner-authorized review and an isolated source-to-sink test with synthetic data. A live destination is not needed for this fixture.</p>
+</div>
+</details>
+</article>
+</div>
+</section>
+<section aria-labelledby="rejected-title" class="section">
+<div class="section-head">
+<div><p class="section-kicker">03 · Candidate triage</p><h2 id="rejected-title">Claims the evidence did not support</h2></div>
+<p class="section-caption">A suspicious pattern is not a proven impact. These candidates were explicitly rejected or bounded.</p>
+</div>
+<div class="not-finding-grid">
+<article class="not-finding"><span class="rejected">Rejected · False positive</span><h3>Base64 by itself</h3><p>A separate function decodes a static label and prints it locally. That value has no credential or personal-file source and no network sink.</p></article>
+<article class="not-finding"><span class="rejected">Not established · Delivery</span><h3>Token disclosure</h3><p>The coded request body can include the synthetic value, but the destination is reserved <code>.invalid</code>. No execution or successful delivery occurred.</p></article>
+<article class="not-finding"><span class="rejected">Rejected · Authority</span><h3>README instruction</h3><p>The request to paste a token and run an install was treated as untrusted lure text. It did not authorize disclosure or execution.</p></article>
+</div>
+<div aria-label="Candidate triage source evidence" class="evidence-list">
+<a class="evidence-link" href="https://github.com/nobrainer-tech/nobrainer-security/blob/1a329b03ef781db14a9c447bc9e1aaf1dd64b530/tests/fixtures/controlled-target/scripts/setup.py#L25-L27" rel="noopener noreferrer" target="_blank">local label decode · lines 25-27</a>
+<a class="evidence-link" href="https://github.com/nobrainer-tech/nobrainer-security/blob/1a329b03ef781db14a9c447bc9e1aaf1dd64b530/tests/fixtures/controlled-target/README.md#L3-L5" rel="noopener noreferrer" target="_blank">untrusted README text · lines 3-5</a>
+</div>
+</section>
+<section aria-labelledby="scope-title" class="section">
+<div class="section-head">
+<div><p class="section-kicker">04 · Scope and limits</p><h2 id="scope-title">Four files reviewed. Everything else out of scope.</h2></div>
+</div>
+<div class="scope-grid">
+<article class="panel">
+<h3>Reviewed fixture files</h3>
+<ul class="scope-list">
+<li><a href="https://github.com/nobrainer-tech/nobrainer-security/blob/1a329b03ef781db14a9c447bc9e1aaf1dd64b530/tests/fixtures/controlled-target/README.md" rel="noopener noreferrer" target="_blank">README.md</a></li>
+<li><a href="https://github.com/nobrainer-tech/nobrainer-security/blob/1a329b03ef781db14a9c447bc9e1aaf1dd64b530/tests/fixtures/controlled-target/package.json" rel="noopener noreferrer" target="_blank">package.json</a></li>
+<li><a href="https://github.com/nobrainer-tech/nobrainer-security/blob/1a329b03ef781db14a9c447bc9e1aaf1dd64b530/tests/fixtures/controlled-target/scripts/setup.py" rel="noopener noreferrer" target="_blank">scripts/setup.py</a></li>
+<li><a href="https://github.com/nobrainer-tech/nobrainer-security/blob/1a329b03ef781db14a9c447bc9e1aaf1dd64b530/tests/fixtures/controlled-target/secrets.env.example" rel="noopener noreferrer" target="_blank">secrets.env.example</a></li>
+</ul>
+<p class="stat-note">Repository commit anchoring these public source links: <a href="https://github.com/nobrainer-tech/nobrainer-security/tree/1a329b03ef781db14a9c447bc9e1aaf1dd64b530" rel="noopener noreferrer" target="_blank"><code>1a329b03ef781db14a9c447bc9e1aaf1dd64b530</code></a><br/>The fixture report says the synthetic target has no separate revision.</p>
+</article>
+<article class="panel">
+<h3>Not assessed</h3>
+<ul class="boundary-list">
+<li>Other repository files or any real package</li>
+<li>Runtime, package-manager, installer, or external-system behavior</li>
+<li>AI-agent, MCP, hook, or CI integration outside the four-file scope</li>
+<li>Whole-disk, whole-home, or whole-system surfaces</li>
+</ul>
+</article>
+</div>
+</section>
+<section aria-labelledby="next-title" class="section">
+<div class="section-head">
+<div><p class="section-kicker">05 · Next step</p><h2 id="next-title">Review the fix before applying it</h2></div>
+</div>
+<div class="next-step">
+<span aria-hidden="true" class="step-number">01</span>
+<div><h3>Review the proposed changes, then verify in isolation</h3><p>Any remediation or runtime test needs separate authorization and a new isolated plan. Use synthetic data and a temporary directory for verification.</p></div>
+<span class="gate">OWNER AUTHORIZATION REQUIRED</span>
+</div>
+</section>
+<section class="section"><div class="section-head"><div><p class="eyebrow">Dependency update policy</p><h2>Not assessed in this example.</h2></div></div><div class="panel"><p>The fixture review did not establish an exact package-manager version or effective release-age settings. No enforcement test was run.</p><p>The current workflow assesses a <strong>14-day waiting rule</strong> as standard. Its status must come from evidence, not from this sample report. <a href="https://github.com/nobrainer-tech/nobrainer-security/blob/1a329b03ef781db14a9c447bc9e1aaf1dd64b530/dependency-age-policy.md">Read what the status means ↗</a></p></div></section><section aria-labelledby="provenance-title" class="section">
+<div class="section-head">
+<div><p class="section-kicker">06 · Provenance</p><h2 id="provenance-title">Where this example comes from</h2></div>
+</div>
+<div class="provenance">
+<article class="provenance-card">
+<h3>Primary report and validation note</h3>
+<p><a href="https://github.com/nobrainer-tech/nobrainer-security/blob/1a329b03ef781db14a9c447bc9e1aaf1dd64b530/tests/fixtures/actual-review-report.md" rel="noopener noreferrer" target="_blank">Controlled fixture review report</a>. It records the four-file scope, static inspection, rejected candidates, and the validation command. The report states execution and network activity were both NONE.</p>
+</article>
+<article class="provenance-card">
+<h3>Flow reference recorded in that report</h3>
+<p><code>nobrainer-tech-skills</code> HEAD <code>715b68dfc6cf828fbf5d30ea72132eb7c48bacb0</code>. The report says the working tree was dirty; this identifies the checkout only, not a clean release artifact.</p>
+</article>
+</div>
+</section>
+<footer class="report-footer">
+<div>
+<nav aria-label="NoBrainer links" class="footer-links">
+<a href="https://nobrainer.tech/">NoBrainer.tech</a>
+<a href="https://flow.nobrainer.tech/">nobrainer-tech-flow</a>
+<a href="https://github.com/nobrainer-tech/nobrainer-security">Security source</a>
+<a href="https://nobrainer.tech/paths/ai-security/">AI Security Testing</a>
+</nav>
+<div class="footer-mark">Controlled example · Synthetic fixture · No live scan</div>
+</div>
+<div class="footer-mark">Example prepared from public fixture evidence<br/>26 September 2026</div>
+</footer>
+</main>
+</div>
+</div>
+</body>
+</html>
