@@ -37,7 +37,7 @@ class ActualReviewReportTests(unittest.TestCase):
         self.assertIn("repository, standalone skill, or installer URL/path", skill)
         self.assertIn("exact ref", skill)
         self.assertIn("REPORT-TEMPLATE.md", skill)
-        self.assertIn("14-day npm", skill)
+        self.assertIn("standard 14-day release-age recommendation", skill)
         self.assertIn("no whole-disk, whole-home, or whole-system scan claim", skill)
 
     def test_readme_explains_path_loading_and_whole_repo_discovery(self):
@@ -78,6 +78,48 @@ class ActualReviewReportTests(unittest.TestCase):
         ):
             with self.subTest(topic=topic):
                 self.assertIn(topic, template)
+
+    def test_dependency_age_is_default_and_assessed_in_each_relevant_review(self):
+        root = ROOT.parent
+        policy = (root / "dependency-age-policy.md").read_text()
+        skill = (root / "SKILL.md").read_text()
+        workflow = (root / "WORKFLOW.md").read_text()
+        readme = (root / "README.md").read_text()
+
+        self.assertIn("Standard 14-day dependency-age policy", policy)
+        self.assertIn("Fourteen days is the default recommendation", policy)
+        self.assertIn("every dependency-relevant review", skill)
+        self.assertIn("every review where dependencies are relevant", workflow)
+        self.assertIn("standard recommendation", readme)
+        self.assertIn("Seven days is acceptable only", policy)
+        self.assertIn("7-day window is acceptable only", skill)
+        self.assertIn("explicitly documents that choice", workflow)
+
+    def test_dependency_status_is_evidence_only_and_exception_is_bounded(self):
+        root = ROOT.parent
+        policy = (root / "dependency-age-policy.md").read_text()
+        template = (root / "REPORT-TEMPLATE.md").read_text()
+        statuses = (
+            "NOT_APPLICABLE",
+            "NEEDS_SETUP",
+            "CONFIGURATION_OBSERVED",
+            "ENFORCEMENT_VERIFIED",
+            "UNSUPPORTED",
+            "NOT_ASSESSED",
+        )
+
+        for status in statuses:
+            with self.subTest(status=status):
+                self.assertIn(status, policy)
+                self.assertIn(status, template)
+        self.assertIn("not a general safety score", policy)
+        self.assertIn("exact fix version", policy)
+        self.assertIn("approving owner", policy)
+        self.assertIn("expiry/review time", policy)
+        self.assertIn("rollback", policy)
+        self.assertIn("Older releases are not necessarily safe", policy)
+        self.assertIn("Do not change host or target settings", policy)
+        self.assertIn("one status for each relevant package-manager/configuration scope", policy)
 
     def test_report_traces_disguised_egress_and_rejects_unconnected_encoding(self):
         report = REPORT.read_text().lower()

@@ -18,7 +18,7 @@ Before sharing repository content with any external service, establish that the 
 
 The review is a bounded static examination of named repository paths and approved evidence. It can cover disguised phishing or social engineering in README/skills/installer instructions; credential and personal-file access; encoded or indirect egress; and AI-agent tools, MCP, hooks, CI permissions, and outbound requests. It does not run target code or installers and does not promise a whole-disk, whole-home, or whole-system scan. A suspicious string or scanner alert is only a lead to investigate; it is not proof of compromise. Likewise, no findings in a reviewed scope do not prove the whole repository is safe.
 
-The optional [14-day dependency-age policy](dependency-age-policy.md) is project guidance, not a setting applied by this repository. It can delay a security fix and does not cover every dependency source.
+The [14-day dependency-age policy](dependency-age-policy.md) is the standard recommendation and must be assessed in every dependency-relevant review. It is project guidance, not a setting applied by this repository. Reviewers record manager/version, configuration scope and evidence status; they do not silently configure the host or target. A 7-day window requires an explicit documented project choice. A cooldown can delay a security fix, does not cover every dependency source, and does not establish that older releases are safe.
 
 ## Flow compatibility checked
 

@@ -24,6 +24,8 @@ For each candidate issue, document the input or trigger, reachable path, permiss
 
 Review dependency manifests, lockfiles, source pinning, integrity or provenance data, lifecycle behavior, and update policy when they are in scope. Do not run install or audit commands by default: package-manager commands can execute code, mutate files, or send dependency inventory to a registry. Any such command needs a narrowly scoped, approved test plan.
 
+For every review where dependencies are relevant, assess the 14-day release-age policy in [`dependency-age-policy.md`](dependency-age-policy.md) and complete the dependency-policy fields in [`REPORT-TEMPLATE.md`](REPORT-TEMPLATE.md), including when the control is absent or unsupported. Identify the actual package manager, exact version, config source and precedence, applicable environment/commands, and evidence status. Use version-specific official documentation. The standard recommendation is 14 days; accept 7 days only when the project explicitly documents that choice. This is an assessment, not permission to edit host or target configuration. Keep the review `READ_ONLY`. Report the limits: age alone does not establish safety, some sources or versions may be outside the control, and a cooldown can delay urgent fixes.
+
 A regex match, suspicious word, scanner label, or example payload is not proof of a vulnerability. An old, popular, signed, or scanner-clean package is not proof of safety either. Verify time-sensitive advisory and version claims against current primary sources when they matter.
 
 ## 4. Verify within the boundary

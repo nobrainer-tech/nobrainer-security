@@ -55,14 +55,17 @@ For each investigated candidate rejected, record its location, apparent path, be
 
 ## Dependency policy (when applicable)
 
-- Package manager and exact version evidence:
-- Configuration source and effective precedence, with auth values omitted:
-- Requested release age and units:
+- Assessment status per relevant manager/configuration scope: `NOT_APPLICABLE` | `NEEDS_SETUP` | `CONFIGURATION_OBSERVED` | `ENFORCEMENT_VERIFIED` | `UNSUPPORTED` | `NOT_ASSESSED` (evidence status only; not a general safety score):
+- Dependency relevance and evidence reviewed (or reason not assessed):
+- Package manager(s), exact version(s), and version-specific official documentation:
+- Configuration source, scope, effective precedence, relevant commands/environments, with auth values omitted:
+- Requested/effective release age and units; standard recommendation: 14 days; if 7 days, explicit documented project choice and rationale:
 - Exceptions, overrides, non-registry sources, and missing publication-time metadata:
 - Lifecycle-script policy and lockfile scope:
-- Controlled behavior test: run / not run, with result:
-- Security-fix delay or other tradeoff:
-- Change and rollback authority, if a change was separately approved:
+- Controlled behavior test: run / not run, exact manager/version/scope and result (required evidence for `ENFORCEMENT_VERIFIED`):
+- Security-fix delay and other limits (including why an older release is not presumed safe):
+- Any urgent-fix exception: exact package/version, reason, approving owner, expiry/review time, and rollback evidence:
+- Configuration change authority: `NONE` unless separately recorded; change/rollback evidence only if separately approved:
 
 ## Evidence and limits
 
