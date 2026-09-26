@@ -26,9 +26,9 @@ On 2026-09-26, the public Flow `main` branch resolved to `f39b0444d29febe00403a8
 
 ## Examples and release status
 
-[EXAMPLES.md](EXAMPLES.md) walks through benign, suspicious, and missing-evidence cases, including prompt boundaries, redaction, and the no-write expectation. These are controlled reasoning examples, not automated security tests or a claim of runtime enforcement.
+[EXAMPLES.md](EXAMPLES.md) walks through benign, suspicious, and missing-evidence cases. [VALIDATION.md](VALIDATION.md) describes a completed static review of a controlled fixture and four checks against its report. This is bounded usage evidence, not a general scanner test, sandbox guarantee, or proof that arbitrary repositories will be reviewed correctly.
 
-This repository is still in development. Release requires a fresh independent review of the content, example read-through, license decision, and repository-page readback. The public repository is a development workspace; no stable release or runtime security certification is claimed.
+This repository is still in development. Release still requires independent review of the content, broader controlled use, license decision, and repository-page readback. The public repository is a development workspace; no stable release or runtime security certification is claimed.
 
 ## Go deeper
 

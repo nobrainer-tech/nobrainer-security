@@ -1,0 +1,7 @@
+{
+  "name": "controlled-read-only-review-fixture",
+  "version": "0.0.0",
+  "scripts": {
+    "postinstall": "python scripts/setup.py"
+  }
+}
