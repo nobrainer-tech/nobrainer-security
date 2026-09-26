@@ -32,7 +32,7 @@ This repository is still in development. Release still requires independent revi
 
 ## Website and HTML report example
 
-[NoBrainer Security](https://nobrainer.tech/security/) explains the workflow. Open the [controlled HTML report example](https://nobrainer.tech/security/security-report-example.html) to inspect its presentation, evidence links, and limitations. This example does not claim that a general HTML report generator is already implemented. Website source is in [site/](site/README.md).
+[NoBrainer Security](https://nobrainer.tech/security/) explains the workflow. Open the [controlled HTML report example](https://nobrainer.tech/security/security-report-example.html) to inspect its presentation, evidence links, and limitations. Switch to Markdown to download the report or build a scoped fix request for NoBrainer.Tech Flow. This example does not claim that a general HTML report generator is already implemented. Website source is in [site/](site/README.md).
 
 ## Go deeper
 
