@@ -501,7 +501,7 @@ def num_word(count):
 
 
 def end(text):
-    return text if text and text[-1] in ".!?" else text + "."
+    return text if text and text[-1] in ".!?" else text.rstrip(";: ") + "."
 
 
 def accepted_findings(report):
@@ -647,7 +647,11 @@ def _md_text(text, line_start=False):
         if match.start() > position:
             out.append(_md_escape(text[position:match.start()], line_start and first))
             first = False
-        out.append(md_code(match.group(0)))
+        token = match.group(0).rstrip(".,;:!?")
+        while token and token[-1] in ")]}" and token.count(token[-1]) > token.count({")": "(", "]": "[", "}": "{"}[token[-1]]):
+            token = token[:-1]
+        out.append(md_code(token))
+        out.append(_md_escape(match.group(0)[len(token):]))
         first = False
         position = match.end()
     if position < len(text):
@@ -1007,7 +1011,7 @@ def _details_html(finding):
 
 def _finding_html(finding, index, links):
     title_id = f"f{index + 1:02d}-title"
-    note = f" {finding['confidence_note']}" if finding.get("confidence_note") else ""
+    note = f" · {finding['confidence_note']}" if finding.get("confidence_note") else ""
     label = esc(f"{finding['id']} · CONFIDENCE: {finding['confidence']}{note}".upper())
     chips = "\n".join(_chip(item, links) for item in finding["evidence"])
     evidence = f'<div aria-label="{esc(finding["id"] + " source evidence")}" class="evidence-list">\n{chips}\n</div>' if chips else ""
@@ -1041,7 +1045,7 @@ def build_html(report, markdown, fix_prompt):
         return f"{counter[0]:02d} · {name}"
 
     page_title = pres.get("page_title") or report["title"]
-    description = f"NoBrainer Security report: {report['title']}. Result {report['status']}. Read-only static review."
+    description = f"NoBrainer Security report: {end(report['title'])} Result {report['status']}. Read-only static review."
     activity = report["activity"]
     execution, network = activity["execution"], activity["network"]
     default_exec = {"NONE": "Static inspection only", "PERFORMED": "See evidence and limits", "NOT_ASSESSED": "Not established"}
@@ -1127,18 +1131,17 @@ def build_html(report, markdown, fix_prompt):
             '<p class="section-caption">A suspicious pattern is not a proven impact. These candidates were explicitly rejected or bounded.</p>\n</div>',
             '<div class="not-finding-grid">',
         ]
-        chips, seen = [], set()
         for verdict, category, title, reason, evidence in cards:
             verdict_label = "Rejected" if verdict == "REJECTED" else "Not established"
-            out.append(f'<article class="not-finding"><span class="rejected">{verdict_label} · {esc(category)}</span><h3>{inline_html(title)}</h3><p>{inline_html(reason)}</p></article>')
+            chips, seen = [], set()
             for item in evidence:
                 key = (item["path"], item.get("line_start"), item.get("line_end"), item.get("label"))
                 if key not in seen:
                     seen.add(key)
                     chips.append(_chip(item, links))
+            evidence_html = '<div aria-label="Candidate source evidence" class="evidence-list">\n' + "\n".join(chips) + "\n</div>" if chips else ""
+            out.append(f'<article class="not-finding"><span class="rejected">{verdict_label} · {esc(category)}</span><h3>{inline_html(title)}</h3><p>{inline_html(reason)}</p>{evidence_html}</article>')
         out.append("</div>")
-        if chips:
-            out.append('<div aria-label="Candidate triage source evidence" class="evidence-list">\n' + "\n".join(chips) + "\n</div>")
         out.append("</section>")
 
     reviewed = report["scope"]["reviewed"]
@@ -1183,15 +1186,17 @@ def build_html(report, markdown, fix_prompt):
         "</section>",
     ]
 
-    steps = report["next_steps"] or [{"title": "Owner authorization required", "text": g} for g in report["owner_gates"]]
-    if steps:
-        gate = '<span class="gate">OWNER AUTHORIZATION REQUIRED</span>' if report["owner_gates"] else ""
+    steps = report["next_steps"]
+    if steps or report["owner_gates"]:
         out += [
             '<section aria-labelledby="next-title" class="section">',
             f'<div class="section-head">\n<div><p class="section-kicker">{kicker("Next step")}</p><h2 id="next-title">{"Review the fix before applying it" if accepted else "What to do next"}</h2></div>\n</div>',
         ]
         for number, step in enumerate(steps, 1):
-            out.append(f'<div class="next-step">\n<span aria-hidden="true" class="step-number">{number:02d}</span>\n<div><h3>{inline_html(step["title"])}</h3><p>{inline_html(step["text"])}</p></div>\n{gate}\n</div>')
+            out.append(f'<div class="next-step">\n<span aria-hidden="true" class="step-number">{number:02d}</span>\n<div><h3>{inline_html(step["title"])}</h3><p>{inline_html(step["text"])}</p></div>\n</div>')
+        if report["owner_gates"]:
+            gates = "\n".join(f"<li>{inline_html(item)}</li>" for item in report["owner_gates"])
+            out.append(f'<div class="panel owner-gates"><span class="gate">OWNER AUTHORIZATION REQUIRED</span><ul class="boundary-list">{gates}</ul></div>')
         out.append("</section>")
 
     dep = report["dependency_age"]
@@ -1208,8 +1213,9 @@ def build_html(report, markdown, fix_prompt):
                 facts.append(f"Window: {esc(item['window'])}")
             if item.get("limits"):
                 facts.append(f"Limits: {inline_html(item['limits'])}")
+            version = "version not established" if item["version"].casefold() == "unknown" else item["version"]
             rows.append(
-                f'<li><strong>{esc(item["package_manager"])} {esc(item["version"])}</strong>'
+                f'<li><strong>{esc(item["package_manager"])} · {esc(version)}</strong>'
                 f'<span class="quiet-label"><i aria-hidden="true" class="mark"></i>{esc(DEP_STATUS_LABELS[item["status"]])}</span>'
                 f'<span class="dep-facts">{" · ".join(facts)}</span></li>'
             )
@@ -1253,7 +1259,7 @@ def build_html(report, markdown, fix_prompt):
             '<section aria-labelledby="fix-title" class="fix-panel" hidden id="fix-panel"><span class="section-kicker">NoBrainer.Tech Flow</span>'
             '<h2 id="fix-title">A precise request. A bounded change.</h2>'
             f"<p>Only {esc(ids)} {'is' if count == 1 else 'are'} included as {'a finding' if count == 1 else 'findings'} to fix."
-            + (f" {esc(panel_note)}" if panel_note else "")
+            + (f" {inline_html(panel_note)}" if panel_note else "")
             + "</p>"
             '<p class="fix-boundary">Creating or copying this text runs nothing. Submit it to Flow when you choose to authorize the scoped fixes; deployment is excluded.</p>'
             '<label class="textarea-label" for="fix-content">Fix request to review before pasting into Flow</label>'
