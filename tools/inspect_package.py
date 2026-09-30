@@ -98,9 +98,14 @@ def esc(text):
 
 
 SECRET = re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----|\b(?:gh[pousr]_|github_pat_|npm_|xox[baprs]-|sk-|AKIA|AIza)[A-Za-z0-9_-]{16,}|://[^/\s:@]+:[^/\s@]+@")
+PRIVATE_KEY = re.compile(
+    r"-----BEGIN [A-Z0-9 ]*PRIVATE KEY(?: BLOCK)?-----.*?(?:-----END [A-Z0-9 ]*PRIVATE KEY(?: BLOCK)?-----|\Z)",
+    re.S,
+)
 
 
 def redact(text):
+    text = PRIVATE_KEY.sub("[REDACTED PRIVATE KEY]", text)
     return SECRET.sub(lambda m: "://REDACTED@" if m.group(0).startswith("://") else "[REDACTED]", text)
 
 

@@ -1,0 +1,3630 @@
+{
+  "tool": {
+    "name": "nobrainer-security inspect_package",
+    "schema": "nobrainer-security.inspect-package/2"
+  },
+  "result": {
+    "status": "OK",
+    "reasons": [],
+    "exit_code": 0
+  },
+  "target": {
+    "ecosystem": "github",
+    "input": "nobrainer-tech/nobrainer-tech-flow@bec696ff199bd1ad79524d7d3e2bffce3d28e796",
+    "name": "nobrainer-tech/nobrainer-tech-flow",
+    "version": "bec696ff199bd1ad79524d7d3e2bffce3d28e796",
+    "exact_pin": true
+  },
+  "source": {
+    "metadata_urls": [
+      "https://api.github.com/repos/nobrainer-tech/nobrainer-tech-flow/commits/bec696ff199bd1ad79524d7d3e2bffce3d28e796"
+    ],
+    "artifact_url": "https://codeload.github.com/nobrainer-tech/nobrainer-tech-flow/tar.gz/bec696ff199bd1ad79524d7d3e2bffce3d28e796"
+  },
+  "fetch": {
+    "fetched_at": "2026-09-30T11:27:15Z",
+    "memory_only": true,
+    "requests": [
+      {
+        "purpose": "GitHub commit metadata (unauthenticated)",
+        "url": "https://api.github.com/repos/nobrainer-tech/nobrainer-tech-flow/commits/bec696ff199bd1ad79524d7d3e2bffce3d28e796",
+        "bytes": 10688
+      },
+      {
+        "purpose": "artifact download (memory only)",
+        "url": "https://codeload.github.com/nobrainer-tech/nobrainer-tech-flow/tar.gz/bec696ff199bd1ad79524d7d3e2bffce3d28e796",
+        "bytes": 526049
+      }
+    ],
+    "download_cap_bytes": 52428800
+  },
+  "artifact": {
+    "filename": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796.tar.gz",
+    "size_bytes": 526049,
+    "sha256": "0f50bd559b2cbcd468a2e94d60fa1e6090a701925807da06b32b8add74ebadaf"
+  },
+  "integrity": {
+    "status": "NOT_PUBLISHED_UPSTREAM",
+    "checks": [],
+    "archive_sha256": "0f50bd559b2cbcd468a2e94d60fa1e6090a701925807da06b32b8add74ebadaf",
+    "note": "GitHub publishes no digest for archives; identity comes from the commit id in the archive header."
+  },
+  "identity": [
+    {
+      "source": "tar pax header (commit id)",
+      "expected": "bec696ff199bd1ad79524d7d3e2bffce3d28e796",
+      "actual": "bec696ff199bd1ad79524d7d3e2bffce3d28e796",
+      "match": true
+    }
+  ],
+  "release_age": {
+    "status": "ESTABLISHED",
+    "policy_days": 14,
+    "published_at": "2026-09-29T15:38:16Z",
+    "source": "commit.committer.date from api.github.com",
+    "age_days": 0.83,
+    "younger_than_policy": true,
+    "reliability": "weak: a git commit date is author-controlled, not a publication time"
+  },
+  "inventory": {
+    "format": "tar.gz",
+    "root_prefix": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/",
+    "complete": true,
+    "truncated": [],
+    "errors": [],
+    "entry_count": 276,
+    "types": {
+      "dir": 71,
+      "file": 205
+    },
+    "kinds": {
+      "binary": 1,
+      "text": 204
+    },
+    "uncompressed_bytes_read": 1802240,
+    "entries": [
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.agents",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.agents/plugins",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.agents/plugins/marketplace.json",
+        "type": "file",
+        "size": 392,
+        "kind": "text",
+        "sha256": "31744656015d01ece730374007e6fbdb12e5e04a504da7057dc941766ab5ca9d"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.claude-plugin",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.claude-plugin/marketplace.json",
+        "type": "file",
+        "size": 422,
+        "kind": "text",
+        "sha256": "ecebfb9f99f58b9e139a61cf47abae6a622ed06492a5d5e522745f02587a5acb"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.claude-plugin/plugin.json",
+        "type": "file",
+        "size": 519,
+        "kind": "text",
+        "sha256": "1f0cf79658cf9a757f7183f8f2b5e268ebdbf44c9255b177593577a0b8b8bf4a"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.codex-plugin",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.codex-plugin/plugin.json",
+        "type": "file",
+        "size": 1596,
+        "kind": "text",
+        "sha256": "ba9e426aae998298c9a8da750eb9c6d2886a07aa6dce6c76a47f4e51320941e7"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.cursor-plugin",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.cursor-plugin/plugin.json",
+        "type": "file",
+        "size": 582,
+        "kind": "text",
+        "sha256": "d097bf4392244f873721ff794d62c77c113282f23f10717a54e8e90397a5f8be"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.gitattributes",
+        "type": "file",
+        "size": 806,
+        "kind": "text",
+        "sha256": "2eed6f7c07b3684d005e23678fc4eb6748afda1a26ddb8436295327f41679f42"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github/ISSUE_TEMPLATE",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github/ISSUE_TEMPLATE/bug_report.md",
+        "type": "file",
+        "size": 2006,
+        "kind": "text",
+        "sha256": "7f8b02de37e4e3027e603edc938e5180cd331c8218a34f6c5dfb4804c4339a6e"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github/ISSUE_TEMPLATE/config.yml",
+        "type": "file",
+        "size": 235,
+        "kind": "text",
+        "sha256": "dfd7a4327100124e508398a6fc4b64ca98e3680d079435350033f6b5161fca3d"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github/ISSUE_TEMPLATE/feature_request.md",
+        "type": "file",
+        "size": 674,
+        "kind": "text",
+        "sha256": "c63e887745d528e4d978360b31a6bf84a111f47448ed624e53a5db9264427aa8"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github/PULL_REQUEST_TEMPLATE.md",
+        "type": "file",
+        "size": 1431,
+        "kind": "text",
+        "sha256": "ae18f5c97b5d4fc0cb46c9162efe99e4717c467ecb3ed2ff954eacec993c215c"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github/copilot-instructions.md",
+        "type": "file",
+        "size": 1752,
+        "kind": "text",
+        "sha256": "271a4f81b028c2fb82af7a14b44b7f8dfe07649ca4c7170ff37184f780fcb8b2"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github/dependabot.yml",
+        "type": "file",
+        "size": 145,
+        "kind": "text",
+        "sha256": "a23c20301d29bdc0a0e61caa42bfeb3b6e0e3568ab5a7d639e3e6978c8930902"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github/workflows",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github/workflows/validate.yml",
+        "type": "file",
+        "size": 4458,
+        "kind": "text",
+        "sha256": "7d55a71bea69b5c7133e6de71775963e9ec0eb6a0aa75a957bd9330b83d9e724"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.gitignore",
+        "type": "file",
+        "size": 168,
+        "kind": "text",
+        "sha256": "357e5cdf66eb8a10720f77f2730ac949050bd0436afb0506b72ef9948e1ac3c0"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.gitleaks.toml",
+        "type": "file",
+        "size": 184,
+        "kind": "text",
+        "sha256": "7dadb0dd103f3c92fa48caae27c89f85499258adcb00eae892e7f34487aae344"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.kimi-plugin",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.kimi-plugin/plugin.json",
+        "type": "file",
+        "size": 1303,
+        "kind": "text",
+        "sha256": "d918aa825a481dee347d7fcfba085aaf7732cef4552fbd8c516aaa08645b52b0"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.opencode",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.opencode/INSTALL.md",
+        "type": "file",
+        "size": 1646,
+        "kind": "text",
+        "sha256": "d5a0235a284cc127fe932fb644992553bf00957ccdefdbb5bfa55f77ce63d276"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.opencode/plugins",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.opencode/plugins/nobrainer-tech-skills.js",
+        "type": "file",
+        "size": 2289,
+        "kind": "text",
+        "sha256": "53f1d7864573043d7effbe8d1d56576e51d355d24759b31f346e808ec3d56816"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.pi",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.pi/extensions",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.pi/extensions/nobrainer-tech-skills.js",
+        "type": "file",
+        "size": 2151,
+        "kind": "text",
+        "sha256": "da25fa25a5cfd80b1440e197a0564982836872ff8c35111c02582840d486a951"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.pre-commit-config.yaml",
+        "type": "file",
+        "size": 515,
+        "kind": "text",
+        "sha256": "fb1b31d2fe85e882f911ba8ab04d19b542f2807d0ea76a3a8de014f469e76244"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/AGENTS.md",
+        "type": "file",
+        "size": 11599,
+        "kind": "text",
+        "sha256": "a16f3ec8b980eaf97a2156a78214c805b1ec7e828109b68616ccfd21610f2f83"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/CLAUDE.md",
+        "type": "file",
+        "size": 11599,
+        "kind": "text",
+        "sha256": "a16f3ec8b980eaf97a2156a78214c805b1ec7e828109b68616ccfd21610f2f83"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/CONTRIBUTING.md",
+        "type": "file",
+        "size": 3127,
+        "kind": "text",
+        "sha256": "ef3db2b2375c7476962bfb9509324bf4516641466b2439579e79295e24a71344"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/GEMINI.md",
+        "type": "file",
+        "size": 25,
+        "kind": "text",
+        "sha256": "4345369fa57923d2ad18f933dde0951d1fbc21b4f3e6a219d88d358b98544486"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/LICENSE",
+        "type": "file",
+        "size": 1071,
+        "kind": "text",
+        "sha256": "8a99ac8b4da8465f676a62a25dfa3a05abf14760f3920c1d1c3a747cca53a247"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md",
+        "type": "file",
+        "size": 29160,
+        "kind": "text",
+        "sha256": "1e0a8784b5cff9fa1de1c6437c7052520c982902982ac223e989f0562fa09c47"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/RELEASE-NOTES.md",
+        "type": "file",
+        "size": 26019,
+        "kind": "text",
+        "sha256": "4426e58f3b89fc983658e07369869d71a5fb53ac93e6f5f4e68db55cbb31c0c7"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/SECURITY.md",
+        "type": "file",
+        "size": 1319,
+        "kind": "text",
+        "sha256": "5bde2c91bd11d6545c5e4419676f49beb2c2863953972899e11796e97a8c8364"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/adapters",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/adapters/bootstrap.md",
+        "type": "file",
+        "size": 1664,
+        "kind": "text",
+        "sha256": "94953da0c944aac1942b72d8bb90e88de3388067a9f2a62d005dbeeead03cd8a"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/assets",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/assets/nobrainer-tech-logo.svg",
+        "type": "file",
+        "size": 495,
+        "kind": "text",
+        "sha256": "77f1e4f40caa55eac29af81914a1eed4bbc78df1f60949eca533dea25ae3daff"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/assets/nobrainer-workflow.svg",
+        "type": "file",
+        "size": 8885,
+        "kind": "text",
+        "sha256": "31618b0d7f27836e5d8b16c257766a403f4e72c2cf71af0206e06fad4b959f9d"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/BOUNDED_RUNNER.md",
+        "type": "file",
+        "size": 2975,
+        "kind": "text",
+        "sha256": "066894950150ed2d6202ef0e6ed3cd8b7879d52e86945dd25c47b9072294e100"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/COMPATIBILITY.md",
+        "type": "file",
+        "size": 19403,
+        "kind": "text",
+        "sha256": "e7a1f344269c53caabaded66748c5152227b4d4937a0dcb7f71ccad13b5f9de1"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/INSTALL.md",
+        "type": "file",
+        "size": 23876,
+        "kind": "text",
+        "sha256": "2d95cdf2b31ffbbb128bc7d077c75c8c88903e5a2ef6201bf754a8d219973ca6"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/MIGRATION_TO_FLOW.md",
+        "type": "file",
+        "size": 4741,
+        "kind": "text",
+        "sha256": "c115a5bf6b2ef16f7550354fb364af53a83d5202fec865adf611e75ed7f896dd"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/NAMING.md",
+        "type": "file",
+        "size": 3275,
+        "kind": "text",
+        "sha256": "2dae2b52850a198997ae7c30ef0c05a263ec4ab5b4bb99d789aa6130c94a4ca3"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/SESSION_RESTART.md",
+        "type": "file",
+        "size": 4290,
+        "kind": "text",
+        "sha256": "87a851885d2e600e2ecde0308218f7c90b00a03e74dc85b26ac3b7ff9430dd52"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/SKILL_CURATION.md",
+        "type": "file",
+        "size": 6543,
+        "kind": "text",
+        "sha256": "239259ef46abba2cbaf4c22abffc57eba90011c7a49989ab7ce59ab8e4d44114"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/TESTING.md",
+        "type": "file",
+        "size": 10614,
+        "kind": "text",
+        "sha256": "5d0ca34f2db9685b6166c231619b3ac939f13681feae105735adf4499fde5435"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/TRY_IT.md",
+        "type": "file",
+        "size": 2121,
+        "kind": "text",
+        "sha256": "173f1f6dc632c9d00896bd02cdcb945b0e8be8f0cc58502478e60a42accca5fd"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.0.0-routing-probe.md",
+        "type": "file",
+        "size": 2282,
+        "kind": "text",
+        "sha256": "f80c17b2317eeb5595bad3f0390d591175656f7c689e6e26e2cba3d1c9060d77"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.3.0-autoimprove-integrity-final5-receipt.md",
+        "type": "file",
+        "size": 2492,
+        "kind": "text",
+        "sha256": "90d859b10b96ccc4c59484d27eaf20252dea5a6400408b4fd6211c621bc130bf"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.3.0-harness-clarity-runtime-boundaries.md",
+        "type": "file",
+        "size": 4669,
+        "kind": "text",
+        "sha256": "6ef3236703a86075d752147105b3bf5e9a5543182df03517a33f0473055c2b3e"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.0",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.0/candidate-source-hashes.json",
+        "type": "file",
+        "size": 3563,
+        "kind": "text",
+        "sha256": "d600581ad2fdf38da4071d623040b0fe318a7448c183a4569278357ad83b238f"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.0/holdout",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.0/holdout/calibration.json",
+        "type": "file",
+        "size": 2984,
+        "kind": "text",
+        "sha256": "47a258997a1f11b83f13060509e60fccc167cb6a39ad7fdc0922c1b5017d6658"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.0/holdout/manifest.json",
+        "type": "file",
+        "size": 331,
+        "kind": "text",
+        "sha256": "84b6cb16adf83d5c95fc355928a090475c9d2ead1de9418e6b1984702d9c1d49"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.0/holdout/receipt.json",
+        "type": "file",
+        "size": 4754,
+        "kind": "text",
+        "sha256": "fb4a5586262959ce369e47ffb9d2f4e0b538e06ee6530e43fc5c36f47c5315fd"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.0/holdout/schema.json",
+        "type": "file",
+        "size": 215,
+        "kind": "text",
+        "sha256": "4b443bfc511bff17ab396077a5de461fc4f0ab2caef57fbde2272f34a8abd414"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.0/holdout/verdict.json",
+        "type": "file",
+        "size": 7476,
+        "kind": "text",
+        "sha256": "f167d6f0bef9106c32b42a66a482d1e8573d62e1a589aa6e94b4ebae75bd9774"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.0/smoke-receipts.json",
+        "type": "file",
+        "size": 4684,
+        "kind": "text",
+        "sha256": "a5889f48859daa52bf57a6ec0900b1b700b601c6168ecac2996e8fabc434f911"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.0/source-snapshot.zip",
+        "type": "file",
+        "size": 93287,
+        "kind": "binary",
+        "sha256": "1048cd49144e74135f9ff45561eb71b181ce1a7d37b6f381c50b5cc438c71e03"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/after",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/after/sentinel.txt",
+        "type": "file",
+        "size": 22,
+        "kind": "text",
+        "sha256": "6899c05c5b9651862288a5f8dca3749485f3d617d45cce3a46afd9c73332c336"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/after/src",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/after/src/exporter.py",
+        "type": "file",
+        "size": 219,
+        "kind": "text",
+        "sha256": "59c603770a27b68dcfcc2a3a0f4544540409799ef83866b9cd4ebe2133ca0e6f"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/after/tests",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/after/tests/test_exporter.py",
+        "type": "file",
+        "size": 357,
+        "kind": "text",
+        "sha256": "312c3e1feb3673f33e067189dfac015c02a4e0f5871743552188a8f2fb0b3585"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/artifact-readback.json",
+        "type": "file",
+        "size": 387,
+        "kind": "text",
+        "sha256": "a68302d09b1e526109d05e1c6ea3819e80ca3450ac6b573e5d71f6b070c13c96"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/before",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/before/sentinel.txt",
+        "type": "file",
+        "size": 22,
+        "kind": "text",
+        "sha256": "6899c05c5b9651862288a5f8dca3749485f3d617d45cce3a46afd9c73332c336"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/before/src",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/before/src/exporter.py",
+        "type": "file",
+        "size": 133,
+        "kind": "text",
+        "sha256": "95bfc47cb17ab8b5c25312bc3f5c2bcab2b7bb436d50d490bb49f3ce59ad24e2"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/before/tests",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/before/tests/test_exporter.py",
+        "type": "file",
+        "size": 357,
+        "kind": "text",
+        "sha256": "312c3e1feb3673f33e067189dfac015c02a4e0f5871743552188a8f2fb0b3585"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/receipt.json",
+        "type": "file",
+        "size": 869,
+        "kind": "text",
+        "sha256": "319c5fe9b07211a4dff04ab5991bac23f80d23198aca03a3cafbf541e38c87b3"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.1/runtime/verdict.json",
+        "type": "file",
+        "size": 812,
+        "kind": "text",
+        "sha256": "173f62d446ec15c7c8125a178f11f51062c33b9c36141bd2f0f837c39a00651c"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/core-routing-v1.1.0-2026-08-28.md",
+        "type": "file",
+        "size": 7431,
+        "kind": "text",
+        "sha256": "7b82d6151ea9f0345a023323c242402b2f945230f6679a7e21f4212515ce3ee6"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/dispatcher-routing-v1.2.0-2026-08-28.md",
+        "type": "file",
+        "size": 13163,
+        "kind": "text",
+        "sha256": "1b56c0fdb4c29be0d51ad9174374570433378ae8400efe93a68281901b1d155b"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/portfolio-autoimprove-2026-08-29.md",
+        "type": "file",
+        "size": 12760,
+        "kind": "text",
+        "sha256": "c285c8de5f01de1236399849e20f9f9ef4040aab665f105d78b45b135dd6d53b"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/v1.3.0-autoimprove-integrity-2026-09-01.md",
+        "type": "file",
+        "size": 2381,
+        "kind": "text",
+        "sha256": "f8bdf1629143d92691361bd9e87a1b823cd63a84a0ff6c8d9cc017d32637ff02"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/v1.3.0-harness-clarity-2026-08-30.md",
+        "type": "file",
+        "size": 8983,
+        "kind": "text",
+        "sha256": "ca42b2c95ac3ee30e91ec328beba8e3d66f35733391f656290e9a34ad2f8b4c4"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/v1.3.1-writing-brief-2026-09-02.md",
+        "type": "file",
+        "size": 4191,
+        "kind": "text",
+        "sha256": "78ad12aede79cc1ae1af776d46f7c3dd74ae220e92792078c836169510cf4f51"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/writing-density-v1.2.0-2026-08-28.md",
+        "type": "file",
+        "size": 5085,
+        "kind": "text",
+        "sha256": "1828831b475cb9cb4ddb8b317e48fa863e6c2048affea479e3659c137e186cf8"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.0-copy-install.json",
+        "type": "file",
+        "size": 1168,
+        "kind": "text",
+        "sha256": "d279edfe4cf6befeff438d44e57ad692ce735860bfa45573aed2e03bfd0bdfab"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json",
+        "type": "file",
+        "size": 2829,
+        "kind": "text",
+        "sha256": "d3ce9a35c539fd945c2f625657cc16cdaeefd35fa79330e2ccacfefb93cee406"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.0.0.md",
+        "type": "file",
+        "size": 3644,
+        "kind": "text",
+        "sha256": "1dbc506348250c2bed597dfb29880a7de2d33e564d53e86d2fe1146fbc154373"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.1.0.md",
+        "type": "file",
+        "size": 3754,
+        "kind": "text",
+        "sha256": "84d21d1fc9d8b4c60d4a8064a2880aa9d2e3f22065538fcca7d72a16c0e728fe"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.10.0.md",
+        "type": "file",
+        "size": 1694,
+        "kind": "text",
+        "sha256": "9d02ace5cfbc1c05bcb958e15d07eceae057c760cd3ee5f745dade93568fb9fd"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.11.0-publication-readback.md",
+        "type": "file",
+        "size": 1380,
+        "kind": "text",
+        "sha256": "32af9a0f643f40d7f9dc36dae81be210cbcdc1028ab5059c98b02d9605364092"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.11.0.md",
+        "type": "file",
+        "size": 1817,
+        "kind": "text",
+        "sha256": "7b6d47a98cadea40f567c2a68f92dcd0b92f5904fee5e2819b45ce3765e249d4"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.12.0.md",
+        "type": "file",
+        "size": 1566,
+        "kind": "text",
+        "sha256": "61ca6b09fe384cea5b5a28e21f7b8a6f9e272e2a6f0d31f5a04d33d491550214"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.13.0.md",
+        "type": "file",
+        "size": 2302,
+        "kind": "text",
+        "sha256": "882a6010ddf936763443e7b2939431a57466642705cf15aaf5a1cb14ec486877"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.14.0.md",
+        "type": "file",
+        "size": 2444,
+        "kind": "text",
+        "sha256": "88bb732043855f05c991669e15b50bbc16209843cdd2dd6db06d28b8ffaf6735"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.14.1.md",
+        "type": "file",
+        "size": 1182,
+        "kind": "text",
+        "sha256": "1f3aa16ec9a0c126aa48f3f745cd2dffacadfc452dc5d5ec99c0d6f495420bb3"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.2.0.md",
+        "type": "file",
+        "size": 4185,
+        "kind": "text",
+        "sha256": "2943ca95abf1da4681e9ccc93f15bcf3258d000c3c1b83849c59580602fd59c0"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.2.1.md",
+        "type": "file",
+        "size": 4131,
+        "kind": "text",
+        "sha256": "676dcb6986ee37b514e37039f6c4bc3ff4f3f0427bb7da2995b1aa0fe8478986"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.3.0-publication-readback.md",
+        "type": "file",
+        "size": 2816,
+        "kind": "text",
+        "sha256": "e76e793a896cf6e2ef44d1291304680dc2c53f5b4a39f81090c7546a41e37852"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.3.0.md",
+        "type": "file",
+        "size": 3049,
+        "kind": "text",
+        "sha256": "919f8c222ed7db14e7d05945fbf005a4928ee75207db3f2f5ad0c67f202b025e"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.3.1-publication-readback.md",
+        "type": "file",
+        "size": 3044,
+        "kind": "text",
+        "sha256": "e827a0d066370f08ae10c29648e1da1b9719c903a5528360a88cbc3678342333"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.3.1.md",
+        "type": "file",
+        "size": 2357,
+        "kind": "text",
+        "sha256": "d58c473b7306850aa9292f9ecd5d7192a6f831103f3020458c53a240a3be4f10"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.4.0-publication-readback.md",
+        "type": "file",
+        "size": 3312,
+        "kind": "text",
+        "sha256": "523eeb96b2f0f5a89305d8755b8508d26da11c65d4c2e03303a07983d7ea88e0"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.4.0.md",
+        "type": "file",
+        "size": 1570,
+        "kind": "text",
+        "sha256": "25f53549891c9973320bdf610ff004e8262c59e06228dafa250183dfba1e87b1"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.5.0-publication-readback.md",
+        "type": "file",
+        "size": 3103,
+        "kind": "text",
+        "sha256": "af787615caaa6e63f3f24d5f7f95d82fa3a5a988c6cc38789aa3fd5f2a0b76fe"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.5.0.md",
+        "type": "file",
+        "size": 2372,
+        "kind": "text",
+        "sha256": "999206edeb61aaece34f7615195cd659a5f1247a18c24fe8f395052af1ef5a94"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.6.0.md",
+        "type": "file",
+        "size": 3616,
+        "kind": "text",
+        "sha256": "c3f2e86d7c89797c282b081c218466f9769444cc6808f659df5771edbe6f1a02"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.6.1-publication-readback.md",
+        "type": "file",
+        "size": 2868,
+        "kind": "text",
+        "sha256": "67864f1fcadfddb9ea2ba1fb2a76d3d51db6cf72c7b60673f004468ded6ca7a7"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.6.1.md",
+        "type": "file",
+        "size": 4739,
+        "kind": "text",
+        "sha256": "e1064f45e790f50c3ec888332a98e0f86349c75a57756f4537e87fea897c63d7"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.7.0.md",
+        "type": "file",
+        "size": 2209,
+        "kind": "text",
+        "sha256": "a15c08ea80dc7c72f5518c5ed24009d5512838dc3fbc180c032fb5164f1b91e5"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.7.1-publication-readback.md",
+        "type": "file",
+        "size": 3500,
+        "kind": "text",
+        "sha256": "d9bb7c2507a82753082550d47ac0d061929f4b17dd2178f3916a486eee48bb01"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.7.1.md",
+        "type": "file",
+        "size": 2581,
+        "kind": "text",
+        "sha256": "38a03fe19166dd511ba73d82ad280d7a0353175293bc280cb500a2929e642773"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.8.0.md",
+        "type": "file",
+        "size": 3560,
+        "kind": "text",
+        "sha256": "35e73973a35329fb5ff2da80c138520e836e1aa01a2fe6c77ebae9bb61f8237a"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.8.1.md",
+        "type": "file",
+        "size": 1605,
+        "kind": "text",
+        "sha256": "018a5ab37a2434d847528ad9cb39962e7b4147115f99abe4b13a2c629ce8c76b"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.9.0.md",
+        "type": "file",
+        "size": 1541,
+        "kind": "text",
+        "sha256": "7c0c3af3b9f2570a0c66ff5b4bb16ef6038f2827954f61200161205ad0161540"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v2.0.0-candidate.md",
+        "type": "file",
+        "size": 1663,
+        "kind": "text",
+        "sha256": "d7bf95899d78a310efe783db5c5fa6d9f50a61e47627eafc06ccf3323ffb0962"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v2.0.0.md",
+        "type": "file",
+        "size": 2516,
+        "kind": "text",
+        "sha256": "cdb2621295fa351a5a89614d437a3ad458566e381bd394f5003abc2fcaea8949"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v2.0.1.md",
+        "type": "file",
+        "size": 7722,
+        "kind": "text",
+        "sha256": "a96e670791afac843634838dfce9150ceb9e87f89955de5f50c37a985c400bfc"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v2.0.2.md",
+        "type": "file",
+        "size": 11357,
+        "kind": "text",
+        "sha256": "23bf1f03edf1d5af2f2613410eb6696f483dca672f95fa52ebca49017039d3f2"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/specs",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/specs/goal-driven-delivery.spec.md",
+        "type": "file",
+        "size": 9093,
+        "kind": "text",
+        "sha256": "f58b47c6f4649ccfce4c84ca057c6283f9754e0ee663f2377d77a6120e13e086"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/specs/optional-decisions.spec.md",
+        "type": "file",
+        "size": 2944,
+        "kind": "text",
+        "sha256": "4aaaa0f622042737b0db26f4820e4d38c0eadce7e3ed75bf98c939fd01daf71c"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/specs/universal-orchestration-2026-09-26.md",
+        "type": "file",
+        "size": 3441,
+        "kind": "text",
+        "sha256": "76fd2a90cad96ab58182763c476820e92e4b33e25a7ad04bfd42fba9e1615e7c"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/specs/v1.3.0-harness-clarity.spec.md",
+        "type": "file",
+        "size": 12116,
+        "kind": "text",
+        "sha256": "098344cfd28a024fd27b20c8eab0a21a1c90225f1451dc088bc9c19e824ac6b6"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/gemini-extension.json",
+        "type": "file",
+        "size": 189,
+        "kind": "text",
+        "sha256": "2b6a0510fe4f668dbac086cea01b85b7e49ab81188d88d7e85160362dabb7c90"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/hooks",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/hooks/claude-hooks.json",
+        "type": "file",
+        "size": 346,
+        "kind": "text",
+        "sha256": "b2db414aa6cb9768c564fec84b603e37adee2e18556e1bc8c5dd3dbf50afc53b"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/hooks/hooks-cursor.json",
+        "type": "file",
+        "size": 161,
+        "kind": "text",
+        "sha256": "d3f2e518447efe6916453e803d279d9c6123b29e7ba44d1a2301a916d6d4f9da"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/hooks/run-hook.cmd",
+        "type": "file",
+        "size": 668,
+        "kind": "text",
+        "sha256": "8fe5ecfcaf2d8898a4f178a1860ceadfc94d0b001a7bd4774b0529bbc6f79672"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/hooks/session-start",
+        "type": "file",
+        "size": 1127,
+        "kind": "text",
+        "sha256": "080c85c0ad3e76915319d61a85db6de1df49a44ad2beda784cc8f1d9a70dcaed"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/package-lock.json",
+        "type": "file",
+        "size": 225,
+        "kind": "text",
+        "sha256": "d2b78220cd88995b925ff295ca74f3f783cddee3b24fdb0a06d199287ff7e58f"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/package.json",
+        "type": "file",
+        "size": 545,
+        "kind": "text",
+        "sha256": "e2713caaec22738d8d9f6c62c812c27ecb5108a5d6a35a2eda6c9540b7a00c7a"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/plugin.json",
+        "type": "file",
+        "size": 278,
+        "kind": "text",
+        "sha256": "b8a0c50999d47f62e3e2dc7fff4f958e141c932d77cf96b78dbc25b0c3655056"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/scripts",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/scripts/check_flow_update.py",
+        "type": "file",
+        "size": 514,
+        "kind": "text",
+        "sha256": "22d5c809029d8d43375590624c832f4dec4c5dc8999738c193ab2fb6899d678d"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/scripts/check_public_commit.py",
+        "type": "file",
+        "size": 2680,
+        "kind": "text",
+        "sha256": "163d94d7b3216bb1a876424be7e622c7ded02be4abee97e9bc71f8583e1d78a8"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/scripts/fetch_public_refs.py",
+        "type": "file",
+        "size": 2148,
+        "kind": "text",
+        "sha256": "44f4f60278f1596cc74b2247951d9db4f61b920dc0f6ec23ef92c245bf033aae"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/scripts/install.py",
+        "type": "file",
+        "size": 17578,
+        "kind": "text",
+        "sha256": "b838a5d270c9d1f22e25b741365e81eeaf5bab8af9e95cf63b5c55f27911f03f"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/scripts/install.sh",
+        "type": "file",
+        "size": 39871,
+        "kind": "text",
+        "sha256": "1c6223d9a688191be9ef2fa77603bb705e346f7f0d26d409d698ace374778575"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/scripts/install_personalization.py",
+        "type": "file",
+        "size": 23542,
+        "kind": "text",
+        "sha256": "4c702912a60ee8f8c6c9e25c34d9e98bde716c03deafc1be83cc5733b1f23f80"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/scripts/install_skills.py",
+        "type": "file",
+        "size": 35422,
+        "kind": "text",
+        "sha256": "c7a1bfca1912e68a3ce2ac553683a29484eb0675f27e4442bcfbd2fb54c16cdc"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/scripts/recommend_flow_setup.py",
+        "type": "file",
+        "size": 61882,
+        "kind": "text",
+        "sha256": "107cb46f1751b9ca5899e3096a56fcf4e2c9f0336f131521ab7222fff04b936a"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/scripts/validate_skills.py",
+        "type": "file",
+        "size": 15665,
+        "kind": "text",
+        "sha256": "b99e8fb1c8f49245af30f89caee24a74a98c9e5b771157ad65077c377b5d892d"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-auto-fine-tune",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-auto-fine-tune/SKILL.md",
+        "type": "file",
+        "size": 7510,
+        "kind": "text",
+        "sha256": "f6a63cd581cef8c4e3c0a6493560d9c1b98b7c3e6badfaafaec07c220426140a"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-auto-fine-tune/references",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-auto-fine-tune/references/capacity-audit.md",
+        "type": "file",
+        "size": 2742,
+        "kind": "text",
+        "sha256": "b60fc26a8b07455a2956af4ad268e1ca8b734c2ebdd0310ff69c7051623faee4"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-autoimprove",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-autoimprove/SKILL.md",
+        "type": "file",
+        "size": 11725,
+        "kind": "text",
+        "sha256": "621274a98df6e5636a46d0bf18ddf1b37d9f4824bbaf1efaf4c67b88cd6bae01"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-autoimprove/scripts",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-autoimprove/scripts/count_words.py",
+        "type": "file",
+        "size": 560,
+        "kind": "text",
+        "sha256": "531c36480b12717342e55897639566c2366c41fd102454d1fd0acb4049ffc3a2"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/SKILL.md",
+        "type": "file",
+        "size": 11146,
+        "kind": "text",
+        "sha256": "b42b4dcf5c205844bf10afc53d68c6718295fcb64987c4519057af15210fa4a9"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/references",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/references/cdp-profile-restart.md",
+        "type": "file",
+        "size": 3842,
+        "kind": "text",
+        "sha256": "89e3ed4ab8b20203d58001af3c2e55db453c6f5c33f26fc17be19ecf918f0065"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-build",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-build/SKILL.md",
+        "type": "file",
+        "size": 8191,
+        "kind": "text",
+        "sha256": "2ef4f2a2170816e6abdc6c79491d4199c4cccb0140508222909fe75b8da00593"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-codex-context",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-codex-context/SKILL.md",
+        "type": "file",
+        "size": 5160,
+        "kind": "text",
+        "sha256": "49a20f68f18c2ae4418977799733b9527eac19df08ceb011dfcf18689f80b610"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-codex-context/scripts",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-codex-context/scripts/codex_context.py",
+        "type": "file",
+        "size": 5688,
+        "kind": "text",
+        "sha256": "b50189052164b53d503c4088624bf49cba4fc8b3ac6dc953a8148d51fa259cd2"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-decide",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-decide/SKILL.md",
+        "type": "file",
+        "size": 9164,
+        "kind": "text",
+        "sha256": "84622259988a651ce56e3d62bb5bc993968fae0706ac351c333af8c929fc248b"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-dispatcher",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-dispatcher/SKILL.md",
+        "type": "file",
+        "size": 11886,
+        "kind": "text",
+        "sha256": "fa2f0f7350c133eae6515b618e0fbee75c189ea3a990eb883b3bad21edee7158"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-dispatcher/agents",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-dispatcher/agents/openai.yaml",
+        "type": "file",
+        "size": 238,
+        "kind": "text",
+        "sha256": "2bbb47a13b597ae0a158f9efca1011f677952ae009c9a23680fb46979a111c47"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-rca",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-rca/SKILL.md",
+        "type": "file",
+        "size": 6199,
+        "kind": "text",
+        "sha256": "c52a8aa8c22a80015ecfe46eceb09ee55fd62d3e58b89820fc6e1712a8ac8fd8"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-research",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-research/SKILL.md",
+        "type": "file",
+        "size": 5877,
+        "kind": "text",
+        "sha256": "ce63020803b1ab917596115022ed2a256549af4ad98f16fceae224321e293215"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-review",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-review/SKILL.md",
+        "type": "file",
+        "size": 9098,
+        "kind": "text",
+        "sha256": "e4815310a63b1065def9bfacb6a9f9b7545148827d467db6a6532765abd4b122"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-security",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-security/SKILL.md",
+        "type": "file",
+        "size": 6837,
+        "kind": "text",
+        "sha256": "4103359fd515e4b345f61fa2b70acbe889ccba636be20f8a05b0380a386b98b0"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-sessions",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-sessions/SKILL.md",
+        "type": "file",
+        "size": 11705,
+        "kind": "text",
+        "sha256": "71a79a3b2348e89ed7a92d33accce7f5cfe68ee9274286de1c489f2d03b76903"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-sessions/references",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-sessions/references/protocol.md",
+        "type": "file",
+        "size": 15054,
+        "kind": "text",
+        "sha256": "5742a6464114a1f46620a37102b49c8af053ffa423763d87b81b0171523c0da3"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-sessions/references/session-restart.md",
+        "type": "file",
+        "size": 16209,
+        "kind": "text",
+        "sha256": "7abf6a748378ed42332f2c154a1bf8c7c93275ba16dca7d73c4b6f7c16380123"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-sessions/scripts",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-sessions/scripts/restart_gate.py",
+        "type": "file",
+        "size": 7307,
+        "kind": "text",
+        "sha256": "dbbac94eaf7d238485884ce1caead7f302f93ba2a8895690db00efb4e5e7ee11"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-sessions/scripts/run_bounded.py",
+        "type": "file",
+        "size": 14040,
+        "kind": "text",
+        "sha256": "659576a64bce6091433b6dc8f54d0b3251d3f86617fd2d223b236e18ef7c377e"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-sessions/scripts/session_title.py",
+        "type": "file",
+        "size": 1665,
+        "kind": "text",
+        "sha256": "f592052448af51fe617bd0ee95fd3c55e768793bbacadcf00e208125d32e85a5"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-skill-doctor",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-skill-doctor/SKILL.md",
+        "type": "file",
+        "size": 6978,
+        "kind": "text",
+        "sha256": "7d43e1fee026b515f5d28912aec6c6b54727d50a68e3f4026db7458c1f3e2749"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-skill-doctor/references",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-skill-doctor/references/astra.md",
+        "type": "file",
+        "size": 1082,
+        "kind": "text",
+        "sha256": "2688be613ac0b19e625c514ef38504d2a386b280f0a814cc011d73eb67013b34"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-skill-doctor/scripts",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-skill-doctor/scripts/audit.py",
+        "type": "file",
+        "size": 4375,
+        "kind": "text",
+        "sha256": "4fe642340cb51ac17dfb23d4bdbd7b42bacdebad6b412edc63306717f9592e0d"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-spec-driven-development",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-spec-driven-development/SKILL.md",
+        "type": "file",
+        "size": 5850,
+        "kind": "text",
+        "sha256": "1f483286d045ab4e19d1b40b10ff87ad6ec0b40a70311ddc0754c2d62be7b7b0"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-spec-driven-development/references",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-spec-driven-development/references/spec-template.md",
+        "type": "file",
+        "size": 2933,
+        "kind": "text",
+        "sha256": "dca87586efeb4c3659f534b509a17e459e87bc4f5033e352dade400709582647"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-team",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-team/SKILL.md",
+        "type": "file",
+        "size": 9206,
+        "kind": "text",
+        "sha256": "1d0d4cb4c7268d56a766283aef125b370f5852bc72438be8b6ea6edf1a2a9e72"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-team/references",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-team/references/team-plan.md",
+        "type": "file",
+        "size": 2002,
+        "kind": "text",
+        "sha256": "90f13e3d3ab5e38baf7f35893509b69b5325e31a1e141f2081fae26df593f031"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/SKILL.md",
+        "type": "file",
+        "size": 13206,
+        "kind": "text",
+        "sha256": "777b256a8daf05d6f74abb99684f828b6431babd77725d8a4b8c940041f17843"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/VERSION",
+        "type": "file",
+        "size": 6,
+        "kind": "text",
+        "sha256": "b4b16faea52dc04ccfe32f7b342094855923ebf599a3cac1940470a2d6d7c261"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references/codex-routing.md",
+        "type": "file",
+        "size": 1318,
+        "kind": "text",
+        "sha256": "17140dd8ae0089ba1d66134083023900570e89295fbc118b08d2eeb52dd79516"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references/correction-hooks.md",
+        "type": "file",
+        "size": 5413,
+        "kind": "text",
+        "sha256": "7a009de9fc42c01af131edc563ad0e9c80fea11c3490d0f63a97f58416fb0d97"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references/daily-update.md",
+        "type": "file",
+        "size": 1719,
+        "kind": "text",
+        "sha256": "64e058e5ebdaa496fde87725adc031671d692cb5db75bd10df32ff6e3556a745"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references/delivery.md",
+        "type": "file",
+        "size": 12020,
+        "kind": "text",
+        "sha256": "22bd21cf5e10ea0a98efe57cebfe716be0672d25be3963942deeca3f800a4dba"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references/long-run-state.md",
+        "type": "file",
+        "size": 9343,
+        "kind": "text",
+        "sha256": "f6cb82ca85760c6ee38892b25195ff0708082a24f199d3071268e45fbf9717b6"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references/model-routing.md",
+        "type": "file",
+        "size": 4083,
+        "kind": "text",
+        "sha256": "00a2cd9ac7e5d7d053c073ebc7c9a502036fd3cfd6515e0014d13b64f6d7a13a"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references/optional-decisions.md",
+        "type": "file",
+        "size": 4544,
+        "kind": "text",
+        "sha256": "1db50042cc66ae61671dd3ff33ff1963679dbce3e00a937078ef93e1770d01ea"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references/project-start.md",
+        "type": "file",
+        "size": 1425,
+        "kind": "text",
+        "sha256": "9a109610b0f61b3ac2a17ce37101248f18212ac20b89dfa5462d6ecce3a4f9c7"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references/routing.md",
+        "type": "file",
+        "size": 6688,
+        "kind": "text",
+        "sha256": "c62b2ec08e85f8cd1f9cf6ff87215f39bdc695072ed19c84873f6fb49ca59fbd"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references/setup.md",
+        "type": "file",
+        "size": 9218,
+        "kind": "text",
+        "sha256": "e35089f762cc7de6b89434cdb9a377525bdb523653e0f1fd2892a1aba379891b"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references/worktrees.md",
+        "type": "file",
+        "size": 7032,
+        "kind": "text",
+        "sha256": "7e04137db7b5680047cec3c6fd22666df0dc22a5d8484c934fd686b6cbf0c915"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/scripts",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/scripts/check_flow_update.py",
+        "type": "file",
+        "size": 11952,
+        "kind": "text",
+        "sha256": "c5a7e4749758de1badcbc180fff3a613ce8a7afd87d45e184a5b18f11b6dac29"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/scripts/cleanup_worktree.py",
+        "type": "file",
+        "size": 14647,
+        "kind": "text",
+        "sha256": "eb613cc23ba410a1bc2a8c8943376e16358a9d3fd96b8d36ff6af2e4349a797a"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/scripts/decision_config.py",
+        "type": "file",
+        "size": 4659,
+        "kind": "text",
+        "sha256": "29356f477deac02a6fd3244a457f970bcaef04897e448844041f7ebaa19c22d0"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/scripts/typed_decisions.py",
+        "type": "file",
+        "size": 9640,
+        "kind": "text",
+        "sha256": "8e719e549f2d9a63ac4f20d221f579dee2dd0edd566162e16ed0d2ce630217bd"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-wiki",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-wiki/SKILL.md",
+        "type": "file",
+        "size": 8521,
+        "kind": "text",
+        "sha256": "efb3af5c3f50d108213d05ad8083f552ceefc9c8bd187d611bf303fe9f665b02"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-wiki/references",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-wiki/references/setup.md",
+        "type": "file",
+        "size": 2618,
+        "kind": "text",
+        "sha256": "b3dd5080527fd07157430cae2b8ce106939caf5440f2f06cb76558ab5cf11291"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/SKILL.md",
+        "type": "file",
+        "size": 13927,
+        "kind": "text",
+        "sha256": "f13b784accde625b504427458aa4ff787318ef549e95d57c7667a5a0aa244622"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/agents",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/agents/openai.yaml",
+        "type": "file",
+        "size": 253,
+        "kind": "text",
+        "sha256": "845031fcd18c3ed155d5a16db7f9a0c002b0cb501e0b31bff921da098b0c658a"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/brief-artifacts.md",
+        "type": "file",
+        "size": 13676,
+        "kind": "text",
+        "sha256": "cb3efa0b35f13415d0fae4eb56d403b50f321cc8907942d10d32a23c9926b13e"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/research.md",
+        "type": "file",
+        "size": 6080,
+        "kind": "text",
+        "sha256": "5755ad3077bd45bf5a640b0f6acee1b17d4ab7ccf15b287ceec45660153a2aee"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tasks",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tasks/autopilot-delivery-audit.md",
+        "type": "file",
+        "size": 2089,
+        "kind": "text",
+        "sha256": "95bc81b1db9cc5cee0431377e1ef53ef651ce9875ceb8fd362da7b35a08820e8"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tasks/lessons.md",
+        "type": "file",
+        "size": 3862,
+        "kind": "text",
+        "sha256": "3904270bda2e2355a8510c7d4afc0e2891edd39ab31ba5f57b242f50318634d7"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tasks/todo.md",
+        "type": "file",
+        "size": 20445,
+        "kind": "text",
+        "sha256": "ac2ebc1862d9ae9edf5aaa957ad7544bf9dd18d1d4a0662a31aeab01ac25b147"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/support.py",
+        "type": "file",
+        "size": 913,
+        "kind": "text",
+        "sha256": "6f4c120136b240db3ae5e96754c53134968838b7af54a71a83ab883e72648777"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_adapters.py",
+        "type": "file",
+        "size": 15171,
+        "kind": "text",
+        "sha256": "ba82143b7e67d11730ab1aee713ad87e13494cfc498b0e18f234ba371a71ad0f"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_audit_inventory.py",
+        "type": "file",
+        "size": 6049,
+        "kind": "text",
+        "sha256": "d7875e928b7efa065bc1ada6ee37afdc590f015a84aa62d840980a8ef7799f48"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_bounded_runner.py",
+        "type": "file",
+        "size": 15719,
+        "kind": "text",
+        "sha256": "532f26298f42ad3660ca1164d8dfc864d49dff22f8970f539c683098e10d267e"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_browser_preference.py",
+        "type": "file",
+        "size": 1877,
+        "kind": "text",
+        "sha256": "ee55548d3947aefc03a1b3a5d983ecd2cd60ac80a993a18313c8e3ddba3feb56"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_codex_context.py",
+        "type": "file",
+        "size": 3561,
+        "kind": "text",
+        "sha256": "ca24804ef0f0d188b915f9c6e3a4fe461fc35b13ebfeeafda54844c4c2e06a04"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_decide_contract.py",
+        "type": "file",
+        "size": 1736,
+        "kind": "text",
+        "sha256": "f06aff8e0cfb9dc3fcddf7447e07b3dbebcbfea888c3a7e6263aff39817c9532"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_decision_config.py",
+        "type": "file",
+        "size": 2892,
+        "kind": "text",
+        "sha256": "945f986b85b04329cc563c210545d1b2b22554df1c75214e086227a2c122a727"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_doctor_context_fixes.py",
+        "type": "file",
+        "size": 5304,
+        "kind": "text",
+        "sha256": "6ff6411380fab6fd041bab8ebec92c52b5039f0ea2cdc063384bae52cda2e530"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_doctor_delivery_fixes.py",
+        "type": "file",
+        "size": 3407,
+        "kind": "text",
+        "sha256": "89153f051eb31a6acf3f785fb8c0e8d339ae9f32bcf2b33ced58e5860fbb1c52"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_doctor_evidence_fixes.py",
+        "type": "file",
+        "size": 1731,
+        "kind": "text",
+        "sha256": "b648be0749e6fcc5838422e8ac5c2d32627048e9df7341e699047390a2c9b772"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_guided_onboarding.py",
+        "type": "file",
+        "size": 45782,
+        "kind": "text",
+        "sha256": "147cb43e94de40224d7c8faebe9ea0e06f754ed1d24c17bcc144d8d9ff24f176"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_installer.py",
+        "type": "file",
+        "size": 65225,
+        "kind": "text",
+        "sha256": "707c3e7380b75ce1f1e6788c95febbd5002cfb39c4bfde3821522c90520c5948"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_nobrainer_browser.py",
+        "type": "file",
+        "size": 3576,
+        "kind": "text",
+        "sha256": "3460d91ac685cc20b0a48a8044785908e39c04dd3089840b78b256be74a9af4f"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_one_command_installer.py",
+        "type": "file",
+        "size": 28456,
+        "kind": "text",
+        "sha256": "a3c492eb26854ad32ef9afc0928af9c11989fac739a48a8b4c44ce3f905dcf44"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_personalization.py",
+        "type": "file",
+        "size": 40462,
+        "kind": "text",
+        "sha256": "d411d6f93953b7924360550b8c32fbcd9f56262bc750473bfc02d7712bb297e5"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_portfolio.py",
+        "type": "file",
+        "size": 4334,
+        "kind": "text",
+        "sha256": "baf276d038718593b8088cb9e8d9e38b762a702c8dcc67fa5718e5b9c43b2460"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_repo_security.py",
+        "type": "file",
+        "size": 9443,
+        "kind": "text",
+        "sha256": "063707c1995cb007639a0159a44d03aed12d95358cf819efab9869a2244e3138"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_restart_gate.py",
+        "type": "file",
+        "size": 6963,
+        "kind": "text",
+        "sha256": "498ecf96a9d012d0165619b245957ace52cb994936a1b8c5befe4cbc3915b128"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_session_lifecycle.py",
+        "type": "file",
+        "size": 12868,
+        "kind": "text",
+        "sha256": "8fc08b1d713dd7d5866c21f56313e6a96a2a918fcafc68aaa31c09fc0915ee91"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_session_title.py",
+        "type": "file",
+        "size": 3227,
+        "kind": "text",
+        "sha256": "f7d910bd008ffbc7da5c54c5fad5bd8ef1d61e1a9772e7fdf3df775f243a37df"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_shell_installer.py",
+        "type": "file",
+        "size": 50354,
+        "kind": "text",
+        "sha256": "f487becdd9b6ce7010ff302bac8efc5595a7c172531f234a3495034fc1c641f0"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_skill_doctor.py",
+        "type": "file",
+        "size": 3098,
+        "kind": "text",
+        "sha256": "8e686d093b1fa4c1798662dca98cc89f1c23692e3b691f2e16f4d41b0e41a6c8"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_suite.py",
+        "type": "file",
+        "size": 128641,
+        "kind": "text",
+        "sha256": "071bc0e57b5fe2767e09f1f2fb0ef0d89c49d88fa87d909f77f5b779e1498a72"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_typed_decisions.py",
+        "type": "file",
+        "size": 4317,
+        "kind": "text",
+        "sha256": "112b976d78a93707e0a19dd70fe1372878a424a7a7e4636e9766db9c3f8fc217"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_update_check.py",
+        "type": "file",
+        "size": 9539,
+        "kind": "text",
+        "sha256": "f4596617944f1f8751a775fe1508083824674556f4fdcd2672440f4f8009a1d0"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_windows_smoke.py",
+        "type": "file",
+        "size": 8321,
+        "kind": "text",
+        "sha256": "7f302c13b48b9d9f1f75b5464527296f9a5a1473b0cf55a1141da99d59cef0c3"
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_worktree_cleanup.py",
+        "type": "file",
+        "size": 11643,
+        "kind": "text",
+        "sha256": "ca6252cb7396f5985f8d5ec64711b206e97eb039e18653e0ff6659016ab45f50"
+      }
+    ]
+  },
+  "flags": [
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.claude-plugin/marketplace.json",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.claude-plugin/plugin.json",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github/copilot-instructions.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/AGENTS.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/CLAUDE.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "binary_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/artifacts/v1.6.0/source-snapshot.zip",
+      "line": null,
+      "detail": "binary content; not analysed"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-auto-fine-tune/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-autoimprove/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-build/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-codex-context/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-decide/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-dispatcher/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-rca/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-research/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-review/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-security/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-sessions/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-skill-doctor/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-spec-driven-development/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-team/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-wiki/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    },
+    {
+      "code": "agent_or_hook_file",
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/SKILL.md",
+      "line": null,
+      "detail": "agent, MCP, hook or instruction file; its text is untrusted (read it with --show)"
+    }
+  ],
+  "flag_summary": {
+    "agent_or_hook_file": 23,
+    "binary_file": 1
+  },
+  "install_evidence": {
+    "npm_manifest": {
+      "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/package.json",
+      "size": 545,
+      "sha256": "e2713caaec22738d8d9f6c62c812c27ecb5108a5d6a35a2eda6c9540b7a00c7a",
+      "parsed": true,
+      "name": "nobrainer-tech-flow",
+      "version": "2.0.2",
+      "scripts": {},
+      "lifecycle_scripts": [],
+      "bin": {},
+      "dependencies": {}
+    },
+    "python_build": null,
+    "ci_workflows": [
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github/workflows/validate.yml",
+        "size": 4458,
+        "sha256": "7d55a71bea69b5c7133e6de71775963e9ec0eb6a0aa75a957bd9330b83d9e724",
+        "unpinned_actions": [],
+        "pull_request_target": false,
+        "pipes_to_shell": false
+      }
+    ],
+    "agent_and_hook_files": [
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.claude-plugin/marketplace.json",
+        "size": 422,
+        "sha256": "ecebfb9f99f58b9e139a61cf47abae6a622ed06492a5d5e522745f02587a5acb",
+        "summary": {
+          "keys": [
+            "description",
+            "name",
+            "owner",
+            "plugins"
+          ],
+          "mcp_servers": []
+        }
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.claude-plugin/plugin.json",
+        "size": 519,
+        "sha256": "1f0cf79658cf9a757f7183f8f2b5e268ebdbf44c9255b177593577a0b8b8bf4a",
+        "summary": {
+          "keys": [
+            "author",
+            "description",
+            "homepage",
+            "hooks",
+            "keywords",
+            "license",
+            "name",
+            "repository",
+            "version"
+          ],
+          "mcp_servers": []
+        }
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github/copilot-instructions.md",
+        "size": 1752,
+        "sha256": "271a4f81b028c2fb82af7a14b44b7f8dfe07649ca4c7170ff37184f780fcb8b2",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/AGENTS.md",
+        "size": 11599,
+        "sha256": "a16f3ec8b980eaf97a2156a78214c805b1ec7e828109b68616ccfd21610f2f83",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/CLAUDE.md",
+        "size": 11599,
+        "sha256": "a16f3ec8b980eaf97a2156a78214c805b1ec7e828109b68616ccfd21610f2f83",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-auto-fine-tune/SKILL.md",
+        "size": 7510,
+        "sha256": "f6a63cd581cef8c4e3c0a6493560d9c1b98b7c3e6badfaafaec07c220426140a",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-autoimprove/SKILL.md",
+        "size": 11725,
+        "sha256": "621274a98df6e5636a46d0bf18ddf1b37d9f4824bbaf1efaf4c67b88cd6bae01",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/SKILL.md",
+        "size": 11146,
+        "sha256": "b42b4dcf5c205844bf10afc53d68c6718295fcb64987c4519057af15210fa4a9",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-build/SKILL.md",
+        "size": 8191,
+        "sha256": "2ef4f2a2170816e6abdc6c79491d4199c4cccb0140508222909fe75b8da00593",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-codex-context/SKILL.md",
+        "size": 5160,
+        "sha256": "49a20f68f18c2ae4418977799733b9527eac19df08ceb011dfcf18689f80b610",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-decide/SKILL.md",
+        "size": 9164,
+        "sha256": "84622259988a651ce56e3d62bb5bc993968fae0706ac351c333af8c929fc248b",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-dispatcher/SKILL.md",
+        "size": 11886,
+        "sha256": "fa2f0f7350c133eae6515b618e0fbee75c189ea3a990eb883b3bad21edee7158",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-rca/SKILL.md",
+        "size": 6199,
+        "sha256": "c52a8aa8c22a80015ecfe46eceb09ee55fd62d3e58b89820fc6e1712a8ac8fd8",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-research/SKILL.md",
+        "size": 5877,
+        "sha256": "ce63020803b1ab917596115022ed2a256549af4ad98f16fceae224321e293215",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-review/SKILL.md",
+        "size": 9098,
+        "sha256": "e4815310a63b1065def9bfacb6a9f9b7545148827d467db6a6532765abd4b122",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-security/SKILL.md",
+        "size": 6837,
+        "sha256": "4103359fd515e4b345f61fa2b70acbe889ccba636be20f8a05b0380a386b98b0",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-sessions/SKILL.md",
+        "size": 11705,
+        "sha256": "71a79a3b2348e89ed7a92d33accce7f5cfe68ee9274286de1c489f2d03b76903",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-skill-doctor/SKILL.md",
+        "size": 6978,
+        "sha256": "7d43e1fee026b515f5d28912aec6c6b54727d50a68e3f4026db7458c1f3e2749",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-spec-driven-development/SKILL.md",
+        "size": 5850,
+        "sha256": "1f483286d045ab4e19d1b40b10ff87ad6ec0b40a70311ddc0754c2d62be7b7b0",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-team/SKILL.md",
+        "size": 9206,
+        "sha256": "1d0d4cb4c7268d56a766283aef125b370f5852bc72438be8b6ea6edf1a2a9e72",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/SKILL.md",
+        "size": 13206,
+        "sha256": "777b256a8daf05d6f74abb99684f828b6431babd77725d8a4b8c940041f17843",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-wiki/SKILL.md",
+        "size": 8521,
+        "sha256": "efb3af5c3f50d108213d05ad8083f552ceefc9c8bd187d611bf303fe9f665b02",
+        "summary": null
+      },
+      {
+        "path": "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/SKILL.md",
+        "size": 13927,
+        "sha256": "f13b784accde625b504427458aa4ff787318ef549e95d57c7667a5a0aa244622",
+        "summary": null
+      }
+    ]
+  },
+  "network_literals": {
+    "urls": [
+      {
+        "url": "http://127.0.0.1:$",
+        "host": "127.0.0.1",
+        "count": 3,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/references/cdp-profile-restart.md:77",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/references/cdp-profile-restart.md:78",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_nobrainer_browser.py:72"
+        ]
+      },
+      {
+        "url": "http://127.0.0.1:9222",
+        "host": "127.0.0.1",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/SKILL.md:145",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_nobrainer_browser.py:27"
+        ]
+      },
+      {
+        "url": "http://127.0.0.1:9333",
+        "host": "127.0.0.1",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/SKILL.md:147"
+        ]
+      },
+      {
+        "url": "http://www.w3.org/2000/svg",
+        "host": "www.w3.org",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/assets/nobrainer-tech-logo.svg:1",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/assets/nobrainer-workflow.svg:1"
+        ]
+      },
+      {
+        "url": "https://(gist",
+        "host": "(gist",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_suite.py:1043"
+        ]
+      },
+      {
+        "url": "https://127.0.0.1/latest/meta-data",
+        "host": "127.0.0.1",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_guided_onboarding.py:230",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_guided_onboarding.py:251"
+        ]
+      },
+      {
+        "url": "https://127.0.0.1/private/repo",
+        "host": "127.0.0.1",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_guided_onboarding.py:209"
+        ]
+      },
+      {
+        "url": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+        "host": "agent-plugins.org",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/plugin.json:2",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_adapters.py:187"
+        ]
+      },
+      {
+        "url": "https://agentskills.io/specification",
+        "host": "agentskills.io",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/specs/v1.3.0-harness-clarity.spec.md:34"
+        ]
+      },
+      {
+        "url": "https://api.github.com/",
+        "host": "api.github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/scripts/recommend_flow_setup.py:321"
+        ]
+      },
+      {
+        "url": "https://api.github.com/repos/acme/repo",
+        "host": "api.github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_guided_onboarding.py:227",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_guided_onboarding.py:248"
+        ]
+      },
+      {
+        "url": "https://api.github.com/repos/nobrainer-tech/nobrainer-tech-flow/releases/latest",
+        "host": "api.github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/scripts/check_flow_update.py:19"
+        ]
+      },
+      {
+        "url": "https://api.github.com/repos/nobrainer-tech/nobrainer-tech-skills/tarball/v1.0.0",
+        "host": "api.github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.0.0.md:12",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.0.0.md:64"
+        ]
+      },
+      {
+        "url": "https://api.typesafe.ai/v1/systemone",
+        "host": "api.typesafe.ai",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/scripts/typed_decisions.py:90"
+        ]
+      },
+      {
+        "url": "https://carbondesignsystem.com/guidelines/content/writing-style/",
+        "host": "carbondesignsystem.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/research.md:23"
+        ]
+      },
+      {
+        "url": "https://code.claude.com/docs",
+        "host": "code.claude.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:50"
+        ]
+      },
+      {
+        "url": "https://code.claude.com/docs/en/costs",
+        "host": "code.claude.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/specs/v1.3.0-harness-clarity.spec.md:33"
+        ]
+      },
+      {
+        "url": "https://code.claude.com/docs/en/memory",
+        "host": "code.claude.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/specs/v1.3.0-harness-clarity.spec.md:33"
+        ]
+      },
+      {
+        "url": "https://cursor.com/",
+        "host": "cursor.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:51"
+        ]
+      },
+      {
+        "url": "https://demo.example.test/runs/42",
+        "host": "demo.example.test",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/brief-artifacts.md:67"
+        ]
+      },
+      {
+        "url": "https://developer.chrome.com/blog/remote-debugging-port",
+        "host": "developer.chrome.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/SKILL.md:233"
+        ]
+      },
+      {
+        "url": "https://developers.google.com/style/tone",
+        "host": "developers.google.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/research.md:19"
+        ]
+      },
+      {
+        "url": "https://developers.openai.com/api/docs/guides/latest-model",
+        "host": "developers.openai.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/specs/goal-driven-delivery.spec.md:33",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/specs/v1.3.0-harness-clarity.spec.md:31"
+        ]
+      },
+      {
+        "url": "https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra",
+        "host": "developers.openai.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-skill-doctor/references/astra.md:3",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_skill_doctor.py:81"
+        ]
+      },
+      {
+        "url": "https://developers.openai.com/codex/guides/agents-md",
+        "host": "developers.openai.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/specs/v1.3.0-harness-clarity.spec.md:32"
+        ]
+      },
+      {
+        "url": "https://developers.openai.com/codex/skills",
+        "host": "developers.openai.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/INSTALL.md:104",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/evals/v1.3.0-harness-clarity-2026-08-30.md:35"
+        ]
+      },
+      {
+        "url": "https://digital.gov/guides/plain-language/writing",
+        "host": "digital.gov",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/brief-artifacts.md:355",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/research.md:20"
+        ]
+      },
+      {
+        "url": "https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/about-issue-and-pull-request-templates",
+        "host": "docs.github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/brief-artifacts.md:352"
+        ]
+      },
+      {
+        "url": "https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository",
+        "host": "docs.github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/brief-artifacts.md:353"
+        ]
+      },
+      {
+        "url": "https://docs.gitlab.com/development/documentation/styleguide/",
+        "host": "docs.gitlab.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/brief-artifacts.md:354",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/research.md:22"
+        ]
+      },
+      {
+        "url": "https://docs.typesafe.ai/api",
+        "host": "docs.typesafe.ai",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references/optional-decisions.md:82"
+        ]
+      },
+      {
+        "url": "https://example.com",
+        "host": "example.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/SKILL.md:164"
+        ]
+      },
+      {
+        "url": "https://flow.nobrainer.tech/",
+        "host": "flow.nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:18"
+        ]
+      },
+      {
+        "url": "https://flow.nobrainer.tech/assets/skills-og.png",
+        "host": "flow.nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:30"
+        ]
+      },
+      {
+        "url": "https://flow.nobrainer.tech/compare/ecc/?from=legacy",
+        "host": "flow.nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:24"
+        ]
+      },
+      {
+        "url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
+        "host": "gist.github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:503",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-wiki/SKILL.md:10"
+        ]
+      },
+      {
+        "url": "https://github.com/Nom-nom-hub/goal-kit",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/specs/goal-driven-delivery.spec.md:34"
+        ]
+      },
+      {
+        "url": "https://github.com/acme/project.git",
+        "host": "github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_worktree_cleanup.py:85",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_worktree_cleanup.py:214"
+        ]
+      },
+      {
+        "url": "https://github.com/acme/project/pull/7",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_worktree_cleanup.py:100"
+        ]
+      },
+      {
+        "url": "https://github.com/acme/repo",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_guided_onboarding.py:197"
+        ]
+      },
+      {
+        "url": "https://github.com/blader/humanizer/blob/38b88903a5080c72a8c0472e79dcc9ffbf07938b/SKILL.md",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/research.md:15"
+        ]
+      },
+      {
+        "url": "https://github.com/example/work-repo",
+        "host": "github.com",
+        "count": 14,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_guided_onboarding.py:74",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_guided_onboarding.py:143",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_guided_onboarding.py:583"
+        ]
+      },
+      {
+        "url": "https://github.com/features/copilot/cli",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:52"
+        ]
+      },
+      {
+        "url": "https://github.com/gitleaks/gitleaks",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.pre-commit-config.yaml:4"
+        ]
+      },
+      {
+        "url": "https://github.com/gitleaks/gitleaks/releases/download/v$",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github/workflows/validate.yml:64"
+        ]
+      },
+      {
+        "url": "https://github.com/google-gemini/gemini-cli",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:54"
+        ]
+      },
+      {
+        "url": "https://github.com/hannsxpeter/humanizer/blob/c35d49f5d57ed6e2222c23fab22b30e34ffa79e5/SKILL.md",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/research.md:16"
+        ]
+      },
+      {
+        "url": "https://github.com/hannsxpeter/humanizer/blob/main/SKILL.md",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/brief-artifacts.md:357"
+        ]
+      },
+      {
+        "url": "https://github.com/jagreehal/jagreehal-claude-skills/blob/810e8d69ef23476f15f3f5ee1044b9552a9fdba0/skills/concise-output/SKILL.md",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/research.md:17"
+        ]
+      },
+      {
+        "url": "https://github.com/karpathy/autoresearch",
+        "host": "github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:500",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-autoimprove/SKILL.md:10"
+        ]
+      },
+      {
+        "url": "https://github.com/mizorewww/laya-mlx",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references/optional-decisions.md:83"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-claude",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/INSTALL.md:329"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-codex",
+        "host": "github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-auto-fine-tune/references/capacity-audit.md:32",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-tech-flow/references/codex-routing.md:8"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow",
+        "host": "github.com",
+        "count": 13,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.claude-plugin/plugin.json:9",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.codex-plugin/plugin.json:10",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.cursor-plugin/plugin.json:10"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow-www/pull/8",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:6"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow.git",
+        "host": "github.com",
+        "count": 3,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:193",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/INSTALL.md:20",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/MIGRATION_TO_FLOW.md:74"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow.git#NB_REVIEWED_COMMIT_SHA",
+        "host": "github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.opencode/INSTALL.md:14",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/INSTALL.md:380"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/actions/runs/33951044769",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.7.1-publication-readback.md:18"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/actions/runs/35705688851",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.14.0.md:23"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/actions/workflows/validate.yml",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:16"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/actions/workflows/validate.yml/badge.svg",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:16"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/pull/57",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.11.0-publication-readback.md:8"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/releases/latest",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:426"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/releases/tag/",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_update_check.py:142"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/releases/tag/1.1.0",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_update_check.py:69"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/releases/tag/1.2.0",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_update_check.py:83"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/releases/tag/v1.1.0",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_update_check.py:184"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/releases/tag/v1.11.0",
+        "host": "github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.11.0-publication-readback.md:4",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.11.0-publication-readback.md:12"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/releases/tag/v1.2.0",
+        "host": "github.com",
+        "count": 4,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_update_check.py:47",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_update_check.py:160",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_update_check.py:168"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/releases/tag/v1.7.1",
+        "host": "github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.7.1-publication-readback.md:4",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.7.1.md:42"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/security/advisories/new",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/SECURITY.md:9"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-flow/security/policy",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.github/ISSUE_TEMPLATE/config.yml:4"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills.git",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/RELEASE-NOTES.md:543"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/actions/runs/33153619658",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.0.0.md:36"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/actions/runs/33153660970",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.0.0.md:37"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/actions/runs/33179388586",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.1.0.md:39"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/actions/runs/33179433836",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.1.0.md:40"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/actions/runs/33214075697",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.2.0.md:52"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/actions/runs/33214127416",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.2.0.md:53"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/actions/runs/33216374869",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.2.1.md:46"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/actions/runs/33216427097",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.2.1.md:47"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/actions/runs/33946027681",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.6.1-publication-readback.md:16"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/archive/refs/tags/v1.1.0.tar.gz",
+        "host": "github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.1.0.md:12",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.1.0.md:68"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/archive/refs/tags/v1.2.0.tar.gz",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.2.0.md:12"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/archive/refs/tags/v1.2.1.tar.gz",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.2.1.md:12"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/archive/refs/tags/v1.3.0.tar.gz",
+        "host": "github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.3.0-publication-readback.md:41",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_suite.py:1974"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/archive/refs/tags/v1.3.1.tar.gz",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.3.1-publication-readback.md:39"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/archive/refs/tags/v1.4.0.tar.gz",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.4.0-publication-readback.md:41"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/archive/refs/tags/v1.5.0.tar.gz",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.5.0-publication-readback.md:44"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/pull/21",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.0.0.md:35"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/pull/23",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.1.0.md:38"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/pull/25",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.2.0.md:51"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/pull/26",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.2.1.md:45"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/pull/44",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.6.1-publication-readback.md:8"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/releases/tag/v1.0.0",
+        "host": "github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.0.0.md:11",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.0.0.md:28"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/releases/tag/v1.1.0",
+        "host": "github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.1.0.md:11",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.1.0.md:31"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/releases/tag/v1.2.0",
+        "host": "github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.2.0.md:11",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.2.0.md:44"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/releases/tag/v1.2.1",
+        "host": "github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.2.1.md:11",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.2.1.md:38"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/releases/tag/v1.3.0",
+        "host": "github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.3.0-publication-readback.md:40",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_suite.py:1970"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/releases/tag/v1.3.1",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.3.1-publication-readback.md:38"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/releases/tag/v1.4.0",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.4.0-publication-readback.md:40"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/releases/tag/v1.5.0",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.5.0-publication-readback.md:43"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/releases/tag/v1.6.0",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.6.0.md:4"
+        ]
+      },
+      {
+        "url": "https://github.com/nobrainer-tech/nobrainer-tech-skills/releases/tag/v1.6.1",
+        "host": "github.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.6.1-publication-readback.md:12",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.6.1.md:4"
+        ]
+      },
+      {
+        "url": "https://github.com/openai/codex",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:49"
+        ]
+      },
+      {
+        "url": "https://github.com/owner/project",
+        "host": "github.com",
+        "count": 3,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/INSTALL.md:232",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/INSTALL.md:243",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/INSTALL.md:271"
+        ]
+      },
+      {
+        "url": "https://guides.18f.org/content-guide/our-approach/plain-language/",
+        "host": "guides.18f.org",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/research.md:20"
+        ]
+      },
+      {
+        "url": "https://img.shields.io/badge/license-MIT-27d8cf.svg",
+        "host": "img.shields.io",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:17"
+        ]
+      },
+      {
+        "url": "https://learn.chatgpt.com/docs/browser",
+        "host": "learn.chatgpt.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/SKILL.md:227"
+        ]
+      },
+      {
+        "url": "https://learn.chatgpt.com/docs/chrome-extension",
+        "host": "learn.chatgpt.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/SKILL.md:228"
+        ]
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/style-guide/word-choice/use-simple-words-concise-sentences",
+        "host": "learn.microsoft.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/research.md:18"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech",
+        "host": "nobrainer.tech",
+        "count": 4,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.codex-plugin/plugin.json:7",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:2",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:519"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/flow/",
+        "host": "nobrainer.tech",
+        "count": 19,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.claude-plugin/plugin.json:8",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.codex-plugin/plugin.json:9",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.codex-plugin/plugin.json:35"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/flow/assets/flow-done-v2-1x1.mp4",
+        "host": "nobrainer.tech",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:40",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:42"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/flow/assets/flow-done-v2-poster-1x1.png",
+        "host": "nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:40"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/flow/assets/flow-done-v2-preview-1x1.webp",
+        "host": "nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:40"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/flow/assets/flow-reel-universal-1x1.mp4",
+        "host": "nobrainer.tech",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:35",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:37"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/flow/assets/flow-reel-universal-poster-1x1.png",
+        "host": "nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:35"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/flow/assets/flow-reel-universal-preview-1x1.webp",
+        "host": "nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:35"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/flow/assets/skills-og.png",
+        "host": "nobrainer.tech",
+        "count": 6,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:32",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:33",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:50"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/flow/compare/",
+        "host": "nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:25"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/flow/compare/ecc/?from=legacy",
+        "host": "nobrainer.tech",
+        "count": 6,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:26",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:27",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:44"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/flow/deep-dive/",
+        "host": "nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:27"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/privacy",
+        "host": "nobrainer.tech",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.codex-plugin/plugin.json:36",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_suite.py:2702"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/skills/",
+        "host": "nobrainer.tech",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:54",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.6.1-publication-readback.md:30"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/skills/assets/skills-og.png",
+        "host": "nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:66"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/skills/compare/",
+        "host": "nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.6.1-publication-readback.md:31"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/skills/compare/ecc/?from=legacy",
+        "host": "nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:60"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/skills/integrations/codex/",
+        "host": "nobrainer.tech",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.6.1-publication-readback.md:32",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/v1.6.1.md:74"
+        ]
+      },
+      {
+        "url": "https://nobrainer.tech/terms",
+        "host": "nobrainer.tech",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/.codex-plugin/plugin.json:37",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_suite.py:2705"
+        ]
+      },
+      {
+        "url": "https://nobrainertech.gumroad.com",
+        "host": "nobrainertech.gumroad.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:521",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_suite.py:2440"
+        ]
+      },
+      {
+        "url": "https://openai.com/index/gpt-6-astra/",
+        "host": "openai.com",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:226",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/COMPATIBILITY.md:63"
+        ]
+      },
+      {
+        "url": "https://opencode.ai/",
+        "host": "opencode.ai",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:53"
+        ]
+      },
+      {
+        "url": "https://pi.dev/",
+        "host": "pi.dev",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:56"
+        ]
+      },
+      {
+        "url": "https://playwright.dev/agent-cli/commands/attach",
+        "host": "playwright.dev",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/SKILL.md:229"
+        ]
+      },
+      {
+        "url": "https://playwright.dev/docs/api/class-browsertype",
+        "host": "playwright.dev",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/SKILL.md:230"
+        ]
+      },
+      {
+        "url": "https://playwright.dev/docs/test-cli",
+        "host": "playwright.dev",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/SKILL.md:231"
+        ]
+      },
+      {
+        "url": "https://playwright.dev/docs/trace-viewer",
+        "host": "playwright.dev",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/SKILL.md:232"
+        ]
+      },
+      {
+        "url": "https://skills.nobrainer.tech/",
+        "host": "skills.nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:36"
+        ]
+      },
+      {
+        "url": "https://skills.nobrainer.tech/assets/skills-og.png",
+        "host": "skills.nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:48"
+        ]
+      },
+      {
+        "url": "https://skills.nobrainer.tech/compare/ecc/?from=legacy",
+        "host": "skills.nobrainer.tech",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/releases/artifacts/v1.7.1-publication.json:42"
+        ]
+      },
+      {
+        "url": "https://styleguide.mailchimp.com/grammar-and-mechanics/",
+        "host": "styleguide.mailchimp.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/research.md:21"
+        ]
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/harness-design-long-running-apps",
+        "host": "www.anthropic.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/specs/v1.3.0-harness-clarity.spec.md:35"
+        ]
+      },
+      {
+        "url": "https://www.atlassian.com/agile/project-management/user-stories",
+        "host": "www.atlassian.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/brief-artifacts.md:356"
+        ]
+      },
+      {
+        "url": "https://www.cs.toronto.edu/pub/eric/REFSQ98.html",
+        "host": "www.cs.toronto.edu",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/docs/specs/goal-driven-delivery.spec.md:34"
+        ]
+      },
+      {
+        "url": "https://www.kimi.com/code",
+        "host": "www.kimi.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:55"
+        ]
+      },
+      {
+        "url": "https://www.npmjs.com/package/@playwright/cli",
+        "host": "www.npmjs.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/SKILL.md:234"
+        ]
+      },
+      {
+        "url": "https://www.producthunt.com/products/nobrainer-tech-flow",
+        "host": "www.producthunt.com",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/README.md:29"
+        ]
+      },
+      {
+        "url": "https://www.w3.org/WAI/tips/writing/",
+        "host": "www.w3.org",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-writing/references/research.md:24"
+        ]
+      }
+    ],
+    "ips": [
+      {
+        "ip": "0.0.0.0",
+        "count": 1,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_nobrainer_browser.py:83"
+        ]
+      },
+      {
+        "ip": "127.0.0.1",
+        "count": 2,
+        "first_seen": [
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/skills/nobrainer-browser/references/cdp-profile-restart.md:55",
+          "nobrainer-tech-flow-bec696ff199bd1ad79524d7d3e2bffce3d28e796/tests/test_nobrainer_browser.py:68"
+        ]
+      }
+    ]
+  },
+  "limits": [
+    "Static inventory only: nothing was executed, installed, imported, extracted or written to disk. Not a malware verdict; a clean result does not show the package is safe.",
+    "Flags, URLs and IPs are leads for a reviewer, not proof. Only IPv4 literals are searched, in the first 1 MiB of each text file.",
+    "Dependencies are listed from manifests, not fetched. Binaries and nested archives are hashed and flagged, not analysed.",
+    "Release age is recency evidence only (14-day rule): an older release is not thereby safe, and a cooldown can delay an urgent security fix.",
+    "GitHub publishes no digest for archives; the recorded sha256 is for reference and archives may not be byte-stable. Identity relies on the commit id in the archive header, and GitHub resolves SHAs across a repository's fork network, so the commit may not be on a branch of this repository. Git dates are author-controlled."
+  ]
+}

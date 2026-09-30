@@ -1,0 +1,1019 @@
+{
+  "tool": {
+    "name": "nobrainer-security inspect_package",
+    "schema": "nobrainer-security.inspect-package/2"
+  },
+  "result": {
+    "status": "OK",
+    "reasons": [],
+    "exit_code": 0
+  },
+  "target": {
+    "ecosystem": "npm",
+    "input": "esbuild@0.24.0",
+    "name": "esbuild",
+    "version": "0.24.0",
+    "exact_pin": true
+  },
+  "source": {
+    "metadata_urls": [
+      "https://registry.npmjs.org/esbuild/0.24.0",
+      "https://registry.npmjs.org/esbuild"
+    ],
+    "artifact_url": "https://registry.npmjs.org/esbuild/-/esbuild-0.24.0.tgz"
+  },
+  "fetch": {
+    "fetched_at": "2026-09-30T11:27:15Z",
+    "memory_only": true,
+    "requests": [
+      {
+        "purpose": "npm version metadata",
+        "url": "https://registry.npmjs.org/esbuild/0.24.0",
+        "bytes": 2174
+      },
+      {
+        "purpose": "npm packument (publish times)",
+        "url": "https://registry.npmjs.org/esbuild",
+        "bytes": 1264676
+      },
+      {
+        "purpose": "artifact download (memory only)",
+        "url": "https://registry.npmjs.org/esbuild/-/esbuild-0.24.0.tgz",
+        "bytes": 30549
+      }
+    ],
+    "download_cap_bytes": 52428800
+  },
+  "artifact": {
+    "filename": "esbuild-0.24.0.tgz",
+    "size_bytes": 30549,
+    "sha256": "560a4648a49ad95e2042ca32438ce40325e9aa547dda6fcc8092adff737a0de5"
+  },
+  "integrity": {
+    "status": "VERIFIED",
+    "checks": [
+      {
+        "source": "dist.integrity",
+        "algorithm": "sha512",
+        "expected": "16e2cf7af0a1183b2181289c8e2b12a2853471e9a9fec19747ce350f92c7301ee64d53a6b041dc031687de2acbe77fbc60321e54d404c928780da614fe2b8fa9",
+        "actual": "16e2cf7af0a1183b2181289c8e2b12a2853471e9a9fec19747ce350f92c7301ee64d53a6b041dc031687de2acbe77fbc60321e54d404c928780da614fe2b8fa9",
+        "match": true
+      },
+      {
+        "source": "dist.shasum",
+        "algorithm": "sha1",
+        "expected": "f2d470596885fcb2e91c21eb3da3b3c89c0b55e7",
+        "actual": "f2d470596885fcb2e91c21eb3da3b3c89c0b55e7",
+        "match": true
+      }
+    ]
+  },
+  "identity": [],
+  "release_age": {
+    "status": "ESTABLISHED",
+    "policy_days": 14,
+    "published_at": "2024-09-22T02:07:11Z",
+    "source": "registry packument time[0.24.0]",
+    "age_days": 738.39,
+    "younger_than_policy": false,
+    "reliability": "registry metadata"
+  },
+  "inventory": {
+    "format": "tar.gz",
+    "root_prefix": "package/",
+    "complete": true,
+    "truncated": [],
+    "errors": [],
+    "entry_count": 7,
+    "types": {
+      "file": 7
+    },
+    "kinds": {
+      "text": 7
+    },
+    "uncompressed_bytes_read": 140288,
+    "entries": [
+      {
+        "path": "package/LICENSE.md",
+        "type": "file",
+        "size": 1069,
+        "kind": "text",
+        "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681"
+      },
+      {
+        "path": "package/README.md",
+        "type": "file",
+        "size": 175,
+        "kind": "text",
+        "sha256": "6d481cd60ec3c679e5e395f547ab4221147f35642894f6b95a8df38fd25c87bd"
+      },
+      {
+        "path": "package/bin/esbuild",
+        "type": "file",
+        "size": 9248,
+        "kind": "text",
+        "sha256": "42732b23f2c53179bd0072327519ef0203ff2de711ae564530893fa6fe58e870"
+      },
+      {
+        "path": "package/install.js",
+        "type": "file",
+        "size": 10991,
+        "kind": "text",
+        "sha256": "7591ca18fd0c82508fd14175c90354ff3728be090c97fd7ef4997b9c99459149"
+      },
+      {
+        "path": "package/lib/main.d.ts",
+        "type": "file",
+        "size": 23002,
+        "kind": "text",
+        "sha256": "4536edc937015c38172e7ff9d022a16110d2c1890529132c20a7c4f6005ee2c6"
+      },
+      {
+        "path": "package/lib/main.js",
+        "type": "file",
+        "size": 87763,
+        "kind": "text",
+        "sha256": "2f43ded7ed5e0e1985cbed5297833e895000f9161812ca7cc29bdf549bfc6c9e"
+      },
+      {
+        "path": "package/package.json",
+        "type": "file",
+        "size": 1380,
+        "kind": "text",
+        "sha256": "8c074dd8849d767e6a14ce80277797c79cec7e7264753f5d786d2ea655d34bc0"
+      }
+    ]
+  },
+  "flags": [
+    {
+      "code": "lifecycle_script",
+      "path": "package/package.json",
+      "line": null,
+      "detail": "postinstall: node install.js"
+    }
+  ],
+  "flag_summary": {
+    "lifecycle_script": 1
+  },
+  "install_evidence": {
+    "npm_manifest": {
+      "path": "package/package.json",
+      "size": 1380,
+      "sha256": "8c074dd8849d767e6a14ce80277797c79cec7e7264753f5d786d2ea655d34bc0",
+      "parsed": true,
+      "name": "esbuild",
+      "version": "0.24.0",
+      "scripts": {
+        "postinstall": "node install.js"
+      },
+      "lifecycle_scripts": [
+        "postinstall"
+      ],
+      "bin": {
+        "esbuild": "bin/esbuild"
+      },
+      "dependencies": {
+        "optionalDependencies": {
+          "@esbuild/aix-ppc64": "0.24.0",
+          "@esbuild/android-arm": "0.24.0",
+          "@esbuild/android-arm64": "0.24.0",
+          "@esbuild/android-x64": "0.24.0",
+          "@esbuild/darwin-arm64": "0.24.0",
+          "@esbuild/darwin-x64": "0.24.0",
+          "@esbuild/freebsd-arm64": "0.24.0",
+          "@esbuild/freebsd-x64": "0.24.0",
+          "@esbuild/linux-arm": "0.24.0",
+          "@esbuild/linux-arm64": "0.24.0",
+          "@esbuild/linux-ia32": "0.24.0",
+          "@esbuild/linux-loong64": "0.24.0",
+          "@esbuild/linux-mips64el": "0.24.0",
+          "@esbuild/linux-ppc64": "0.24.0",
+          "@esbuild/linux-riscv64": "0.24.0",
+          "@esbuild/linux-s390x": "0.24.0",
+          "@esbuild/linux-x64": "0.24.0",
+          "@esbuild/netbsd-x64": "0.24.0",
+          "@esbuild/openbsd-arm64": "0.24.0",
+          "@esbuild/openbsd-x64": "0.24.0",
+          "@esbuild/sunos-x64": "0.24.0",
+          "@esbuild/win32-arm64": "0.24.0",
+          "@esbuild/win32-ia32": "0.24.0",
+          "@esbuild/win32-x64": "0.24.0"
+        }
+      }
+    },
+    "python_build": null,
+    "ci_workflows": [],
+    "agent_and_hook_files": []
+  },
+  "network_literals": {
+    "urls": [
+      {
+        "url": "https://esbuild.github.io/api/",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/README.md:3"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#alias",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:129"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#allow-overwrite",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:141"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#analyze",
+        "host": "esbuild.github.io",
+        "count": 2,
+        "first_seen": [
+          "package/lib/main.d.ts:586",
+          "package/lib/main.d.ts:624"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#asset-names",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:153"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#banner",
+        "host": "esbuild.github.io",
+        "count": 2,
+        "first_seen": [
+          "package/lib/main.d.ts:157",
+          "package/lib/main.d.ts:267"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#browser",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:636"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#build",
+        "host": "esbuild.github.io",
+        "count": 3,
+        "first_seen": [
+          "package/lib/main.d.ts:540",
+          "package/lib/main.d.ts:551",
+          "package/lib/main.d.ts:596"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#bundle",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:111"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#charset",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:51"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#chunk-names",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:151"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#color",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:78"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#conditions",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:137"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#define",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:71"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#drop",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:37"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#drop-labels",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:39"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#entry-names",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:149"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#entry-points",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:161"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#external",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:125"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#footer",
+        "host": "esbuild.github.io",
+        "count": 2,
+        "first_seen": [
+          "package/lib/main.d.ts:159",
+          "package/lib/main.d.ts:269"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#format",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:18"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#global-name",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:20"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#ignore-annotations",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:55"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#inject",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:155"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#jsx",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:58"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#jsx-development",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:66"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#jsx-factory",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:60"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#jsx-fragment",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:62"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#jsx-import-source",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:64"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#jsx-side-effects",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:68"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#keep-names",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:75"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#legal-comments",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:11"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#line-limit",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:49"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#loader",
+        "host": "esbuild.github.io",
+        "count": 2,
+        "first_seen": [
+          "package/lib/main.d.ts:131",
+          "package/lib/main.d.ts:265"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#log-level",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:80"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#log-limit",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:82"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#log-override",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:84"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#main-fields",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:135"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#mangle-props",
+        "host": "esbuild.github.io",
+        "count": 4,
+        "first_seen": [
+          "package/lib/main.d.ts:29",
+          "package/lib/main.d.ts:31",
+          "package/lib/main.d.ts:33"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#metafile",
+        "host": "esbuild.github.io",
+        "count": 2,
+        "first_seen": [
+          "package/lib/main.d.ts:119",
+          "package/lib/main.d.ts:463"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#minify",
+        "host": "esbuild.github.io",
+        "count": 4,
+        "first_seen": [
+          "package/lib/main.d.ts:41",
+          "package/lib/main.d.ts:43",
+          "package/lib/main.d.ts:45"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#node-paths",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:169"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#out-extension",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:145"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#outbase",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:123"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#outdir",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:121"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#outfile",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:117"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#packages",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:127"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#platform",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:26"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#preserve-symlinks",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:115"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#public-path",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:147"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#pure",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:73"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#rebuild",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:514"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#resolve-extensions",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:133"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#serve",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:520"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#serve-arguments",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:236"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#serve-return-values",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:256"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#source-root",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:13"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#sourcefile",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:263"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#sourcemap",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:9"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#sources-content",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:15"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#splitting",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:113"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#stdin",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:163"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#supported",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:24"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#target",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:22"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#transform",
+        "host": "esbuild.github.io",
+        "count": 2,
+        "first_seen": [
+          "package/lib/main.d.ts:564",
+          "package/lib/main.d.ts:606"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#tree-shaking",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:53"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#tsconfig",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:143"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#tsconfig-raw",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:87"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#watch",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:517"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#working-directory",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:167"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#write",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:139"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:165"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#build-options",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:294"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#on-dispose",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:316"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#on-end",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:304"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#on-load",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:312"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#on-load-arguments",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:424"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#on-load-options",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:418"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#on-load-results",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:433"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#on-resolve",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:308"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#on-resolve-arguments",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:375"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#on-resolve-options",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:369"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#on-resolve-results",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:400"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#on-start",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:300"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#resolve",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:297"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#resolve-options",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:335"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/plugins/#resolve-results",
+        "host": "esbuild.github.io",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:346"
+        ]
+      },
+      {
+        "url": "https://github.com/evanw/esbuild",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "package/README.md:3"
+        ]
+      },
+      {
+        "url": "https://github.com/evanw/esbuild.git",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "package/package.json:7"
+        ]
+      },
+      {
+        "url": "https://github.com/evanw/esbuild/issues/1711#issuecomment-1027554035",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "package/install.js:110"
+        ]
+      },
+      {
+        "url": "https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/826",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:696"
+        ]
+      },
+      {
+        "url": "https://nodejs.org/api/worker_threads.html",
+        "host": "nodejs.org",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.js:2106"
+        ]
+      },
+      {
+        "url": "https://nodejs.org/dist/",
+        "host": "nodejs.org",
+        "count": 1,
+        "first_seen": [
+          "package/install.js:109"
+        ]
+      },
+      {
+        "url": "https://nodejs.org/en/download/",
+        "host": "nodejs.org",
+        "count": 2,
+        "first_seen": [
+          "package/bin/esbuild:158",
+          "package/lib/main.js:1731"
+        ]
+      },
+      {
+        "url": "https://registry.npmjs.org/$",
+        "host": "registry.npmjs.org",
+        "count": 1,
+        "first_seen": [
+          "package/install.js:234"
+        ]
+      },
+      {
+        "url": "https://snapcraft.io/",
+        "host": "snapcraft.io",
+        "count": 1,
+        "first_seen": [
+          "package/install.js:108"
+        ]
+      },
+      {
+        "url": "https://stackoverflow.com/questions/49580725",
+        "host": "stackoverflow.com",
+        "count": 1,
+        "first_seen": [
+          "package/lib/main.d.ts:529"
+        ]
+      },
+      {
+        "url": "https://yarnpkg.com/configuration/yarnrc/#supportedArchitectures",
+        "host": "yarnpkg.com",
+        "count": 4,
+        "first_seen": [
+          "package/bin/esbuild:144",
+          "package/bin/esbuild:164",
+          "package/lib/main.js:1717"
+        ]
+      }
+    ],
+    "ips": []
+  },
+  "limits": [
+    "Static inventory only: nothing was executed, installed, imported, extracted or written to disk. Not a malware verdict; a clean result does not show the package is safe.",
+    "Flags, URLs and IPs are leads for a reviewer, not proof. Only IPv4 literals are searched, in the first 1 MiB of each text file.",
+    "Dependencies are listed from manifests, not fetched. Binaries and nested archives are hashed and flagged, not analysed.",
+    "Release age is recency evidence only (14-day rule): an older release is not thereby safe, and a cooldown can delay an urgent security fix.",
+    "The digest comes from the same registry response as the metadata: it catches corruption and a metadata/tarball mismatch, not a malicious publisher or a compromised registry."
+  ]
+}

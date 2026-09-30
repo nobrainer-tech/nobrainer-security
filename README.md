@@ -41,6 +41,8 @@ Load `SKILL.md` by full filesystem path so its links to `tools/`, `WORKFLOW.md`,
 
 Both tools use the Python 3 standard library only; nothing needs to be installed.
 
+See the [observed package-inspection examples](EXAMPLES.md#memory-only-package-inspection) for actual npm, PyPI and GitHub outputs with audit-event records and limits.
+
 - [`tools/inspect_package.py`](tools/inspect_package.py) reads an exact npm (`name@1.2.3`), PyPI (`name==1.2.3`), or GitHub (`owner/repo@<commit>`) artifact into memory. It checks the published digest and lists files, install-time scripts, workflows, agent and MCP files, URL leads, and release age. It runs nothing and writes nothing to disk.
 - [`tools/render_report.py`](tools/render_report.py) turns a filled copy of [`tools/report-skeleton.json`](tools/report-skeleton.json) into `report.html` and `report.md`. It validates the data against [`tools/report-schema.json`](tools/report-schema.json), refuses unfilled placeholders, escapes text taken from the target, and redacts common secret patterns.
 

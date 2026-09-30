@@ -1,0 +1,50 @@
+{
+  "tool_ref": "8df0093b3ab27d3b57ff52fba006df92f6dcffd1",
+  "tool_path": "tools/inspect_package.py",
+  "tool_sha256": "cbbec7e1a6b0ad2f28eb68d2604c14a7971ebf2fe0f986e69fc065b7b7046818",
+  "method": "Python -B with sys.addaudithook before runpy.run_path of the reviewed inspector. Shell redirects save the JSON outside the inspector process; inspected artifacts stay in memory. This observes Python write-type events, not all OS activity and not a sandbox. No package code is executed.",
+  "runs": [
+    {
+      "target": "esbuild@0.24.0",
+      "output": "npm-esbuild.json",
+      "output_sha256": "b5a2d63186f97c552b7f0a704aa8aa0efbd6ca1b4bed30bf55277738b902fa31",
+      "fetched_at": "2026-09-30T11:27:15Z",
+      "artifact_sha256": "560a4648a49ad95e2042ca32438ce40325e9aa547dda6fcc8092adff737a0de5",
+      "python_write_events": 0,
+      "dns_hosts": [
+        "registry.npmjs.org"
+      ]
+    },
+    {
+      "target": "six==1.16.0",
+      "output": "pypi-six.json",
+      "output_sha256": "84af7770ae6a96fdb99b3582222a60d00b2060bb4946666c590dad3935e852a5",
+      "fetched_at": "2026-09-30T11:27:15Z",
+      "artifact_sha256": "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
+      "python_write_events": 0,
+      "dns_hosts": [
+        "files.pythonhosted.org",
+        "pypi.org"
+      ]
+    },
+    {
+      "target": "nobrainer-tech/nobrainer-tech-flow@bec696ff199bd1ad79524d7d3e2bffce3d28e796",
+      "output": "github-flow.json",
+      "output_sha256": "c90ba179862d3a0c5f74e9bae640873af88631a7dba771afc73e48a39fe675e4",
+      "fetched_at": "2026-09-30T11:27:15Z",
+      "artifact_sha256": "0f50bd559b2cbcd468a2e94d60fa1e6090a701925807da06b32b8add74ebadaf",
+      "python_write_events": 0,
+      "dns_hosts": [
+        "api.github.com",
+        "codeload.github.com"
+      ]
+    }
+  ],
+  "scope_limits": [
+    "No malware verdict.",
+    "Dependencies, binaries and nested archives are not analysed.",
+    "Registry digests verify byte consistency, not publisher trust.",
+    "GitHub archive identity is a commit header match, not an upstream published digest.",
+    "Age is recency evidence only; Git commit dates are weak evidence."
+  ]
+}
