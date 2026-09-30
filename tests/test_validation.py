@@ -48,8 +48,12 @@ class ActualReviewReportTests(unittest.TestCase):
         readme = (ROOT.parent / "README.md").read_text()
         self.assertIn("full filesystem path", readme)
         self.assertIn("registered this whole repository as a skill", readme)
-        self.assertIn("<skill-repository commit>", readme)
-        self.assertIn("<target exact ref>", readme)
+        prompt = readme.split("```text\n", 1)[1].split("```", 1)[0]
+        self.assertIn("https://github.com/nobrainer-tech/nobrainer-security", prompt)
+        self.assertIn("https://github.com/nobrainer-tech/nobrainer-tech-flow", prompt)
+        self.assertNotRegex(prompt, r"\b[0-9a-f]{40}\b")
+        self.assertIn("Record the checked-out revision before using it", prompt)
+        self.assertIn("Resolve its exact revision or digest before reviewing it", prompt)
 
     def test_workflow_names_social_engineering_and_sensitive_data_paths(self):
         workflow = (ROOT.parent / "WORKFLOW.md").read_text().lower()
