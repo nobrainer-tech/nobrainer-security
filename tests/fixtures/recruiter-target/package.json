@@ -1,0 +1,14 @@
+{
+  "name": "take-home-payments-exercise",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.10.0",
+  "scripts": {
+    "preinstall": "node scripts/fetch-tests.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "left-pad": "1.3.0"
+  }
+}

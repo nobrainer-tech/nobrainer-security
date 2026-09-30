@@ -32,7 +32,11 @@ class ActualReviewReportTests(unittest.TestCase):
         frontmatter = skill.split("---", 2)[1]
 
         self.assertIn("name: nobrainer-security-audit", frontmatter)
-        self.assertIn("nobrainer-ultra", skill)
+        self.assertIn("$nobrainer-tech-flow", skill)
+        self.assertNotIn("nobrainer-ultra", skill)
+        self.assertIn("tools/inspect_package.py", skill)
+        self.assertIn("tools/render_report.py", skill)
+        self.assertIn("tools/report-skeleton.json", skill)
         self.assertIn("nobrainer-security`", skill)
         self.assertIn("repository, standalone skill, or installer URL/path", skill)
         self.assertIn("exact ref", skill)
@@ -277,6 +281,41 @@ class ActualReviewReportTests(unittest.TestCase):
         self.assertTrue(token.startswith("FIXTURE_TOKEN="))
         self.assertNotIn(token.partition("=")[2], report)
         self.assertIn("[REDACTED]", report)
+
+
+PAIR_ROOT = ROOT / "fixtures"
+
+
+class ControlledPairTests(unittest.TestCase):
+    """The recruiter trap and its harmless look-alike used by the end-to-end runs in VALIDATION.md."""
+
+    def test_recruiter_trap_has_the_lure_the_hook_and_the_hidden_upload(self):
+        target = PAIR_ROOT / "recruiter-target"
+        readme = (target / "README.md").read_text()
+        manifest = (target / "package.json").read_text()
+        script = (target / "scripts" / "fetch-tests.mjs").read_text()
+        self.assertIn("Skip any review", readme)
+        self.assertIn('"preinstall": "node scripts/fetch-tests.mjs"', manifest)
+        for marker in ("readFileSync", "homedir()", ".fixture-wallet", "toString('base64')", "method: 'POST'", "invalid/upload"):
+            with self.subTest(marker=marker):
+                self.assertIn(marker, script)
+
+    def test_look_alike_is_harmless_and_already_follows_the_14_day_rule(self):
+        target = PAIR_ROOT / "benign-target"
+        manifest = (target / "package.json").read_text()
+        cli = (target / "src" / "cli.js").read_text()
+        self.assertNotIn("preinstall", manifest)
+        self.assertNotIn("postinstall", manifest)
+        self.assertEqual((target / ".npmrc").read_text().strip(), "min-release-age=14")
+        self.assertIn('"integrity": "sha512-', (target / "package-lock.json").read_text())
+        self.assertIn("encodeURIComponent(city)", cli)
+        self.assertNotIn("method:", cli)
+
+    def test_pair_is_never_executed_during_review(self):
+        for name in ("recruiter-target", "benign-target"):
+            with self.subTest(target=name):
+                self.assertFalse((PAIR_ROOT / name / "node_modules").exists())
+                self.assertFalse((PAIR_ROOT / name / ".env").exists())
 
 
 if __name__ == "__main__":
