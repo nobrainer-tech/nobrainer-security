@@ -65,7 +65,7 @@ The [14-day dependency-age policy](dependency-age-policy.md) is the standard rec
 | [tools/](tools/) | Package inspector, report renderer, data contract, and skeleton |
 | [EXAMPLES.md](EXAMPLES.md), [VALIDATION.md](VALIDATION.md) | Controlled examples and how the workflow was tested |
 | [PROVENANCE.md](PROVENANCE.md) | Earlier work and sources |
-| [site/](site/README.md) | Source of nobrainer.tech/security |
+| [tests/](tests/) | Tests, controlled fixtures, and the approved example report |
 
 ## Go deeper
 

@@ -23,8 +23,8 @@ sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parent.parent
 TOOL = ROOT / "tools" / "render_report.py"
 FIXTURE = ROOT / "tests" / "fixtures" / "controlled-report.json"
-EXAMPLE_HTML = ROOT / "site" / "security-report-example.html"
-EXAMPLE_MD = ROOT / "site" / "security-report-example.md"
+EXAMPLE_HTML = ROOT / "tests" / "fixtures" / "approved-example-report.html"
+EXAMPLE_MD = ROOT / "tests" / "fixtures" / "approved-example-report.md"
 
 _spec = importlib.util.spec_from_file_location("render_report", TOOL)
 rr = importlib.util.module_from_spec(_spec)

@@ -1337,9 +1337,10 @@ def main(argv=None):
 
 # ------------------------------------------------ embedded presentation assets
 # CSS_MAIN, CSS_TOOLS and the base of JS_APP are the approved report design taken from
-# site/security-report-example.html; CSS_EXTRA styles the elements the example does not
-# have (excerpts, plain evidence chips, dependency assessments). The fix prompt is built
-# in Python and shipped in the data block instead of being assembled in the browser.
+# tests/fixtures/approved-example-report.html, published as
+# https://nobrainer.tech/security/security-report-example.html. CSS_EXTRA styles the elements
+# the example does not have (excerpts, plain evidence chips, dependency assessments). The fix
+# prompt is built in Python and shipped in the data block instead of being assembled in the browser.
 
 CSS_MAIN = r'''
     :root {
