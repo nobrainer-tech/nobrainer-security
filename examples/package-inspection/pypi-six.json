@@ -1,0 +1,376 @@
+{
+  "tool": {
+    "name": "nobrainer-security inspect_package",
+    "schema": "nobrainer-security.inspect-package/2"
+  },
+  "result": {
+    "status": "OK",
+    "reasons": [],
+    "exit_code": 0
+  },
+  "target": {
+    "ecosystem": "pypi",
+    "input": "six==1.16.0",
+    "name": "six",
+    "version": "1.16.0",
+    "exact_pin": true
+  },
+  "source": {
+    "metadata_urls": [
+      "https://pypi.org/pypi/six/1.16.0/json"
+    ],
+    "artifact_url": "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
+  },
+  "fetch": {
+    "fetched_at": "2026-09-30T11:27:15Z",
+    "memory_only": true,
+    "requests": [
+      {
+        "purpose": "PyPI release metadata",
+        "url": "https://pypi.org/pypi/six/1.16.0/json",
+        "bytes": 4048
+      },
+      {
+        "purpose": "artifact download (memory only)",
+        "url": "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz",
+        "bytes": 34041
+      }
+    ],
+    "download_cap_bytes": 52428800
+  },
+  "artifact": {
+    "filename": "six-1.16.0.tar.gz",
+    "size_bytes": 34041,
+    "sha256": "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+  },
+  "integrity": {
+    "status": "VERIFIED",
+    "checks": [
+      {
+        "source": "urls[].digests.sha256",
+        "algorithm": "sha256",
+        "expected": "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
+        "actual": "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
+        "match": true
+      }
+    ]
+  },
+  "identity": [],
+  "release_age": {
+    "status": "ESTABLISHED",
+    "policy_days": 14,
+    "published_at": "2021-05-05T14:18:18Z",
+    "source": "PyPI upload_time_iso_8601 of six-1.16.0.tar.gz",
+    "age_days": 1973.88,
+    "younger_than_policy": false,
+    "reliability": "registry metadata"
+  },
+  "inventory": {
+    "format": "tar.gz",
+    "root_prefix": "six-1.16.0/",
+    "complete": true,
+    "truncated": [],
+    "errors": [],
+    "entry_count": 19,
+    "types": {
+      "dir": 3,
+      "file": 16
+    },
+    "kinds": {
+      "text": 16
+    },
+    "uncompressed_bytes_read": 174080,
+    "entries": [
+      {
+        "path": "six-1.16.0",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "six-1.16.0/CHANGES",
+        "type": "file",
+        "size": 9261,
+        "kind": "text",
+        "sha256": "1de9fd91b9e597adc743dc2361ba9db4de81c7bc120e0b759d3cfc2353ee87bd"
+      },
+      {
+        "path": "six-1.16.0/LICENSE",
+        "type": "file",
+        "size": 1066,
+        "kind": "text",
+        "sha256": "8bb850c565aa389fdc16f3a46965ad23d82adff60f2393fc2762b63185e8e6c9"
+      },
+      {
+        "path": "six-1.16.0/MANIFEST.in",
+        "type": "file",
+        "size": 114,
+        "kind": "text",
+        "sha256": "e18c7205486527268826a438e7efa721d330d77956f8bfff28b212ddafd7f3d9"
+      },
+      {
+        "path": "six-1.16.0/PKG-INFO",
+        "type": "file",
+        "size": 2038,
+        "kind": "text",
+        "sha256": "355443ab25bb9df55cc623a4255dcba1e8c25566c0ba300edf36d083fb1a5fc1"
+      },
+      {
+        "path": "six-1.16.0/README.rst",
+        "type": "file",
+        "size": 1178,
+        "kind": "text",
+        "sha256": "2d938a85edf316fa4cf35f2b671fb55017c92c0651c290eb8f29ea890db325be"
+      },
+      {
+        "path": "six-1.16.0/documentation",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "six-1.16.0/documentation/Makefile",
+        "type": "file",
+        "size": 4578,
+        "kind": "text",
+        "sha256": "43187a18a0486a0c5c60e411a5e492d1726b8e914b2e89363d70af41d1aee346"
+      },
+      {
+        "path": "six-1.16.0/documentation/conf.py",
+        "type": "file",
+        "size": 7015,
+        "kind": "text",
+        "sha256": "cc4810f8ee93faddcae36e03d1679628de82c23f0aa1010da1b272be46114c12"
+      },
+      {
+        "path": "six-1.16.0/documentation/index.rst",
+        "type": "file",
+        "size": 39501,
+        "kind": "text",
+        "sha256": "e3f68f97b7991ebc6ae3399c0112d8e4d9c82bd25a306e8ed3eff3bcb4358bc0"
+      },
+      {
+        "path": "six-1.16.0/setup.cfg",
+        "type": "file",
+        "size": 317,
+        "kind": "text",
+        "sha256": "1b538c49d370b0420331e0e98cc417fd72be0adb1a4d3e23fc618fac450998bf"
+      },
+      {
+        "path": "six-1.16.0/setup.py",
+        "type": "file",
+        "size": 2294,
+        "kind": "text",
+        "sha256": "477ec1a08611fcc43cd61f80b3af550e938b761fde85d66cf6a2cf5c959655d0"
+      },
+      {
+        "path": "six-1.16.0/six.egg-info",
+        "type": "dir",
+        "size": 0,
+        "kind": null,
+        "sha256": null
+      },
+      {
+        "path": "six-1.16.0/six.egg-info/PKG-INFO",
+        "type": "file",
+        "size": 2038,
+        "kind": "text",
+        "sha256": "355443ab25bb9df55cc623a4255dcba1e8c25566c0ba300edf36d083fb1a5fc1"
+      },
+      {
+        "path": "six-1.16.0/six.egg-info/SOURCES.txt",
+        "type": "file",
+        "size": 253,
+        "kind": "text",
+        "sha256": "0e5cf78d9cf118b109b87e8640636cebaedaa7bdc22a3be9fd6fcbe8ea43dc8e"
+      },
+      {
+        "path": "six-1.16.0/six.egg-info/dependency_links.txt",
+        "type": "file",
+        "size": 1,
+        "kind": "text",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "path": "six-1.16.0/six.egg-info/top_level.txt",
+        "type": "file",
+        "size": 4,
+        "kind": "text",
+        "sha256": "fe2547fe2604b445e70fc9d819062960552f9145bdb043b51986e478a4806a2b"
+      },
+      {
+        "path": "six-1.16.0/six.py",
+        "type": "file",
+        "size": 34549,
+        "kind": "text",
+        "sha256": "4ce39f422ee71467ccac8bed76beb05f8c321c7f0ceda9279ae2dfa3670106b3"
+      },
+      {
+        "path": "six-1.16.0/test_six.py",
+        "type": "file",
+        "size": 30094,
+        "kind": "text",
+        "sha256": "c5dd3ebd71e635159157e5030ac9b22ad7ae610d5143773dbd00170110f2535e"
+      }
+    ]
+  },
+  "flags": [
+    {
+      "code": "build_hook",
+      "path": "six-1.16.0/setup.py",
+      "line": null,
+      "detail": "setup.py runs on the installing machine when this source distribution is built"
+    }
+  ],
+  "flag_summary": {
+    "build_hook": 1
+  },
+  "install_evidence": {
+    "npm_manifest": null,
+    "python_build": {
+      "setup.py": {
+        "path": "six-1.16.0/setup.py",
+        "size": 2294,
+        "sha256": "477ec1a08611fcc43cd61f80b3af550e938b761fde85d66cf6a2cf5c959655d0"
+      }
+    },
+    "ci_workflows": [],
+    "agent_and_hook_files": []
+  },
+  "network_literals": {
+    "urls": [
+      {
+        "url": "http://werkzeug.pocoo.org/docs/datastructures/#werkzeug.datastructures.MultiDict",
+        "host": "werkzeug.pocoo.org",
+        "count": 1,
+        "first_seen": [
+          "six-1.16.0/documentation/index.rst:207"
+        ]
+      },
+      {
+        "url": "https://docs.python.org/2/",
+        "host": "docs.python.org",
+        "count": 1,
+        "first_seen": [
+          "six-1.16.0/documentation/conf.py:216"
+        ]
+      },
+      {
+        "url": "https://docs.python.org/3/",
+        "host": "docs.python.org",
+        "count": 1,
+        "first_seen": [
+          "six-1.16.0/documentation/conf.py:217"
+        ]
+      },
+      {
+        "url": "https://github.com/benjaminp/six",
+        "host": "github.com",
+        "count": 7,
+        "first_seen": [
+          "six-1.16.0/PKG-INFO:5",
+          "six-1.16.0/PKG-INFO:36",
+          "six-1.16.0/README.rst:28"
+        ]
+      },
+      {
+        "url": "https://github.com/benjaminp/six/blob/master/LICENSE",
+        "host": "github.com",
+        "count": 3,
+        "first_seen": [
+          "six-1.16.0/PKG-INFO:22",
+          "six-1.16.0/README.rst:14",
+          "six-1.16.0/six.egg-info/PKG-INFO:22"
+        ]
+      },
+      {
+        "url": "https://github.com/benjaminp/six/issues/259",
+        "host": "github.com",
+        "count": 1,
+        "first_seen": [
+          "six-1.16.0/test_six.py:901"
+        ]
+      },
+      {
+        "url": "https://img.shields.io/badge/license-MIT-green.svg",
+        "host": "img.shields.io",
+        "count": 3,
+        "first_seen": [
+          "six-1.16.0/PKG-INFO:21",
+          "six-1.16.0/README.rst:13",
+          "six-1.16.0/six.egg-info/PKG-INFO:21"
+        ]
+      },
+      {
+        "url": "https://img.shields.io/pypi/v/six.svg",
+        "host": "img.shields.io",
+        "count": 3,
+        "first_seen": [
+          "six-1.16.0/PKG-INFO:9",
+          "six-1.16.0/README.rst:1",
+          "six-1.16.0/six.egg-info/PKG-INFO:9"
+        ]
+      },
+      {
+        "url": "https://pypi.org/project/six/",
+        "host": "pypi.org",
+        "count": 4,
+        "first_seen": [
+          "six-1.16.0/PKG-INFO:10",
+          "six-1.16.0/README.rst:2",
+          "six-1.16.0/documentation/index.rst:16"
+        ]
+      },
+      {
+        "url": "https://readthedocs.org/projects/six/badge/?version=latest",
+        "host": "readthedocs.org",
+        "count": 3,
+        "first_seen": [
+          "six-1.16.0/PKG-INFO:17",
+          "six-1.16.0/README.rst:9",
+          "six-1.16.0/six.egg-info/PKG-INFO:17"
+        ]
+      },
+      {
+        "url": "https://six.readthedocs.io/",
+        "host": "six.readthedocs.io",
+        "count": 6,
+        "first_seen": [
+          "six-1.16.0/PKG-INFO:18",
+          "six-1.16.0/PKG-INFO:34",
+          "six-1.16.0/README.rst:10"
+        ]
+      },
+      {
+        "url": "https://travis-ci.org/benjaminp/six",
+        "host": "travis-ci.org",
+        "count": 3,
+        "first_seen": [
+          "six-1.16.0/PKG-INFO:14",
+          "six-1.16.0/README.rst:6",
+          "six-1.16.0/six.egg-info/PKG-INFO:14"
+        ]
+      },
+      {
+        "url": "https://travis-ci.org/benjaminp/six.svg?branch=master",
+        "host": "travis-ci.org",
+        "count": 3,
+        "first_seen": [
+          "six-1.16.0/PKG-INFO:13",
+          "six-1.16.0/README.rst:5",
+          "six-1.16.0/six.egg-info/PKG-INFO:13"
+        ]
+      }
+    ],
+    "ips": []
+  },
+  "limits": [
+    "Static inventory only: nothing was executed, installed, imported, extracted or written to disk. Not a malware verdict; a clean result does not show the package is safe.",
+    "Flags, URLs and IPs are leads for a reviewer, not proof. Only IPv4 literals are searched, in the first 1 MiB of each text file.",
+    "Dependencies are listed from manifests, not fetched. Binaries and nested archives are hashed and flagged, not analysed.",
+    "Release age is recency evidence only (14-day rule): an older release is not thereby safe, and a cooldown can delay an urgent security fix.",
+    "The sha256 comes from the same PyPI response as the file URL: it catches corruption, not a malicious publisher or a compromised index."
+  ]
+}
