@@ -1,0 +1,749 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NoBrainer Security report data",
+  "description": "Contract between a completed read-only NoBrainer Security review and tools/render_report.py. Every string comes from a reviewed target or from a review of it, so it is treated as untrusted: the renderer escapes it, never passes raw HTML or Markdown through and redacts obvious secrets. Plain-text fields may use two inline marks only: backtick code spans and double-asterisk bold. Line breaks in single-line fields are collapsed to spaces. Fields marked x-multiline (excerpts) keep their line breaks and render as code. The contract is a subset of JSON Schema 2020-12 (type, enum, const, pattern, min/max limits, items, properties, required, additionalProperties, $ref, format http-url and date); render_report.py validates against this file, so the file is the single source of truth. The cross-field rules in x-rules are enforced by the renderer as well.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "title",
+    "review",
+    "mode",
+    "flow",
+    "target",
+    "authority",
+    "scope",
+    "status",
+    "activity",
+    "decision_brief",
+    "surface_review",
+    "findings",
+    "rejected_candidates",
+    "dependency_age",
+    "checks_run",
+    "limits",
+    "sources",
+    "owner_gates",
+    "next_steps"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Contract version. Only 1.0 exists.",
+      "const": "1.0"
+    },
+    "title": {
+      "description": "Report title. Becomes the Markdown H1 and the HTML page title.",
+      "$ref": "#/$defs/label"
+    },
+    "presentation": {
+      "description": "Optional wording that frames the report. Nothing here changes findings or status.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "example": {
+          "description": "True labels the report as an example (masthead, provenance heading).",
+          "type": "boolean"
+        },
+        "banner": {
+          "description": "Banner shown above the report in HTML and Markdown, for example 'Controlled example · Synthetic fixture · Static review only'.",
+          "$ref": "#/$defs/label"
+        },
+        "page_title": {
+          "description": "HTML page title (browser tab). Defaults to the report title.",
+          "$ref": "#/$defs/label"
+        },
+        "footer_mark": {
+          "description": "Left footer line.",
+          "$ref": "#/$defs/label"
+        },
+        "footer_note": {
+          "description": "Right footer line; the review date is added below it.",
+          "$ref": "#/$defs/label"
+        }
+      }
+    },
+    "review": {
+      "description": "Who reviewed and when (REPORT-TEMPLATE: review date / reviewer).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["date", "reviewer"],
+      "properties": {
+        "date": {
+          "description": "Review date, YYYY-MM-DD.",
+          "type": "string",
+          "format": "date"
+        },
+        "reviewer": {
+          "$ref": "#/$defs/label"
+        }
+      }
+    },
+    "mode": {
+      "description": "Authority mode. This workflow only produces READ_ONLY reviews: no target code executed or installed, no target files changed.",
+      "const": "READ_ONLY"
+    },
+    "flow": {
+      "description": "NoBrainer.Tech Flow used for the review (REPORT-TEMPLATE: Flow source and exact revision, Flow security mode).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "ref", "security_mode"],
+      "properties": {
+        "source": {
+          "description": "Where Flow came from, for example a repository URL or a local checkout name.",
+          "$ref": "#/$defs/text"
+        },
+        "ref": {
+          "description": "Exact Flow revision (commit SHA or release). Null only when unknown; then ref_note is required.",
+          "type": ["string", "null"],
+          "maxLength": 200
+        },
+        "ref_note": {
+          "description": "Caveats about the ref, for example a dirty working tree.",
+          "$ref": "#/$defs/text"
+        },
+        "security_mode": {
+          "type": "string",
+          "enum": ["THREAT_MODEL", "SECURITY_REVIEW", "SUPPLY_CHAIN", "RELEASE_GATE"]
+        }
+      }
+    },
+    "target": {
+      "description": "Identity of the reviewed target (REPORT-TEMPLATE: target URL and exact revision, local modifications).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "label", "location", "ref", "local_modifications"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["repository", "skill", "installer", "package", "fixture", "other"]
+        },
+        "label": {
+          "description": "Short display name, shown in the report header.",
+          "$ref": "#/$defs/label"
+        },
+        "location": {
+          "description": "Repository, skill or installer URL or local path. Null when not applicable.",
+          "type": ["string", "null"],
+          "maxLength": 500
+        },
+        "ref": {
+          "description": "Exact commit SHA, tag or version that was reviewed. Null when none exists; then ref_note is required.",
+          "type": ["string", "null"],
+          "maxLength": 200
+        },
+        "ref_note": {
+          "description": "Why the ref is missing or what it does not cover.",
+          "$ref": "#/$defs/text"
+        },
+        "digest": {
+          "description": "Artifact digest when available, for example sha256:<hex>.",
+          "type": ["string", "null"],
+          "maxLength": 300
+        },
+        "local_modifications": {
+          "description": "Uncommitted or dirty paths included in the review, NONE, or UNKNOWN.",
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "authority": {
+      "description": "Data handling and authority limits (REPORT-TEMPLATE: data classification, write/execution/live-test authority).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["data_classification", "write_execution"],
+      "properties": {
+        "data_classification": {
+          "description": "Data classification and approved disclosure destinations.",
+          "$ref": "#/$defs/text"
+        },
+        "write_execution": {
+          "description": "Write, execution and live-test authority that was actually granted and used.",
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "scope": {
+      "description": "What was reviewed and what was not.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewed", "excluded", "boundary"],
+      "properties": {
+        "headline": {
+          "description": "Optional section heading. Defaults to '<N> paths reviewed. Everything else out of scope.'.",
+          "$ref": "#/$defs/label"
+        },
+        "reviewed": {
+          "description": "Reviewed files and components, paths relative to the target root.",
+          "type": "array",
+          "maxItems": 200,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path"],
+            "properties": {
+              "path": {
+                "$ref": "#/$defs/relpath"
+              },
+              "note": {
+                "$ref": "#/$defs/label"
+              }
+            }
+          }
+        },
+        "excluded": {
+          "description": "Excluded or skipped surfaces with the reason. Shown as 'Not assessed'.",
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "boundary": {
+          "description": "Scope boundary statement, including that whole-disk, whole-home and whole-system scans were NOT_PERFORMED.",
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "source_snapshot": {
+      "description": "Public source anchor used to build evidence links. Links follow GitHub conventions: <repo_url>/blob/<commit>/<root>/<path>#L<start>-L<end> and <repo_url>/tree/<commit>/<root>. Without it, evidence is shown as plain text.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repo_url", "commit"],
+      "properties": {
+        "repo_url": {
+          "description": "https URL of the repository, without query or fragment.",
+          "$ref": "#/$defs/httpUrl"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{7,64}$"
+        },
+        "root": {
+          "description": "Subdirectory of the repository that is the target root. Empty or omitted for the repository root.",
+          "type": "string",
+          "maxLength": 300
+        },
+        "note": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "status": {
+      "description": "Result. A scoped result never proves the target safe.",
+      "type": "string",
+      "enum": ["FINDINGS", "NO_FINDINGS_IN_REVIEWED_SCOPE", "PARTIAL", "BLOCKED"]
+    },
+    "activity": {
+      "description": "What actually ran during the review.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["execution", "network"],
+      "properties": {
+        "execution": {
+          "$ref": "#/$defs/activityItem"
+        },
+        "network": {
+          "$ref": "#/$defs/activityItem"
+        }
+      }
+    },
+    "decision_brief": {
+      "description": "The short answer a reader needs first.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lede", "summary_title", "summary", "result_meaning"],
+      "properties": {
+        "headline": {
+          "description": "Optional page headline. Derived from status and finding count when omitted (for example 'Two issues to review.').",
+          "$ref": "#/$defs/label"
+        },
+        "headline_accent": {
+          "description": "Optional second headline line. Derived when omitted (for example 'No target code was run.').",
+          "$ref": "#/$defs/label"
+        },
+        "lede": {
+          "description": "One or two sentences under the headline.",
+          "$ref": "#/$defs/text"
+        },
+        "summary_title": {
+          "$ref": "#/$defs/label"
+        },
+        "summary": {
+          "description": "Paragraphs explaining what the review found.",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "result_meaning": {
+          "description": "Paragraphs stating what the result means for this exact scope. Never call a partial review clean or the target safe.",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    },
+    "assets_and_boundaries": {
+      "description": "Optional threat-model notes shown in the Markdown report.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "assets": {
+          "type": "array",
+          "maxItems": 30,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "boundaries": {
+          "type": "array",
+          "maxItems": 30,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "untrusted_inputs": {
+          "type": "array",
+          "maxItems": 30,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    },
+    "surface_review": {
+      "description": "One row per required surface from REPORT-TEMPLATE. The four required surfaces must each appear once; record NOT_PRESENT, NOT_ASSESSED or BLOCKED with a reason instead of leaving one out.",
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["surface", "status", "summary"],
+        "properties": {
+          "surface": {
+            "$ref": "#/$defs/surface"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["REVIEWED", "NOT_PRESENT", "NOT_ASSESSED", "BLOCKED"]
+          },
+          "summary": {
+            "$ref": "#/$defs/text"
+          },
+          "details": {
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        }
+      }
+    },
+    "findings": {
+      "description": "Every finding the review considered. accepted=true means a supported, actionable finding: it is counted, listed in HTML and Markdown, and is the only kind that can enter the fix request. accepted=false records a finding that was reviewed and not accepted; it is shown with the rejected candidates.",
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "$ref": "#/$defs/finding"
+      }
+    },
+    "rejected_candidates": {
+      "description": "Investigated candidates that never became findings. Omit scanner noise that was not investigated.",
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "verdict", "category", "reason"],
+        "properties": {
+          "title": {
+            "$ref": "#/$defs/label"
+          },
+          "verdict": {
+            "type": "string",
+            "enum": ["REJECTED", "NOT_ESTABLISHED"]
+          },
+          "category": {
+            "description": "Short reason class, for example 'False positive', 'Delivery' or 'Authority'.",
+            "$ref": "#/$defs/label"
+          },
+          "reason": {
+            "description": "Benign explanation or effective guard, and the evidence for rejecting it. Shown in HTML and Markdown.",
+            "$ref": "#/$defs/text"
+          },
+          "detail": {
+            "description": "Longer technical detail (function names, decoded literals). Markdown only.",
+            "$ref": "#/$defs/text"
+          },
+          "evidence": {
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "$ref": "#/$defs/evidence"
+            }
+          }
+        }
+      }
+    },
+    "dependency_age": {
+      "description": "Assessment of the 14-day release-age recommendation from dependency-age-policy.md. Required in every report; the status describes evidence for this control only and is not a safety score.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "summary"],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/depStatus"
+        },
+        "summary": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "policy_url": {
+          "description": "Link explaining what the statuses mean.",
+          "$ref": "#/$defs/httpUrl"
+        },
+        "assessments": {
+          "description": "One entry per package manager and configuration scope. Required for every status except NOT_APPLICABLE and NOT_ASSESSED.",
+          "type": "array",
+          "maxItems": 30,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["package_manager", "version", "config_source", "scope", "status"],
+            "properties": {
+              "package_manager": {
+                "$ref": "#/$defs/label"
+              },
+              "version": {
+                "description": "Exact manager version, or UNKNOWN.",
+                "$ref": "#/$defs/label"
+              },
+              "config_source": {
+                "description": "File or setting that supplies the window, with authentication values omitted.",
+                "$ref": "#/$defs/text"
+              },
+              "scope": {
+                "description": "project, user, global, CI, registry or other, with precedence when known.",
+                "$ref": "#/$defs/text"
+              },
+              "status": {
+                "$ref": "#/$defs/depStatus"
+              },
+              "window": {
+                "description": "Requested or effective release age with units.",
+                "$ref": "#/$defs/label"
+              },
+              "limits": {
+                "description": "Exceptions, overrides, non-registry sources, missing publication times, security-fix delay.",
+                "$ref": "#/$defs/text"
+              }
+            }
+          }
+        }
+      }
+    },
+    "checks_run": {
+      "description": "Files and traces inspected, commands or tests actually run and their outcome. An empty list means nothing was run.",
+      "type": "array",
+      "maxItems": 50,
+      "items": {
+        "$ref": "#/$defs/text"
+      }
+    },
+    "limits": {
+      "description": "Unknowns, unreviewed areas and blocked checks. Also shown under 'Not assessed'. Required (non-empty) for PARTIAL and BLOCKED.",
+      "type": "array",
+      "maxItems": 50,
+      "items": {
+        "$ref": "#/$defs/text"
+      }
+    },
+    "sources": {
+      "description": "Primary sources and provenance for the report.",
+      "type": "array",
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "text"],
+        "properties": {
+          "title": {
+            "$ref": "#/$defs/label"
+          },
+          "url": {
+            "$ref": "#/$defs/httpUrl"
+          },
+          "url_label": {
+            "description": "Link text. Defaults to the URL.",
+            "$ref": "#/$defs/label"
+          },
+          "text": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    },
+    "sensitive_data_omitted": {
+      "description": "What was deliberately left out of the report (values, personal content).",
+      "$ref": "#/$defs/text"
+    },
+    "owner_gates": {
+      "description": "Actions that need separate owner authority before anyone takes them.",
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "$ref": "#/$defs/text"
+      }
+    },
+    "next_steps": {
+      "description": "Recommended next actions. A report recommends; it does not authorize.",
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "text"],
+        "properties": {
+          "title": {
+            "$ref": "#/$defs/label"
+          },
+          "text": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    },
+    "fix_request": {
+      "description": "Optional narrowing input for the NoBrainer.Tech Flow fix request. The request always contains accepted findings only, forbids running target code and grants nothing by itself. These notes may only narrow it.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "panel_note": {
+          "description": "One sentence shown in the HTML fix panel.",
+          "$ref": "#/$defs/text"
+        },
+        "scope_notes": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "allowed_paths": {
+          "description": "Paths the fix may edit. When empty, edits stay at the locations of the accepted findings.",
+          "type": "array",
+          "maxItems": 50,
+          "items": {
+            "$ref": "#/$defs/relpath"
+          }
+        },
+        "extra_constraints": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "label": {
+      "description": "Short single-line text.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "text": {
+      "description": "Single-line text, up to 2000 characters, with optional backtick code spans and double-asterisk bold.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "relpath": {
+      "description": "Path relative to the target root: no leading slash, no .. segment, no backslash.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300,
+      "format": "relative-path"
+    },
+    "httpUrl": {
+      "description": "http or https URL without credentials, whitespace or control characters.",
+      "type": "string",
+      "maxLength": 2048,
+      "format": "http-url"
+    },
+    "surface": {
+      "description": "Reviewed surface. The first four rows are required in surface_review.",
+      "type": "string",
+      "enum": [
+        "social_engineering",
+        "credential_personal_files",
+        "egress",
+        "agent_tools_hooks_ci",
+        "installer_lifecycle",
+        "dependencies"
+      ]
+    },
+    "depStatus": {
+      "type": "string",
+      "enum": [
+        "NOT_APPLICABLE",
+        "NEEDS_SETUP",
+        "CONFIGURATION_OBSERVED",
+        "ENFORCEMENT_VERIFIED",
+        "UNSUPPORTED",
+        "NOT_ASSESSED"
+      ]
+    },
+    "activityItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["NONE", "PERFORMED", "NOT_ASSESSED"]
+        },
+        "note": {
+          "$ref": "#/$defs/label"
+        }
+      }
+    },
+    "evidence": {
+      "description": "One piece of evidence: a location in the target and, optionally, a short excerpt. Excerpts are redacted for secret patterns and rendered as code only.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path"],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/relpath"
+        },
+        "line_start": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000000
+        },
+        "line_end": {
+          "description": "Requires line_start and must not be smaller than it.",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000000
+        },
+        "label": {
+          "description": "Short display label for the evidence chip. Defaults to the file name.",
+          "$ref": "#/$defs/label"
+        },
+        "excerpt": {
+          "description": "Short excerpt, at most 20 lines and 1500 characters. Never include real secret values.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1500,
+          "x-multiline": true
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "severity", "confidence", "accepted", "surface", "location", "trace", "evidence"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,31}$"
+        },
+        "title": {
+          "$ref": "#/$defs/label"
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["Critical", "High", "Medium", "Low", "Informational"]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["High", "Medium", "Low"]
+        },
+        "confidence_note": {
+          "description": "Qualifies the confidence, for example 'for the coded path, no claim of delivery'.",
+          "$ref": "#/$defs/label"
+        },
+        "accepted": {
+          "description": "True for a supported, actionable finding. False requires rejection_reason.",
+          "type": "boolean"
+        },
+        "surface": {
+          "$ref": "#/$defs/surface"
+        },
+        "location": {
+          "description": "Exact location or trust boundary.",
+          "$ref": "#/$defs/text"
+        },
+        "trace": {
+          "description": "Input-to-impact trace through the reachable path. Shown as 'Observed path' in HTML.",
+          "$ref": "#/$defs/text"
+        },
+        "trigger": {
+          "description": "Trigger and realistic preconditions. Required when accepted.",
+          "$ref": "#/$defs/text"
+        },
+        "existing_control": {
+          "description": "Existing control and why it fails here. Required when accepted.",
+          "$ref": "#/$defs/text"
+        },
+        "impact": {
+          "description": "Affected asset and observable impact.",
+          "$ref": "#/$defs/text"
+        },
+        "evidence_boundary": {
+          "description": "What the evidence does not establish, for example delivery or runtime effect.",
+          "$ref": "#/$defs/text"
+        },
+        "evidence_summary": {
+          "description": "How the finding was established and what was not run. Required when accepted.",
+          "$ref": "#/$defs/text"
+        },
+        "evidence": {
+          "description": "Evidence locations. At least one when accepted.",
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "fix_guidance": {
+          "description": "Smallest fix or containment proposal. Required when accepted.",
+          "$ref": "#/$defs/text"
+        },
+        "required_verification": {
+          "description": "Verification and responsible owner before the fix counts. Required when accepted.",
+          "$ref": "#/$defs/text"
+        },
+        "rejection_reason": {
+          "description": "Why the finding was not accepted. Required when accepted is false.",
+          "$ref": "#/$defs/text"
+        }
+      }
+    }
+  },
+  "x-rules": [
+    "status FINDINGS requires at least one accepted finding; NO_FINDINGS_IN_REVIEWED_SCOPE and BLOCKED forbid accepted findings.",
+    "status PARTIAL or BLOCKED requires a non-empty limits list.",
+    "Finding ids are unique. An accepted finding requires trigger, existing_control, evidence_summary, fix_guidance, required_verification and at least one evidence item; a finding that is not accepted requires rejection_reason.",
+    "surface_review lists each surface once and includes social_engineering, credential_personal_files, egress and agent_tools_hooks_ci.",
+    "flow.ref and target.ref may be null only with a ref_note that explains why.",
+    "evidence line_end requires line_start and must not be smaller than it; an excerpt has at most 20 lines.",
+    "dependency_age.assessments is required for NEEDS_SETUP, CONFIGURATION_OBSERVED, ENFORCEMENT_VERIFIED and UNSUPPORTED; overall ENFORCEMENT_VERIFIED requires every assessment to be ENFORCEMENT_VERIFIED.",
+    "Every string is checked for control characters (line feed, carriage return and tab are allowed) before anything is rendered."
+  ]
+}

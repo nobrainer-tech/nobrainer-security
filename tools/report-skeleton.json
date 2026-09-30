@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0",
+  "title": "FILL: short title, e.g. Security review of example-tool 1.2.3",
+  "review": {
+    "date": "FILL: review date YYYY-MM-DD",
+    "reviewer": "FILL: who ran it, e.g. Codex with NoBrainer.Tech Flow"
+  },
+  "mode": "READ_ONLY",
+  "flow": {
+    "source": "FILL: Flow source, e.g. https://github.com/nobrainer-tech/nobrainer-tech-flow v2.0.2",
+    "ref": "FILL: exact Flow commit SHA",
+    "security_mode": "FILL: SECURITY_REVIEW | SUPPLY_CHAIN | THREAT_MODEL | RELEASE_GATE"
+  },
+  "target": {
+    "kind": "FILL: repository | skill | installer | package | fixture | other",
+    "label": "FILL: name of the reviewed tool",
+    "location": "FILL: URL, package id or local path",
+    "ref": "FILL: exact commit SHA or version; use null for a local folder without Git",
+    "ref_note": "FILL: how the target was pinned, e.g. local folder, sha256 of its files in digest; or delete this line",
+    "digest": "FILL: artifact digest, or delete this line",
+    "local_modifications": "FILL: dirty paths of a local checkout, or None"
+  },
+  "authority": {
+    "data_classification": "FILL: e.g. Public source; no private data was read",
+    "write_execution": "FILL: e.g. Read-only static inspection; nothing was installed or run"
+  },
+  "scope": {
+    "headline": "FILL: one line, e.g. Six files reviewed. Everything else out of scope.",
+    "reviewed": [
+      {
+        "path": "FILL: relative path that you read",
+        "note": "FILL: short note, or delete this line"
+      }
+    ],
+    "excluded": [
+      "FILL: what you did not review and why"
+    ],
+    "boundary": "FILL: the named paths only; no whole-disk, whole-home or whole-system scan"
+  },
+  "status": "FILL: FINDINGS | NO_FINDINGS_IN_REVIEWED_SCOPE | PARTIAL | BLOCKED",
+  "activity": {
+    "execution": {
+      "status": "NONE",
+      "note": "FILL: e.g. Static inspection only"
+    },
+    "network": {
+      "status": "FILL: NONE | PERFORMED | NOT_ASSESSED",
+      "note": "FILL: e.g. Registry metadata and archive read into memory"
+    }
+  },
+  "decision_brief": {
+    "lede": "FILL: two or three plain sentences a non-expert can act on",
+    "summary_title": "FILL: one-line verdict",
+    "summary": [
+      "FILL: what you found, in plain words"
+    ],
+    "result_meaning": [
+      "FILL: what this result means and does not mean"
+    ]
+  },
+  "surface_review": [
+    {
+      "surface": "social_engineering",
+      "status": "FILL: REVIEWED | NOT_PRESENT | NOT_ASSESSED | BLOCKED",
+      "summary": "FILL: README, skill, prompt and installer text"
+    },
+    {
+      "surface": "credential_personal_files",
+      "status": "FILL: REVIEWED | NOT_PRESENT | NOT_ASSESSED | BLOCKED",
+      "summary": "FILL: access to secrets, keys, browser or home files"
+    },
+    {
+      "surface": "egress",
+      "status": "FILL: REVIEWED | NOT_PRESENT | NOT_ASSESSED | BLOCKED",
+      "summary": "FILL: direct, encoded or indirect outbound data"
+    },
+    {
+      "surface": "agent_tools_hooks_ci",
+      "status": "FILL: REVIEWED | NOT_PRESENT | NOT_ASSESSED | BLOCKED",
+      "summary": "FILL: AI agent tools, MCP, hooks and CI permissions"
+    },
+    {
+      "surface": "installer_lifecycle",
+      "status": "FILL: REVIEWED | NOT_PRESENT | NOT_ASSESSED | BLOCKED",
+      "summary": "FILL: installers, lifecycle scripts and downloads"
+    },
+    {
+      "surface": "dependencies",
+      "status": "FILL: REVIEWED | NOT_PRESENT | NOT_ASSESSED | BLOCKED",
+      "summary": "FILL: manifests, lockfiles, sources and integrity"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F-01",
+      "title": "FILL: short finding title",
+      "severity": "FILL: High | Critical | Medium | Low | Informational",
+      "confidence": "FILL: High | Medium | Low",
+      "accepted": true,
+      "surface": "FILL: installer_lifecycle | egress | credential_personal_files | social_engineering | agent_tools_hooks_ci | dependencies",
+      "location": "FILL: file and function",
+      "trace": "FILL: trigger, reachable code, data and destination",
+      "trigger": "FILL: what starts it, e.g. npm install runs preinstall",
+      "existing_control": "FILL: the guard that exists, or None",
+      "impact": "FILL: what could happen to the user",
+      "evidence_summary": "FILL: what the evidence proves and what it does not",
+      "evidence": [
+        {
+          "path": "FILL: relative path",
+          "line_start": 1,
+          "line_end": 1,
+          "label": "FILL: short label",
+          "excerpt": "FILL: a few lines, secrets removed"
+        }
+      ],
+      "fix_guidance": "FILL: the concrete change",
+      "required_verification": "FILL: how to verify the fix without running untrusted code"
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "title": "FILL: suspicious-looking item that is not a finding",
+      "verdict": "FILL: REJECTED | NOT_ESTABLISHED",
+      "category": "FILL: e.g. False positive",
+      "reason": "FILL: why it is not a finding",
+      "evidence": [
+        {
+          "path": "FILL: relative path",
+          "line_start": 1
+        }
+      ]
+    }
+  ],
+  "dependency_age": {
+    "status": "FILL: NEEDS_SETUP | NOT_APPLICABLE | CONFIGURATION_OBSERVED | ENFORCEMENT_VERIFIED | UNSUPPORTED | NOT_ASSESSED",
+    "summary": [
+      "FILL: status of the 14-day rule in plain words, with its limits"
+    ],
+    "policy_url": "https://github.com/nobrainer-tech/nobrainer-security/blob/main/dependency-age-policy.md",
+    "assessments": [
+      {
+        "package_manager": "FILL: npm, pnpm, pip or other",
+        "version": "FILL: exact version, or unknown",
+        "config_source": "FILL: e.g. No .npmrc in the repository",
+        "scope": "FILL: project, user, CI or registry",
+        "status": "FILL: NEEDS_SETUP | NOT_APPLICABLE | CONFIGURATION_OBSERVED | ENFORCEMENT_VERIFIED | UNSUPPORTED | NOT_ASSESSED",
+        "window": "FILL: e.g. None found; recommended min-release-age=14",
+        "limits": "FILL: what this setting would not cover"
+      }
+    ]
+  },
+  "checks_run": [
+    "FILL: each check you actually ran, e.g. python3 tools/inspect_package.py npm:left-pad@1.3.0"
+  ],
+  "limits": [
+    "FILL: what this review could not see or prove"
+  ],
+  "sources": [
+    {
+      "title": "FILL: source title",
+      "url": "FILL: https URL",
+      "url_label": "FILL: link text",
+      "text": "FILL: why it matters"
+    }
+  ],
+  "owner_gates": [
+    "FILL: decisions only the owner can make, e.g. approve a fix or an isolated test"
+  ],
+  "next_steps": [
+    {
+      "title": "FILL: next step",
+      "text": "FILL: what to do and why"
+    }
+  ]
+}
