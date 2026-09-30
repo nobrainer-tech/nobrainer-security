@@ -354,6 +354,42 @@ class ReleaseAgeTests(unittest.TestCase):
 
 
 class OutputTests(unittest.TestCase):
+    def test_show_redacts_the_entire_private_key_block(self):
+        body = "SYNTHETIC_PRIVATE_KEY_BODY\nSYNTHETIC_PRIVATE_KEY_TAIL"
+        for kind in ("PRIVATE KEY", "RSA PRIVATE KEY", "EC PRIVATE KEY", "OPENSSH PRIVATE KEY", "PGP PRIVATE KEY BLOCK"):
+            text = "before\n-----BEGIN " + kind + "-----\n" + body + "\n-----END " + kind + "-----\nafter"
+            with self.subTest(kind=kind):
+                out = io.StringIO()
+                code = ip.main(["pkg@1.0.0", "--show", "key.txt"],
+                               fetch=make_fetch(npm_routes({"key.txt": text.encode()})),
+                               out=out, err=io.StringIO(), now=NOW)
+                self.assertEqual(code, 0)
+                self.assertNotIn("SYNTHETIC_PRIVATE_KEY_BODY", out.getvalue())
+                self.assertNotIn("SYNTHETIC_PRIVATE_KEY_TAIL", out.getvalue())
+                self.assertIn("[REDACTED PRIVATE KEY]", out.getvalue())
+                self.assertIn("before", out.getvalue())
+                self.assertIn("after", out.getvalue())
+
+    def test_show_redacts_an_unterminated_private_key_block(self):
+        text = "before\n-----BEGIN PRIVATE KEY-----\nSYNTHETIC_UNTERMINATED_KEY_BODY"
+        out = io.StringIO()
+        code = ip.main(["pkg@1.0.0", "--show", "key.txt"],
+                       fetch=make_fetch(npm_routes({"key.txt": text.encode()})),
+                       out=out, err=io.StringIO(), now=NOW)
+        self.assertEqual(code, 0)
+        self.assertNotIn("SYNTHETIC_UNTERMINATED_KEY_BODY", out.getvalue())
+        self.assertIn("[REDACTED PRIVATE KEY]", out.getvalue())
+
+    def test_manifest_and_flag_json_redact_private_key_bodies(self):
+        command = "echo before\n-----BEGIN PRIVATE KEY-----\nSYNTHETIC_INSTALL_KEY_BODY\n-----END PRIVATE KEY-----\necho after"
+        routes = npm_routes({"package.json": json.dumps({
+            "name": "pkg", "version": "1.0.0", "scripts": {"postinstall": command}
+        }).encode()})
+        out = io.StringIO()
+        self.assertEqual(ip.main(["pkg@1.0.0"], fetch=make_fetch(routes), out=out, err=io.StringIO(), now=NOW), 0)
+        self.assertNotIn("SYNTHETIC_INSTALL_KEY_BODY", out.getvalue())
+        self.assertIn("[REDACTED PRIVATE KEY]", out.getvalue())
+
     def test_json_is_deterministic_with_fixed_key_order_and_explicit_limits(self):
         runs = []
         for _ in range(2):
