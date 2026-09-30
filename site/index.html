@@ -29,7 +29,7 @@ var m=matchMedia('(prefers-reduced-motion: reduce)');if(m.matches)r.classList.ad
 <style>
 :root{
   --bg:#FAF9F6;--card:#FFFCF7;--ink:#202124;--muted:#485162;--link:#2948B8;--btn:#2948B8;--edge:#D94724;--orange:#D94724;
-  --line:#D3D5DB;--soft:#EDF0F6;--eb-bg:rgba(217,71,36,.10);--eb-ink:#D94724;--field:#FFFFFF;
+  --line:#D3D5DB;--soft:#EDF0F6;--eb-bg:rgba(217,71,36,.10);--field:#FFFFFF;
   --shadow:0 2px 4px #17294314,0 9px 22px #17294320;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
@@ -37,13 +37,13 @@ var m=matchMedia('(prefers-reduced-motion: reduce)');if(m.matches)r.classList.ad
 }
 html[data-theme=night]{
   --bg:#202127;--card:#303139;--ink:#F3EEE6;--muted:#C9D2E2;--link:#AFC3FF;--edge:#D94724;--orange:#D94724;
-  --line:#555C6B;--soft:#293344;--eb-bg:rgba(217,71,36,.16);--eb-ink:#D94724;--field:#25262D;
+  --line:#555C6B;--soft:#293344;--eb-bg:rgba(217,71,36,.16);--field:#25262D;
   --shadow:0 3px 8px #0006,0 12px 26px #0005;
 }
 /* Dark cobalt-navy bands keep their own explicit palette in both themes */
 .band{
   --bg:var(--band);--ink:#F3EEE6;--muted:#C9D2E2;--link:#AFC3FF;--edge:#D94724;--orange:#D94724;
-  --line:rgba(175,195,255,.24);--card:var(--panel);--soft:#1A2C6B;--eb-bg:rgba(217,71,36,.16);--eb-ink:#D94724;
+  --line:rgba(175,195,255,.24);--card:var(--panel);--soft:#1A2C6B;--eb-bg:rgba(217,71,36,.16);
   background:var(--band);color:var(--ink);
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -64,7 +64,8 @@ button{font:inherit}
 .ico{display:block;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
 
 /* ---------- shared components ---------- */
-.eyebrow{display:inline-block;margin:0 0 18px;padding:5px 11px 5px 12px;border-left:4px solid var(--edge);background:var(--eb-bg);color:var(--eb-ink);font-size:12px;line-height:1.4;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+/* Small labels use the text colour for contrast; #D94724 stays the accent (rule, tint, markers) */
+.eyebrow{display:inline-block;margin:0 0 18px;padding:5px 11px 5px 12px;border-left:4px solid var(--edge);background:var(--eb-bg);color:var(--ink);font-size:13px;line-height:1.4;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
 h2{font-size:clamp(30px,3.6vw,48px);line-height:1.08;font-weight:760;letter-spacing:-.05em;text-wrap:balance}
 h3{font-size:19px;line-height:1.25;font-weight:700;letter-spacing:-.025em}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:13px 22px;border:1px solid var(--btn);border-radius:3px;background:var(--btn);color:#fff;font:700 15px/1.35 var(--sans);text-decoration:none;text-align:center;cursor:pointer;transition:transform .16s ease,background-color .16s ease,border-color .16s ease,box-shadow .16s ease}
@@ -93,7 +94,8 @@ h3{font-size:19px;line-height:1.25;font-weight:700;letter-spacing:-.025em}
 .brand-dot{display:inline-block;width:4px;height:4px;margin:0 2px 0 1px;background:var(--edge);font-style:normal}
 .brand-path{color:var(--ink)}
 .head-tools{display:flex;align-items:center;gap:10px}
-.head-badge{margin-right:8px;font-size:12px;font-weight:750;letter-spacing:.08em;line-height:1.3;text-transform:uppercase;color:var(--orange);white-space:nowrap}
+.head-badge{display:inline-flex;align-items:center;gap:8px;margin-right:8px;font-size:12px;font-weight:750;letter-spacing:.08em;line-height:1.3;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.head-badge::before{content:"";flex:none;width:7px;height:7px;background:var(--edge)}
 .icon-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid rgba(175,195,255,.4);border-radius:3px;background:transparent;color:var(--ink);cursor:pointer;transition:background-color .16s ease,border-color .16s ease,transform .16s ease}
 .icon-btn:hover{border-color:var(--edge);background:rgba(175,195,255,.1);transform:translateY(-1px)}
 .icon-btn .ico{width:20px;height:20px}
@@ -150,7 +152,7 @@ html[data-theme=night] .i-moon{display:none}
 .t-title{display:block;color:var(--ink);font-size:clamp(17px,1.6vw,20px);font-weight:700;line-height:1.25;letter-spacing:-.02em;text-decoration:none}
 .t-title:hover{text-decoration:underline;text-underline-offset:4px}
 .t-meta{margin-top:5px;font-size:13px;line-height:1.4;color:var(--muted)}
-.t-meta .src{color:var(--orange);font-weight:700}
+.t-meta .src{color:var(--ink);font-weight:700}
 html.js .ticker-bar{display:flex}
 html.js .ticker-list{display:grid}
 html.js .t-item{grid-area:1/1;padding:14px 0 0;border:0;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .26s ease,transform .26s ease,visibility 0s .26s}
@@ -172,7 +174,7 @@ html.js .t-item.is-off{transform:translateY(-12px)}
 .case-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
 .case-ico{display:grid;place-items:center;width:44px;height:44px;border-radius:3px;background:var(--soft);color:var(--link)}
 .case-ico .ico{width:24px;height:24px}
-.case-no{font-size:13px;font-weight:800;letter-spacing:.08em;color:var(--orange);font-variant-numeric:tabular-nums}
+.case-no{padding:3px 8px 3px 9px;border-left:3px solid var(--edge);background:var(--eb-bg);font-size:13px;line-height:1.4;font-weight:800;letter-spacing:.08em;color:var(--ink);font-variant-numeric:tabular-nums}
 .case h3{font-size:19px;margin-bottom:10px;text-wrap:balance}
 .case h3 .s2{display:block}
 .case-text{font-size:14.5px;line-height:1.55;color:var(--muted);margin-bottom:16px}
@@ -218,13 +220,13 @@ html.js .t-item.is-off{transform:translateY(-12px)}
 .tl{position:relative;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .tl::before{content:"";position:absolute;left:16.6667%;right:16.6667%;top:27px;height:2px;background:repeating-linear-gradient(90deg,var(--edge) 0 8px,transparent 8px 14px)}
 .tl li{position:relative;padding:0 6px;text-align:center}
-.tl-node{position:relative;z-index:1;display:grid;place-items:center;width:56px;height:56px;margin:0 auto 18px;border:2px solid var(--link);border-radius:50%;background:var(--card);color:var(--link)}
+.tl-node{position:relative;z-index:1;display:grid;place-items:center;width:56px;height:56px;margin:0 auto 18px;border:2px solid var(--link);border-radius:50%;background:var(--bg);color:var(--link)}
 .tl-node .ico{width:24px;height:24px}
 .tl li:last-child .tl-node{background:#2948B8;border-color:#2948B8;color:#fff}
 .tl li:last-child .tl-node .ico{stroke-width:2.6}
 .tl li:nth-child(2) .tl-node{border-color:var(--edge);color:var(--orange)}
-.tl-day{display:block;margin-bottom:4px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}
-.tl-text{font-size:17px;line-height:1.35;font-weight:650;letter-spacing:-.012em;text-wrap:balance}
+.tl-day{display:inline-block;margin-bottom:8px;padding:3px 8px 3px 9px;border-left:3px solid var(--edge);background:var(--eb-bg);font-size:12px;line-height:1.4;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.tl-text{display:block;font-size:17px;line-height:1.35;font-weight:650;letter-spacing:-.012em;text-wrap:balance}
 .tl-dot{position:absolute;z-index:2;left:calc(16.6667% - 5px);top:23px;width:10px;height:10px;background:var(--edge);opacity:0;box-shadow:0 0 10px 1px rgba(217,71,36,.7)}
 .tl-wrap.in .tl-dot{animation:travel 2.6s ease-in-out both}
 @keyframes travel{0%{opacity:0;transform:translateX(0)}10%{opacity:1}88%{opacity:1}100%{opacity:0;transform:translateX(66.6667cqw)}}
@@ -374,6 +376,8 @@ body:has(dialog[open]){overflow:hidden}
   .btn:hover,.icon-btn:hover{transform:none}
 }
 html.rm .spark{display:none}
+/* Reduced motion: cases still rotate, so mark the current one with a full bar instead of an animated fill */
+html.rm .ticker.is-playing .segs i.is-active::after{transform:scaleX(1)}
 </style>
 </head>
 <body>
@@ -861,4 +865,3 @@ $('#copy-review').addEventListener('click',function(ev){
 </script>
 </body>
 </html>
-
