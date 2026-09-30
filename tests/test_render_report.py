@@ -167,6 +167,55 @@ def data_payload(page):
     return json.loads(DATA_BLOCK.search(page).group(1))
 
 
+class PresentationRegressionTests(unittest.TestCase):
+    def test_candidate_keeps_its_own_evidence_inside_the_card(self):
+        data = load_fixture()
+        data['rejected_candidates'] = [{'title': 'Local output only', 'verdict': 'REJECTED', 'category': 'False positive', 'reason': 'No outbound sink.', 'evidence': [{'path': 'README.md', 'label': 'CANDIDATE-OWN-EVIDENCE', 'line_start': 1}]}]
+        page, _ = rr.render(data)
+        card = re.search(r'<article class="not-finding">.*?</article>', page, re.S).group(0)
+        self.assertIn('CANDIDATE-OWN-EVIDENCE', card)
+
+    def test_confidence_note_has_a_visible_separator(self):
+        data = load_fixture()
+        data['findings'][0]['confidence_note'] = 'trace verified'
+        page, _ = rr.render(data)
+        self.assertIn('CONFIDENCE: HIGH · TRACE VERIFIED', page)
+
+    def test_unknown_manager_version_is_explained(self):
+        data = load_fixture()
+        data['dependency_age']['status'] = 'NEEDS_SETUP'
+        data['dependency_age']['assessments'] = [{'package_manager': 'npm', 'version': 'UNKNOWN', 'config_source': 'Not found', 'scope': 'Project', 'status': 'NEEDS_SETUP'}]
+        page, _ = rr.render(data)
+        self.assertIn('npm · version not established', page)
+        self.assertNotIn('npm UNKNOWN</strong>', page)
+
+    def test_auto_code_leaves_sentence_punctuation_outside(self):
+        self.assertEqual(rr.md_inline('See https://example.invalid/check.'), 'See ' + BT + 'https://example.invalid/check' + BT + '.')
+        self.assertEqual(rr.md_inline('(https://example.invalid/check).'), '(' + BT + 'https://example.invalid/check' + BT + ').')
+        self.assertEqual(rr.md_inline('See https://example.invalid/check(v1).'), 'See ' + BT + 'https://example.invalid/check(v1)' + BT + '.')
+
+    def test_fix_panel_note_uses_the_supported_inline_markup(self):
+        data = load_fixture()
+        data['fix_request'] = {'panel_note': 'Keep ' + BT + 'README.md' + BT + ' unchanged.'}
+        page, _ = rr.render(data)
+        self.assertIn('Keep <code>README.md</code> unchanged.', page)
+
+    def test_owner_gates_are_listed_once_after_next_steps(self):
+        data = load_fixture()
+        data['owner_gates'] = ['Approve isolated execution.', 'Approve target writes.']
+        data['next_steps'] = [{'title': 'Read the source', 'text': 'Inspect the reported lines.'}, {'title': 'Plan the fix', 'text': 'Choose the smallest change.'}]
+        page, _ = rr.render(data)
+        self.assertEqual(page.count('OWNER AUTHORIZATION REQUIRED'), 1)
+        self.assertIn('Approve isolated execution.', page)
+        self.assertIn('Approve target writes.', page)
+
+    def test_description_does_not_double_a_terminal_period(self):
+        data = load_fixture()
+        data['title'] = 'Review of a local tool.'
+        page, _ = rr.render(data)
+        self.assertNotIn('Review of a local tool..', page)
+
+
 class ControlledFixtureTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
