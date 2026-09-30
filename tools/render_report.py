@@ -648,7 +648,8 @@ def _md_text(text, line_start=False):
             out.append(_md_escape(text[position:match.start()], line_start and first))
             first = False
         token = match.group(0).rstrip(".,;:!?")
-        while token and token[-1] in ")]}" and token.count(token[-1]) > token.count({")": "(", "]": "[", "}": "{"}[token[-1]]):
+        while (token and token[-1] in ")]}"
+               and token.count(token[-1]) > token.count({")": "(", "]": "[", "}": "{"}[token[-1]])):
             token = token[:-1]
         out.append(md_code(token))
         out.append(_md_escape(match.group(0)[len(token):]))
@@ -1593,6 +1594,8 @@ code{overflow-wrap:anywhere}
 .dep-list li:first-child{border-top:0}
 .dep-list .quiet-label{margin-left:8px}
 .dep-facts{display:block;margin-top:5px;color:var(--muted);font-size:13px}
+.next-step+.next-step,.owner-gates{margin-top:14px}
+.owner-gates .gate{display:block;margin-bottom:10px;color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.04em}
 @media print{.excerpt{white-space:pre-wrap}}
 '''
 
