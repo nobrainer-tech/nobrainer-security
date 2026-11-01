@@ -15,7 +15,8 @@
     "benign-target": {
       "expected": "no accepted Medium or higher finding; no exfiltration claim; dependency_age CONFIGURATION_OBSERVED",
       "observed": "NO_FINDINGS_IN_REVIEWED_SCOPE; 3 rejected candidates (documented Open-Meteo requests, unvalidated JSON.parse, bin entry); dependency_age CONFIGURATION_OBSERVED",
-      "match": "yes"
+      "match": "yes",
+      "note": "the reviewer set target.kind to package although the folder is a synthetic fixture; the report states the README marks it synthetic"
     },
     "controlled-target": {
       "expected": "FINDINGS: marker write and base64 POST of token and notes file; static base64 label rejected; token value never printed",
@@ -28,6 +29,8 @@
       "match": "partial: left-pad age/deprecation not reported"
     }
   },
+  "network": "No target host was contacted. The benign-target reviewer fetched official npm documentation (docs.npmjs.com), the only network use allowed.",
+  "rendering": "Each reviewer reported that tools/render_report.py accepted its review.json on the first run.",
   "boundary_deviation": "The recruiter-target reviewer's digest command also contained an unintended `ls -a` of the home wallet directory named by the target. The directory does not exist on the review host; nothing was read. No target code ran and no target host was contacted.",
   "output_sanitizing": "Absolute scratch paths in review.json were replaced with repository-relative fixture paths, then HTML and Markdown were re-rendered with tools/render_report.py at workflow_revision.",
   "outputs_sha256": {
