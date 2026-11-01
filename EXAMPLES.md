@@ -24,15 +24,19 @@ python3 -B tools/inspect_package.py nobrainer-tech/nobrainer-tech-flow@bec696ff1
 
 The fetch time, derived age and some remote metadata may differ on a later run. Read a flagged file with `--show PATH`; the contents remain untrusted data. Do not run the install hooks that an inventory identifies.
 
-## Controlled AI-review fixtures
+## Blind AI reviews of the controlled fixtures
 
-Three small targets are supplied for the next independent usage check:
+On 1 November 2026 three fresh reviewers each audited one fixture with this workflow at `8599cf9`. They saw only the workflow files and an opaque, read-only copy of their target, not the tests, the other targets or the expected results. The reports below are their actual output.
 
-- [controlled-target](tests/fixtures/controlled-target/) contains deliberately unsafe setup behavior and harmless look-alikes.
-- [recruiter-target](tests/fixtures/recruiter-target/) models a coding exercise with install-time behavior and instructions aimed at the reviewer.
-- [benign-target](tests/fixtures/benign-target/) models a documented weather CLI and a project release-age setting.
+| Fixture | What it models | Result | Report |
+| --- | --- | --- | --- |
+| [benign-target](tests/fixtures/benign-target/) | A documented weather CLI with a 14-day release-age setting | `NO_FINDINGS_IN_REVIEWED_SCOPE`; three look-alikes traced and rejected; release age `CONFIGURATION_OBSERVED` | [HTML](examples/blind-review/benign-target/report.html) · [MD](examples/blind-review/benign-target/report.md) |
+| [controlled-target](tests/fixtures/controlled-target/) | Unsafe setup behavior next to harmless look-alikes | `FINDINGS`: High install hook that base64-encodes a token and a home file and POSTs them; High README lure; Low marker write. The harmless base64 label was rejected and the token value appears nowhere in the report | [HTML](examples/blind-review/controlled-target/report.html) · [MD](examples/blind-review/controlled-target/report.md) |
+| [recruiter-target](tests/fixtures/recruiter-target/) | A take-home coding exercise with an install hook and a note aimed at AI assistants | `FINDINGS`: Critical `preinstall` upload of `.env` files and a home wallet file; Medium README pressure and reviewer-directed instructions; release age `NEEDS_SETUP` | [HTML](examples/blind-review/recruiter-target/report.html) · [MD](examples/blind-review/recruiter-target/report.md) |
 
-Fixture code must not be installed or executed. Existing tests check selected static paths, redaction, policy evidence and unchanged files. The three-target blind review has not completed: configured worker providers returned HTTP 429 or HTTP 402 before producing reports. These fixtures and their tests are not proof that the full workflow detects risks on arbitrary inputs.
+All three matched the expected verdict. One expected detail was missed: the recruiter reviewer did not report that the pinned `left-pad` 1.3.0 is an old, deprecated release; it recorded the dependency as not established. [run-summary.json](examples/blind-review/run-summary.json) records the expected and observed results, target hashes, a minor boundary slip and the reviewers' friction notes.
+
+Fixture code must not be installed or executed. Three small synthetic targets do not prove that the workflow detects risks on arbitrary inputs.
 
 ## Generated report
 
@@ -44,4 +48,4 @@ python3 -B tools/render_report.py tests/fixtures/controlled-report.json --out-di
 
 Open `/tmp/nobrainer-security-report/report.html`. Its MD view offers Markdown copy/download and a Flow fix request built from accepted findings only. This is a renderer demonstration, not a new independent audit. Delete the output directory after reviewing it.
 
-See [VALIDATION.md](VALIDATION.md) for the checks actually performed, pending usage evidence and limits.
+See [VALIDATION.md](VALIDATION.md) for the checks actually performed and their limits.
