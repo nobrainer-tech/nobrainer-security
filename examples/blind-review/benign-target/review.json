@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "title": "Security review of weather-cli 1.2.0 (local folder)",
+  "review": {"date": "2026-11-01", "reviewer": "Claude Code (Sonnet 5.5) with NoBrainer.Tech Flow nobrainer-security"},
+  "mode": "READ_ONLY",
+  "flow": {
+    "source": "Installed Claude Code plugin nobrainer-tech-flow version 2.6.0 (synced plugin)",
+    "ref": "No Git commit available; plugin version 2.6.0",
+    "security_mode": "SUPPLY_CHAIN"
+  },
+  "target": {
+    "kind": "package",
+    "label": "weather-cli",
+    "location": "tests/fixtures/benign-target (opaque copy target-a)",
+    "ref": null,
+    "ref_note": "Local folder without Git; package.json declares version 1.2.0. Pinned by sha256 over the six reviewed files (digest).",
+    "digest": "sha256:5f0fe8984ad663b0aeab8b88bbadea6454453b220b97c4bbd4f5456d9a872a47 (shasum -a 256 of .npmrc, README.md, package-lock.json, package.json, src/cli.js, test/format.test.js, in that order, hashed again)",
+    "local_modifications": "None known; no Git metadata to compare against"
+  },
+  "authority": {
+    "data_classification": "Local source only; no secrets or personal files read",
+    "write_execution": "Read-only static inspection; nothing was installed, imported or run; output written only to the report folder"
+  },
+  "scope": {
+    "headline": "Six files reviewed, the whole folder. Nothing outside the folder was read.",
+    "reviewed": [
+      {"path": ".npmrc", "note": "release-age setting"},
+      {"path": "README.md", "note": "usage and data-disclosure statement"},
+      {"path": "package.json", "note": "no lifecycle scripts; one dependency"},
+      {"path": "package-lock.json", "note": "kleur 4.1.5 from registry.npmjs.org with integrity"},
+      {"path": "src/cli.js", "note": "the only runtime code"},
+      {"path": "test/format.test.js", "note": "trivial unit test"}
+    ],
+    "excluded": [
+      "The kleur 4.1.5 package contents (third-party code not present in the folder and not fetched)",
+      "Live behavior of the Open-Meteo API and runtime execution"
+    ],
+    "boundary": "The named folder only; no whole-disk, whole-home or whole-system scan"
+  },
+  "status": "NO_FINDINGS_IN_REVIEWED_SCOPE",
+  "activity": {
+    "execution": {"status": "NONE", "note": "Static inspection only"},
+    "network": {"status": "PERFORMED", "note": "One read of npm's public documentation page; nothing contacted from the target"}
+  },
+  "decision_brief": {
+    "lede": "The six files in this folder show no supported security problem. The program reads one optional config file, sends only the city name to Open-Meteo, and has no install scripts. This is a scoped static result, not a guarantee the tool is safe.",
+    "summary_title": "No findings in the reviewed files",
+    "summary": [
+      "src/cli.js reads only ~/.config/weather-cli/config.json (the city field) and queries two fixed Open-Meteo HTTPS endpoints; the city is URL-encoded.",
+      "package.json has no preinstall, install, postinstall or prepare scripts, and the single dependency kleur 4.1.5 is pinned with an integrity hash.",
+      "The README statement about what is sent matches the code."
+    ],
+    "result_meaning": [
+      "No finding was supported by a reachable path within these six files.",
+      "The kleur package source was not read, so this does not cover third-party code, and nothing was run."
+    ]
+  },
+  "surface_review": [
+    {"surface": "social_engineering", "status": "REVIEWED", "summary": "README.md is short and factual; no credential requests, urgency, fake identity or instructions to disable safeguards. It labels itself a synthetic fixture."},
+    {"surface": "credential_personal_files", "status": "REVIEWED", "summary": "Only ~/.config/weather-cli/config.json is read, and only its city value is used; no env vars, keys, browser profiles or other home files are referenced."},
+    {"surface": "egress", "status": "REVIEWED", "summary": "Two fixed destinations (geocoding-api.open-meteo.com, api.open-meteo.com). Sent data: the encoded city name, then coordinates returned by the first API. No encoding, redirects to other hosts or other sinks."},
+    {"surface": "agent_tools_hooks_ci", "status": "NOT_PRESENT", "summary": "No MCP config, agent files, skills, hooks, editor tasks or CI workflows in the folder."},
+    {"surface": "installer_lifecycle", "status": "REVIEWED", "summary": "No lifecycle scripts or downloads. The only script is test: node --test, run only if invoked. The README suggests npx weather-cli."},
+    {"surface": "dependencies", "status": "REVIEWED", "summary": "One dependency, kleur 4.1.5, exact-pinned in package.json and lockfile (lockfileVersion 3) with registry.npmjs.org URL and sha512 integrity. Package contents not inspected."}
+  ],
+  "findings": [],
+  "rejected_candidates": [
+    {
+      "title": "Config file read followed by network requests (possible data exfiltration)",
+      "verdict": "REJECTED",
+      "category": "False positive",
+      "reason": "Only the city string from the config reaches the network, as documented in the README; destinations are fixed constants. A config with extra fields does not send them. A non-string city is stringified by encodeURIComponent and sent only to Open-Meteo.",
+      "evidence": [{"path": "src/cli.js", "line_start": 8}, {"path": "src/cli.js", "line_start": 10}]
+    },
+    {
+      "title": "Unvalidated JSON.parse of user config and API responses",
+      "verdict": "REJECTED",
+      "category": "Robustness, no security impact",
+      "reason": "The config is the user's own file; a malformed file or response only crashes the CLI. No injection sink, no eval, no shell, no file writes.",
+      "evidence": [{"path": "src/cli.js", "line_start": 8}, {"path": "src/cli.js", "line_start": 19}]
+    },
+    {
+      "title": "bin entry plus npx usage executes code on run",
+      "verdict": "REJECTED",
+      "category": "Expected behavior",
+      "reason": "Running a CLI is its stated purpose and the code was reviewed; there is no install-time execution.",
+      "evidence": [{"path": "package.json", "line_start": 6}]
+    }
+  ],
+  "dependency_age": {
+    "status": "CONFIGURATION_OBSERVED",
+    "summary": [
+      "The project .npmrc sets min-release-age=14, matching the standard 14-day recommendation, and package.json declares packageManager npm@11.10.0, the release that added the key.",
+      "Enforcement was not tested: nothing was run, and the npm version actually used on a given machine or in CI, plus user/global config precedence, are unknown.",
+      "A cooldown can delay an urgent security fix (npm audit fix may keep a vulnerable version), and older releases are not thereby safe. The lockfile pins kleur 4.1.5; its publication date was not checked."
+    ],
+    "policy_url": "https://github.com/nobrainer-tech/nobrainer-security/blob/main/dependency-age-policy.md",
+    "assessments": [
+      {
+        "package_manager": "npm",
+        "version": "11.10.0 (declared in packageManager; installed version unknown)",
+        "config_source": "Project .npmrc, line 1",
+        "scope": "project",
+        "status": "CONFIGURATION_OBSERVED",
+        "window": "min-release-age=14 (days)",
+        "limits": "Not behavior-tested; a before setting in the same source would take precedence; the packageManager field is only a hint unless Corepack enforces it; min-release-age-exclude was not present; Git, file or tarball sources and user/global config were not assessed. npm docs (v11 config) confirm the unit is days and that npm errors when no version qualifies."
+      }
+    ]
+  },
+  "checks_run": [
+    "Read all six files in the target folder with cat -n (no execution)",
+    "shasum -a 256 of the six files, hashed again, for the digest",
+    "Read npm v11 config documentation for min-release-age"
+  ],
+  "limits": [
+    "Static review of six files; no runtime test and no execution",
+    "kleur 4.1.5 source and registry state were not inspected",
+    "Open-Meteo service behavior and the host's npm configuration are unknown",
+    "No Git history, so provenance and authorship of the folder are unverified",
+    "Flow recorded as plugin version 2.6.0; no commit available"
+  ],
+  "sources": [
+    {"title": "npm v11 configuration: min-release-age", "url": "https://docs.npmjs.com/cli/v11/using-npm/config/", "url_label": "docs.npmjs.com", "text": "Confirms the unit (days), default null, erroring when no version qualifies, and the npm audit fix caveat."}
+  ],
+  "owner_gates": [
+    "Running npm install, npm test or the CLI is the owner's decision; this review did not run them",
+    "Any isolated enforcement test of min-release-age needs separate approval"
+  ],
+  "next_steps": [
+    {"title": "Optionally review kleur 4.1.5", "text": "If you want assurance beyond this folder, inspect the pinned kleur tarball read-only before installing."},
+    {"title": "Run only with the file as reviewed", "text": "If you run it, compare the folder against the recorded digest first, and be aware it makes two HTTPS requests to open-meteo.com containing your configured city."}
+  ]
+}
